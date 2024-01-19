@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="." rel="prev"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href=".." rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.3" name="generator"/>
-<title>Welcome to MkDocs - blog from lf</title>
-<link href="assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
+<title>Context free grammar - blog from lf</title>
+<link href="../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="css/heti.css" rel="stylesheet"/>
+<link href="../css/heti.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet"/>
-<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -25,13 +25,13 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
 <body dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#welcome-to-mkdocs">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
@@ -39,7 +39,7 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
-<a aria-label="blog from lf" class="md-header__button md-logo" data-md-component="logo" href="." title="blog from lf">
+<a aria-label="blog from lf" class="md-header__button md-logo" data-md-component="logo" href=".." title="blog from lf">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Context free grammar
             
           </span>
 </div>
@@ -82,7 +82,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="导航栏" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="blog from lf" class="md-nav__button md-logo" data-md-component="logo" href="." title="blog from lf">
+<a aria-label="blog from lf" class="md-nav__button md-logo" data-md-component="logo" href=".." title="blog from lf">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"></path></svg>
 </a>
     blog from lf
@@ -98,26 +98,73 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
 <span class="md-ellipsis">
     编译原理
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
             编译原理
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="Context-free%20grammar/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Context free grammar
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Context free grammar
   </span>
 </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      上下文无关文法小记
+    </span>
+</a>
+<nav aria-label="上下文无关文法小记" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      上下文无关文法的形式化定义
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      编程语言的语法可以使用上下文无关文法来形式化描述
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tips-about-closure-form-gpt">
+<span class="md-ellipsis">
+      tips about closure form gpt
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -137,7 +184,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href=".">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     None
   </span>
@@ -161,7 +208,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href=".">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     None
   </span>
@@ -185,7 +232,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href=".">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     None
   </span>
@@ -209,7 +256,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href=".">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     None
   </span>
@@ -218,55 +265,26 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     随记内容
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             随记内容
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     Welcome to MkDocs
   </span>
 </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#commands">
-<span class="md-ellipsis">
-      Commands
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-layout">
-<span class="md-ellipsis">
-      Project layout
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -286,16 +304,34 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#commands">
+<a class="md-nav__link" href="#_1">
 <span class="md-ellipsis">
-      Commands
+      上下文无关文法小记
+    </span>
+</a>
+<nav aria-label="上下文无关文法小记" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      上下文无关文法的形式化定义
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#project-layout">
+<a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
-      Project layout
+      编程语言的语法可以使用上下文无关文法来形式化描述
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tips-about-closure-form-gpt">
+<span class="md-ellipsis">
+      tips about closure form gpt
     </span>
 </a>
 </li>
@@ -306,20 +342,97 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h1>Context free grammar</h1>
+<h4 id="_1">上下文无关文法小记</h4>
+<p><a href="https://en.wikipedia.org/wiki/Context-free_grammar">维基百科介绍</a></p>
+<p>从<span class="heti-skip"><span class="heti-spacing"> </span>CFL<span class="heti-spacing"> </span></span>可达这个概念了解到了上下文无关文法这个概念</p>
+<h5 id="_2">上下文无关文法的形式化定义</h5>
+<p>A context-free grammar G is defined by the 4-tuple G=(V,Σ,R,S)</p>
+<p><span>V :=<span class="heti-spacing"> </span></span>非终结符的集合
+Σ :=终结符的集合 
+R :=V * (V U Σ)<em>  一种替换关系（$ A\ \to \ \alpha $  the </em><strong>single</strong><em> nonterminal A
+A on the left hand side can always be </em><strong>replaced directly</strong>* by α
+  on the right hand side）
+S :=开始符 属于非终结符</p>
+<p>文法最后推导出的结果是一串终结符序列 所有非终结符都被直接替换了</p>
+<h5 id="_3">编程语言的语法可以使用上下文无关文法来形式化描述</h5>
+<p>下面是一个简单的例子，展示了一个用于描述算术表达式的上下文无关文法：</p>
+<pre><code class="language-mathematica">Expr -&gt; Expr + Term
+      | Expr - Term
+      | Term
+
+Term -&gt; Term * Factor
+      | Term / Factor
+      | Factor
+
+Factor -&gt; (Expr)
+        | Number
+
+Number -&gt; digit+
+####在上下文无关文法中，digit+ 表示一个或多个数字字符。具体而言，digit 是一个符号，表示单个数字字符（0 到 9 中的任意一个数字）。而 + 是正闭包操作符，表示前面的元素（这里是 digit）可以重复出现一次或多次
+</code></pre>
+<h4 id="tips-about-closure-form-gpt">tips about closure form gpt</h4>
+<pre><code>Person: 
+- 为什么是并集的 Kleene 闭包 而不是直接是并集
+
+ChatGPT: 
+- 在上下文无关文法（CFG）中，使用 (V∪Σ)∗(V \cup \Sigma)^*(V∪Σ)∗ 表示 VVV 和 Σ\SigmaΣ 的并集的 Kleene 闭包的原因是为了表示可重复的符号序列，包括可以为空串的情况。 
+- **）：**  表示可以重复零次或多次。在这里，(V∪Σ)∗(V \cup \Sigma)^*(V∪Σ)∗ 表示 VVV 和 Σ\SigmaΣ 中的符号可以重复出现零次或多次，即生成的字符串可以是包含 VVV 中的非终结符、Σ\SigmaΣ 中的终结符和空串的任意数量的序列。 
+- **）：**  表示取两个集合的并集。在这里，V∪ΣV \cup \SigmaV∪Σ 表示非终结符集合 VVV 和终结符集合 Σ\SigmaΣ 的并集，即文法中可以使用的所有符号。
+
+将两者结合起来，(V∪Σ)∗(V \cup \Sigma)^*(V∪Σ)∗ 表示由 VVV 和 Σ\SigmaΣ 中的符号构成的任意数量的序列，包括空串。这是因为 Kleene 闭包允许零次的重复，因此可以生成空串。
+
+如果直接使用 V∪ΣV \cup \SigmaV∪Σ 而不是 Kleene 闭包，那么规则只能生成一个符号，而不允许多个符号的序列。这不符合在语法中描述可重复的结构的需求。因此，使用 Kleene 闭包更加灵活，使得文法可以生成各种可能的符号序列，包括空串。
+
+Person: 
+- 集合的闭包是怎么计算的  给出具体实例  如集合{a,b,c}
+
+ChatGPT: 
+- 在集合论中，一个集合 AAA 的**闭包** 通常是包含 AAA 中所有元素及其导出的所有可能元素的集合。闭包可以是在某种运算下生成的，这个运算通常包括原始集合的元素，以及这些元素经过某种操作得到的新元素。
+
+具体来说，有一些常见的闭包运算，例如传递闭包和代数闭包，它们可以用来计算集合的闭包。
+### 1. 传递闭包：
+
+假设有一个关系 RRR，RRR 的传递闭包（transitive closure）是包含所有 RRR 的传递性元素的最小关系。传递闭包通常用来扩展关系，使得关系变得传递。如果关系是集合的元素对，那么传递闭包是包含所有直接或间接相关的元素对的集合。
+
+举个例子，考虑关系 R={(a,b),(b,c)}R = \{(a, b), (b, c)\}R={(a,b),(b,c)}。它的传递闭包是 {(a,b),(b,c),(a,c)}\{(a, b), (b, c), (a, c)\}{(a,b),(b,c),(a,c)}，包含了所有直接或间接相关的元素对。
+### 2. 代数闭包：
+
+假设有一组操作（例如加法、乘法等），集合的代数闭包是在这组操作下生成的最小代数结构。代数闭包通常包含原始集合及其经过操作生成的所有可能元素。
+
+举个例子，考虑集合 {a,b,c}\{a, b, c\}{a,b,c}，如果我们考虑集合上的整数加法操作，那么代数闭包将包含所有通过加法操作生成的整数，比如 a+ba + ba+b、b+cb + cb+c、a+ca + ca+c 等。
+
+需要注意的是，闭包的具体定义取决于所采用的闭包运算。不同的运算可能会产生不同的闭包。在实际问题中，要根据具体的上下文来选择适当的闭包运算。
+
+Person: 
+- 字符串的闭包
+
+ChatGPT: 
+- 在形式语言理论中，字符串的闭包通常指的是某个字符串集合在某个操作下的闭包，其中最常见的操作是字符串的连接操作。
+
+具体来说，给定一个字符串集合 SSS，它的闭包（concatenation closure）是包含所有通过连接 SSS 中字符串得到的字符串的集合。这个闭包通常表示为 S∗S^*S∗。
+
+形式上，字符串集合 SSS 的闭包 S∗S^*S∗ 定义为：
+
+S∗={w1w2…wk∣wi∈S,k≥0}S^* = \{ w_1 w_2 \ldots w_k \mid w_i \in S, k \geq 0 \}S∗={w1​w2​…wk​∣wi​∈S,k≥0}
+
+这里的连接操作是将字符串 w1,w2,…,wkw_1, w_2, \ldots, w_kw1​,w2​,…,wk​ 按顺序连接起来，得到一个新的字符串。
+
+举个例子，假设 S={a,b}S = \{a, b\}S={a,b}，那么 S∗S^*S∗ 就是包含所有由 aaa 和 bbb 连接而成的字符串的集合，包括空串。具体地，S∗S^*S∗ 包含的一些字符串如下： 
+- ε\varepsilonε （空串） 
+- aaa 
+- bbb 
+- aaaaaa 
+- ababab 
+- bababa 
+- bbbbbb 
+- aaaaaaaaa 
+- aabaabaab 
+- abaabaaba 
+- abbabbabb 
+- …\ldots…
+
+这些字符串包含了 aaa 和 bbb 所有可能的排列组合，以及它们的重复。这就是字符串集合 SSS 的闭包 S∗S^*S∗。
 </code></pre>
 </article>
 </div>
@@ -344,9 +457,9 @@ docs/
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
-<script src="javascripts/katex.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+<script src="../javascripts/katex.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
