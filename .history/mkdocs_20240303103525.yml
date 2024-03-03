@@ -1,0 +1,6 @@
+repo_url: https://github.com/littlejlf/mkdocsSite
+site_name:  blog from lf
+nav:
+  - Home: index.md
+  - About: about.md
+theme: readthedocs

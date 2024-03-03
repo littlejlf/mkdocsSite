@@ -1,0 +1,85 @@
+repo_url: https://github.com/littlejlf/mkdocsSite
+site_name:  blog from lf
+nav:
+  - Home: index.md
+  - About: about.md
+<<<<<<< Updated upstream
+theme:
+  name: material
+  language: 'zh'       # 使用中文
+  icon:
+    logo: material/notebook-outline
+plugins:
+  - glightbox
+  - heti:
+      disable_serve: false
+markdown_extensions:
+  - attr_list
+  - md_in_html    
+
+
+nav:
+
+  - 编译原理:
+    - Context-free grammar.md
+
+  - 静态分析、程序检测:
+    - index.md
+
+  - 并发:
+    - index.md
+
+  - 程序语言:
+    - index.md
+
+  - 操作系统:
+    - index.md
+
+  - 随记内容:
+    - index.md
+    
+markdown_extensions:
+    - meta # 支持markdown博客文件头的元数据，比如标题
+    - toc:
+        permalink: "#"
+        baselevel: 1
+        separator: "_"
+    - footnotes # 支持脚注
+    - admonition  # 支持提示块
+    - pymdownx.details  # 提示块可折叠
+    - attr_list 
+    - pymdownx.inlinehilite # 支持行内语法高亮
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+    
+=======
+theme: readthedocs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+markdown_extensions:
+  - pymdownx.github:
+      html_tables: false   # 如果你希望禁用HTML表格的自动转换，可以将此选项设置为false
+>>>>>>> Stashed changes
