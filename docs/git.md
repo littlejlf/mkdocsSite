@@ -1,7 +1,11 @@
 #### 好的资料
 https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-spring-cs/lec2/#/2/4
 https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496
-
+https://space.bilibili.com/35894086/channel/collectiondetail?sid=941763
+#### 一图胜千言
+![Alt text](../site/img/git/git.png)
+![Alt text](../site/img/git/git-2.png)
+![Alt text](../site/img/git/image.png)
  ***只有本地仓库和远程仓库位于同一commitID两者才能交互 stash发挥作用***
 #### git push
 push 的时候 名称不一样怎么办
@@ -75,4 +79,9 @@ footer：解决 issue 了可以写 Fixes #id 或 Closes #id
     ~ 表示第一个父提交，~2 表示第一个父提交的第一个父提交
     ^ 表示第一个父提交，^2 表示第二个父提交
     一个提交可能会有多个父提交（merge commit）
+
+#### 什么时候无法push pull git pull=git fetch+merge|rebase
+    远程仓库和本地仓库不是同一个commitId||远程本地有冲突||未提交本地或者暂存区内容
+
+
 
