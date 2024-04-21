@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>Markdown - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "Markdown";
+        var mkdocs_page_input_path = "markdown.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -103,7 +101,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
@@ -120,7 +118,17 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../markdown/">Markdown</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Markdown</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#2">标题2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3">标题3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#yaml">```yaml</a>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -137,10 +145,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">Markdown</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/markdown.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +156,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
-</code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+                <ol>
+<li>
+<p>标题：使用 <code>#</code> 符号表示标题，可使用不同数量的 <code>#</code> 表示不同级别的标题，最多支持六级标题。</p>
+<p>```shell</p>
+<h1 id="1">标题1<a class="headerlink" href="#1" title="Permanent link">#</a></h1>
+<h2 id="2">标题2<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<h3 id="3">标题3<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
+<p>```</p>
+</li>
+<li>
+<p>列表：使用 <code>-</code> 或 <code>*</code> 符号表示无序列表，使用数字加 <code>.</code> 表示有序列表。</p>
+<p>```markdown
+- 无序列表项1
+- 无序列表项2</p>
+<ol>
+<li>有序列表项1</li>
+<li>有序列表项2
+```</li>
+</ol>
+</li>
+<li>
+<p>引用：使用 <code>&gt;</code> 符号表示引用。</p>
+<p>```markdown</p>
+<blockquote>
+<p>这是一个引用。
+```</p>
+</blockquote>
+</li>
+<li>
+<p>粗体和斜体：使用 <code>**</code> 表示粗体，使用 <code>*</code> 或 <code>_</code> 表示斜体。</p>
+<p><code>markdown
+**粗体**，*斜体*，_也是斜体_</code></p>
+</li>
+<li>
+<p>链接和图片：使用 <code>[链接文字](链接地址)</code> 表示链接，使用 <code>![图片描述](图片链接)</code> 表示图片。</p>
+<p><code>less
+[百度](https://www.baidu.com)
+![图片](https://example.com/image.jpg)</code></p>
+</li>
+<li>
+<p>代码块：使用三个反引号 ``` 表示代码块，可指定语言以进行语法高亮。</p>
+<p><code>java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></p>
+</li>
+<li>
+<p>水平线：使用三个或更多的 <code>-</code>、<code>*</code> 或 <code>_</code> 符号表示水平线。</p>
+<h2 id="yaml">```yaml<a class="headerlink" href="#yaml" title="Permanent link">#</a></h2>
+<p>```</p>
+</li>
+</ol>
+<p>以上是 Markdown 的一些基本语法，你可以通过这些语法快速轻松地创建格式化的文档。</p>
+<ol>
+<li>实现按钮会执行终端脚本的按钮<a href="bash_script.sh"><img alt="Button" src="button_image.png" /></a></li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../gradle/" class="btn btn-neutral float-left" title="Gradle"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -197,10 +245,8 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../gradle/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

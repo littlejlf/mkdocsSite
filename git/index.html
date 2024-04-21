@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>Git - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "Git";
+        var mkdocs_page_input_path = "git.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -103,7 +101,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
@@ -116,7 +114,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../encoding-issues/">Encoding issues</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Git</a>
+    <ul class="current">
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
                   </li>
@@ -137,10 +137,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">Git</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/git.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +148,75 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
+                <h4 id="_1">好的资料<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
+<p>https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-spring-cs/lec2/#/2/4
+https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496
+https://space.bilibili.com/35894086/channel/collectiondetail?sid=941763</p>
+<h4 id="_2">一图胜千言<a class="headerlink" href="#_2" title="Permanent link">#</a></h4>
+<p><a class="glightbox" href="../site/img/git/git.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../site/img/git/git.png" /></a>
+<a class="glightbox" href="../site/img/git/git-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../site/img/git/git-2.png" /></a>
+<a class="glightbox" href="../site/img/git/image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../site/img/git/image.png" /></a>
+ <strong><em>只有本地仓库和远程仓库位于同一commitID两者才能交互 stash发挥作用</em></strong></p>
+<h4 id="git_push">git push<a class="headerlink" href="#git_push" title="Permanent link">#</a></h4>
+<p>push 的时候 名称不一样怎么办</p>
+<hr />
+<p><strong>ChatGPT:</strong></p>
+<p>如果本地分支与远程仓库的对应分支的名称不一样，你可以在 <code>git push</code> 命令中指定远程分支的名称。语法如下：</p>
+<pre><code class="language-bash">git push &lt;远程仓库名称&gt; &lt;本地分支名称&gt;:&lt;远程分支名称&gt;
 </code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+<p>git merge 如果没有冲突只是在移动指针 有冲突的话 从工作区-》暂存区-》本地仓库 发生变化 产生一个新的commit节点
+以下是导致合并冲突的常见情况：</p>
+<pre><code>同时修改同一行代码：如果两个分支上的修改都涉及同一行代码，那么 Git 无法自动确定应该保留哪个修改。
+
+删除或重命名文件：如果一个分支删除了一个文件，而另一个分支修改了该文件，或者两个分支重命名了同一个文件，那么合并时会出现冲突。
+
+合并历史中的分叉：如果要合并的两个分支之间的提交历史有分叉，即它们有共同的祖先但在某一时刻分开发展，那么合并时可能会产生冲突。
+
+</code></pre>
+<p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；</p>
+<p>当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场；</p>
+<p>在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动</p>
+<h4 id="git_branch">git branch<a class="headerlink" href="#git_branch" title="Permanent link">#</a></h4>
+<p>git 切换分支时</p>
+<pre><code>如果切换的分支和当前分支属于同一个commit节点，那么会把未add或未commit的内容带过去
+不属于同一个commit节点的，那么在当前节点没有commit的情况下是无法切换的(这就引出了git stash 的作用)
+</code></pre>
+<h4 id="git_stash">git stash<a class="headerlink" href="#git_stash" title="Permanent link">#</a></h4>
+<p>git stash 命令会将工作目录中未提交的修改（包括已跟踪的文件和暂存区中的修改）保存起来，以便稍后恢复使用。存储的这些修改并不直接保存在仓库中，而是保存在Git的存储区域中。具体来说，git stash 将修改存储在栈中，可以通过 git stash list 命令查看当前存储的所有 stashes。</p>
+<p>存储的修改会以栈的形式存储，你可以通过 git stash apply 命令来将最新的 stash 应用到工作目录中，或者通过 git stash pop 命令来应用并从 stash 栈中移除最新的 stash</p>
+<h6 id="_3">常用场景<a class="headerlink" href="#_3" title="Permanent link">#</a></h6>
+<ul>
+<li>切分支修bug 开发到一半 无法提交</li>
+<li>代码开发完了，准备提交  同事修改了同一个文件，出现远端冲突   先stash 再拉 再 pop 处理冲突后提交</li>
+</ul>
+<h4 id="commit_message">关于 commit message<a class="headerlink" href="#commit_message" title="Permanent link">#</a></h4>
+<p>意义是什么：记录更改的原因 / 内容，方便定位 / 回溯（特别是合作项目）
+Angular 规范（来源：angular/angular:CONTRIBUTING.md）
+<type>([scope]): <summary></p>
+<p>[body]</p>
+<p>[footer]
+type：更改类型（fix/feat/docs/refactor/perf/test/ci/...）
+重大更改可以写 BREAKING CHANGE 或 DEPRECATED（全大写）
+scope：影响范围（可选，比如具体影响的模块等）
+summary：更改的简要描述，英文一般现在时，首字母小写句末无句号
+body：详细描述，可选
+footer：解决 issue 了可以写 Fixes #id 或 Closes #id</p>
+<h4 id="_4">分支<a class="headerlink" href="#_4" title="Permanent link">#</a></h4>
+<p>什么是分支名：和 HEAD 一样，也是一个指针（实际上叫引用 ref）</p>
+<pre><code>可以基于 ref 使用 ~ 或 ^ 定位父提交
+~ 表示第一个父提交，~2 表示第一个父提交的第一个父提交
+^ 表示第一个父提交，^2 表示第二个父提交
+一个提交可能会有多个父提交（merge commit）
+</code></pre>
+<h4 id="push_pull_git_pullgit_fetchmergerebase">什么时候无法push pull git pull=git fetch+merge|rebase<a class="headerlink" href="#push_pull_git_pullgit_fetchmergerebase" title="Permanent link">#</a></h4>
+<pre><code>远程仓库和本地仓库不是同一个commitId||远程本地有冲突||未提交本地或者暂存区内容
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../encoding-issues/" class="btn btn-neutral float-left" title="Encoding issues"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../gradle/" class="btn btn-neutral float-right" title="Gradle">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,10 +243,10 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../encoding-issues/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../gradle/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

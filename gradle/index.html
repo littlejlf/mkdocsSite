@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>Gradle - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "Gradle";
+        var mkdocs_page_input_path = "gradle.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -103,7 +101,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
@@ -118,7 +116,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Gradle</a>
+    <ul class="current">
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../markdown/">Markdown</a>
                   </li>
@@ -137,10 +137,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">Gradle</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/gradle.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +148,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
+                <p><strong><em>依赖和插件两个关于仓库的设置是不一样 之前一直以为是同一个</em></strong>
+Person: 
+- plugins 和dependencies  对他们的远程仓库设置是怎么样的</p>
+<p>ChatGPT: 
+- 在 Gradle 构建脚本中，<code>plugins</code> 和 <code>dependencies</code> 使用不同的语法来指定远程仓库。</p>
+<h3 id="plugins"><code>plugins</code> 远程仓库设置<a class="headerlink" href="#plugins" title="Permanent link">#</a></h3>
+<p>在应用插件时，通常需要指定插件所在的远程仓库。这可以通过在构建脚本的顶层使用 <code>pluginManagement</code> 块来实现。在 <code>pluginManagement</code> 块中，你可以指定插件仓库的地址，并且也可以包括 Gradle 插件 portal：</p>
+<pre><code class="language-gradle">pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            url &quot;https://maven.example.com/repo&quot;
+        }
+    }
+}
 </code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+<p>在上述例子中，<code>gradlePluginPortal()</code> 添加了 Gradle 插件 portal 作为插件的默认仓库，而 <code>maven</code> 块添加了一个自定义的 Maven 仓库。</p>
+<h3 id="dependencies"><code>dependencies</code> 远程仓库设置<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h3>
+<p>对于 <code>dependencies</code>，你可以在构建脚本的顶层使用 <code>repositories</code> 块来指定远程仓库。这是一个例子：</p>
+<pre><code class="language-gradle">repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url &quot;https://maven.example.com/repo&quot;
+    }
+}
+</code></pre>
+<p>在这个例子中，<code>mavenCentral()</code> 和 <code>jcenter()</code> 添加了 Maven Central 和 JCenter 作为默认的 Maven 仓库，而 <code>maven</code> 块添加了一个自定义的 Maven 仓库。</p>
+<p>需要注意的是，对于 <code>plugins</code>，Gradle 插件 portal 是默认的仓库，而对于 <code>dependencies</code>，Maven Central 和 JCenter 是默认的 Maven 仓库。通常，你只需添加自定义仓库，而不必显式指定默认的仓库，除非你有特殊的要求。</p>
+<p><em>而且pluginManagement是在settings.gradle中的 而repositories是设置在build.gradel里的</em></p>
+<p><em>Gradle 插件块（plugins 块）用于声明和应用插件，而不涉及直接的依赖下载。插件的相关信息，包括插件的二进制文件和元数据，通常会被 Gradle 下载到 Gradle 的本地缓存中，而不是 Maven 本地仓库</em></p>
+<p>buildSrc 内是项目内自定义的gradle插件</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../git/" class="btn btn-neutral float-left" title="Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../markdown/" class="btn btn-neutral float-right" title="Markdown">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,10 +212,10 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../git/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../markdown/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

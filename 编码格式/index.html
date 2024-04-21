@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>编码格式 - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "\u7f16\u7801\u683c\u5f0f";
+        var mkdocs_page_input_path = "\u7f16\u7801\u683c\u5f0f.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -103,10 +101,12 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">编码格式</a>
+    <ul class="current">
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">代理工具</a>
                   </li>
@@ -137,10 +137,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">编码格式</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/编码格式.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +148,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
-</code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+                <p><a class="glightbox" href="../site/img/%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="中文编码常见错误" src="../site/img/%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/image.png" /></a></p>
+<h5 id="jvm">jvm默认字符集编码作用<a class="headerlink" href="#jvm" title="Permanent link">#</a></h5>
+<p><strong>You:</strong></p>
+<p>java 是使用这个jvm默认字符集编码来进行解码
+JAVA_TOOL_OPTIONS  -Dfile.encoding=UTF-8       使用这个环境变量设置JVM的字符集</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="btn btn-neutral float-left" title="快捷键"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/" class="btn btn-neutral float-right" title="代理工具">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,10 +185,10 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

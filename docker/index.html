@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>Docker - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "Docker";
+        var mkdocs_page_input_path = "docker.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -103,7 +101,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
@@ -112,7 +110,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../comand/">Comand</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../encoding-issues/">Encoding issues</a>
                   </li>
@@ -137,10 +135,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">Docker</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/docker.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +146,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
+                <p><a class="glightbox" href="../site/img/docker/Docker Compose.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="docker compose相关" src="../site/img/docker/Docker Compose.png" /></a>
+<a href="https://www.bilibili.com/video/BV1aA4m1w7Ew/?spm_id_from=333.880.my_history.page.click&amp;vd_source=95ec760e1cb7245ba0252e9e0962b83f">docker好的视频</a>
+<a class="glightbox" href="https://linux.do/t/topic/17895" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="docker文章 大汇总" src="https://linux.do/t/topic/17895" /></a>
+<a class="glightbox" href="https://blog.csdn.net/PIKapikaaaa/article/details/131510452" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="docker文章 对于镜像原理解析 很好" src="https://blog.csdn.net/PIKapikaaaa/article/details/131510452" /></a>
+<a class="glightbox" href="https://blog.csdn.net/qq_36515317/article/details/127987651" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="docker 数据卷挂载和目录挂载" src="https://blog.csdn.net/qq_36515317/article/details/127987651" /></a>
+bootfs： 包含bootloader（引导加载程序）和kernel（内核）
+rootfs： root文件系统，包含的就是典型Linux系统中的 /dev，/ proc， /bin， /etc等标准目录和文件
+不同的linux发行版，bootfs基本一样，儿rootfs不同，如ubuntu，centos等                      <br />
+docker镜像是由特殊的文件系统叠加而成的<strong>【分层的文件系统】</strong>
+最底端是bootfs，并使用宿主机的bootfs
+第二层是root文件系统rootfs，称为base image
+然后网上可以叠加其它的镜像 镜像复用linux操作系统，只需root文件系统 且基础镜像可以复用包括rootfs</p>
+<p>数据卷挂载（Volume Mount）：通过 docker run -v 或 Dockerfile 中的 VOLUME 指令挂载的数据卷内容不会被包含在新的镜像中。数据卷是一个持久化存储的机制，在容器之间共享数据，但不包含在镜像中。因此，当您使用 docker commit 命令创建新的镜像时，这些数据卷中的内容不会被包含在新的镜像中。</p>
+<pre><code class="language-bash"># 创建nginx容器并挂载数据卷到容器内的HTML目录
+docker run --name mn -v html:/usr/share/nginx/html -p 80:80 -d nginx
+# [数据卷名称]:[卷内目录，即容器的目录]
 </code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+<p>直接目录挂载（Bind Mount）：通过 docker run -v /host/path:/container/path 挂载的目录或文件会被包含在新的镜像中。这是因为直接目录挂载是将主机上的目录或文件直接挂载到容器中，它们的内容与主机上的内容是同步的。因此，当您使用 docker commit 命令创建新的镜像时，这些挂载的目录或文件中的内容会被包含在新的镜像中，<strong>因为内容存储在宿主机的绝对目录下</strong>。</p>
+<pre><code class="language-bash"># 直接目录挂载
+docker run --name mn -v [宿主机目录]:[容器内目录]
+docker run --name mn -v [宿主机文件]:[容器内文件]
+
+</code></pre>
+<p><a class="glightbox" href="../image-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="数据卷挂载（推荐）和直接目录挂载" src="../image-4.png" /></a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../comand/" class="btn btn-neutral float-left" title="Comand"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../encoding-issues/" class="btn btn-neutral float-right" title="Encoding issues">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,10 +202,10 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../comand/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../encoding-issues/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

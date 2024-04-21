@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Incompleteness theorems - blog from lf</title>
+    <title>泛型以及协变逆变 - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Incompleteness theorems";
-        var mkdocs_page_input_path = "incompleteness theorems.md";
+        var mkdocs_page_name = "\u6cdb\u578b\u4ee5\u53ca\u534f\u53d8\u9006\u53d8";
+        var mkdocs_page_input_path = "\u6cdb\u578b\u4ee5\u53ca\u534f\u53d8\u9006\u53d8.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,16 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">计算机理论</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Incompleteness theorems</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">编译原理</span></p>
@@ -79,12 +77,14 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">程序语言</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="#">java</a>
-    <ul>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">java</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/">Java的动态绑定的原理</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/">泛型以及协变逆变</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">泛型以及协变逆变</a>
+    <ul class="current">
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../CompletableFuture/">CompletableFuture</a>
                 </li>
@@ -137,10 +137,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">计算机理论</li>
-      <li class="breadcrumb-item active">Incompleteness theorems</li>
+          <li class="breadcrumb-item">程序语言</li>
+          <li class="breadcrumb-item">java</li>
+      <li class="breadcrumb-item active">泛型以及协变逆变</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/incompleteness theorems.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/泛型以及协变逆变.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,29 +149,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">哥德尔不完备定理<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>一致性：在一个逻辑系统中不存在一个命题既被证伪又被证明为真
-完备性：逻辑系统中的所有命题都可以被证明</p>
-<p>哥德尔第一不完备定理：包含自然数的公理体系，包含一致性就不存在完备性</p>
-<p>goodstein定理：
-   goodstein序列会在有限步内趋向于0  又自然数公理体系构建但不能证明，在集合论下被证明为真
-   Goodstein 序列的迭代过程如下：</p>
-<pre><code>    从一个正整数开始，将其写成 n 进制表示，其中 n 是序列的当前步数。
-    将每一位的 n 替换为 n+1。
-    将结果减去1。
-    将得到的结果作为下一步的起点，重复以上步骤。
-    Goodstein 定理陈述：对于任何初始正整数，通过 Goodstein 序列的迭代过程，序列最终会达到0，从而终止。
+                <h4 id="_1">相关文章<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
+<p><a href="https://wiyi.org/type-erasure.html">类型擦除&amp;桥接方法</a>
+<a href="https://blog.csdn.net/csdn_mrsongyang/article/details/121753591">Java泛型原理篇: 类型擦除以及桥接方法</a> 
+<a href="https://juejin.cn/post/6911302681583681544">Java泛型的协变与逆变</a> 
+<a href="https://zhuanlan.zhihu.com/p/268523581">你懂的逆变协变</a></p>
+<h2 id="_2">泛型<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p><strong>You:</strong></p>
+<p>java 中的泛型擦除是什么意思</p>
+<hr />
+<p>Java 中的泛型擦除（Generics Erasure）是指在编译时期，Java 编译器会擦除泛型信息，将泛型类型转换为原始类型。这是为了兼容 Java 早期版本的非泛型代码，以及为了保持与 Java 虚拟机（JVM）的向后兼容性。</p>
+<p>泛型擦除的过程包括以下几个方面：</p>
+<ol>
+<li>
+<p><strong>类型擦除</strong>：编译器会将泛型类型擦除为它们的原始类型。例如，List<String> 在编译时会擦除为 List。</p>
+</li>
+<li>
+<p><strong>类型参数擦除</strong>：泛型类型中的类型参数信息也会被擦除。例如，List<String> 和 List<Integer> 在编译后都会被擦除为 List。</p>
+</li>
+<li>
+<p><strong>桥方法生成</strong>：当泛型类或接口中存在泛型方法时，编译器会生成桥方法来保持与原始类或接口的兼容性。这些桥方法会被添加到字节码中，以确保正确的方法调用。</p>
+</li>
+</ol>
+<p>由于泛型擦除的存在，导致在运行时无法获取泛型类型的具体信息。例如，在运行时无法知道 List<String> 还是 List<Integer>，因为它们在编译后都被擦除为 List。这就是 Java 中所谓的泛型类型信息丢失问题。泛型的类型信息在编译期间会检查避免一些类型错误</p>
+<p>泛型擦除的优点是可以确保向后兼容性，并且可以减少在生成的字节码中泛型类型信息的冗余。然而，泛型擦除也导致了一些限制，如无法在运行时获取泛型类型信息，以及一些泛型类型转换的限制（泛型不能协变，编译期不会通过）。</p>
+<hr />
+<p><strong>You:</strong></p>
+<p>桥方法生成是什么意思</p>
+<hr />
+<p>在Java中，泛型擦除会导致一个特殊的问题，即擦除后的泛型类型可能会丢失一些信息，尤其是在涉及到泛型方法和泛型子类型的情况下。为了保持 Java 的类型安全性，编译器会生成桥方法（Bridge Method）来处理这种情况。</p>
+<p>桥方法的生成是为了保证类型安全性和向后兼容性，适应多态。当一个类或接口实现了一个泛型接口或继承了一个泛型类时，并且在子类或实现类中使用了泛型类型，编译器会生成桥方法来确保类型安全性。桥方法会强转类型然后调用子方法</p>
+<hr />
+<h2 id="_3">逆变协变<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>协变（covariance）和逆变（contravariance）是面向对象编程中的两个重要概念，通常与泛型和子类型多态性相关联。它们描述了类型在子类型关系中的行为。</p>
+<ol>
+<li>
+<p><strong>协变（Covariance）</strong>：</p>
+<ul>
+<li>协变是指在子类型关系中，类型参数的子类型关系与其参数化类型之间的关系保持一致。</li>
+<li>在协变中，如果类型 <code>S</code> 是类型 <code>T</code> 的子类型（即 <code>S &lt;: T</code>），那么类型 <code>F&lt;S&gt;</code> 是类型 <code>F&lt;T&gt;</code> 的子类型。</li>
+</ul>
+</li>
+<li>
+<p><strong>逆变（Contravariance）</strong>：</p>
+<ul>
+<li>逆变是指在子类型关系中，类型参数的子类型关系与其参数化类型之间的关系相反。</li>
+<li>在逆变中，如果类型 <code>S</code> 是类型 <code>T</code> 的子类型（即 <code>S &lt;: T</code>），那么类型 <code>F&lt;T&gt;</code> 是类型 <code>F&lt;S&gt;</code> 的子类型。</li>
+</ul>
+</li>
+</ol>
+<p>Java中的泛型是不变（invariance）的，但是在使用一门面向对象的语言中，我们难免会有需要集合也支持一些面向对象的特性的场景。Java的数组是协变的，泛型是不变的。但泛型可以通过extends关键字实现协变，通过super关键字实现逆变，分别应用于不同的场景。协变应用于消费场景，定义了上界。逆变应用于生产场景，定义了下界</p>
+<p>关于Java的通配符如何使用， Effective Java, 3rd Edition 的作者将其总结为：PECS : stands for Producer-Extends, Consumer-Super. 结合上面代码分析是不是觉得很精辟。</p>
+<p>Producer-Extends 只能调用读取方法，向外提供数据，无法调用修改方法 读是生产
+Consumer-Super 一般只调用修改方法，消费从外面获取的数据，调用读取方法几乎没什么用，拿到的类型永远是Object 写是消费</p>
+<pre><code class="language-java">
+interface BoxJ&lt;T&gt; {
+      T getAnimal();
+      void putAnimal(T a);
+  }
+
+//协变，可以接受BoxJ&lt;Dog&gt;类型的参数  BoxJ&lt;Animal&gt;也可以
+ private Animal getOutAnimalFromBox(BoxJ&lt;? extends Animal&gt; box) {
+       Animal animal = box.getAnimal();
+      //无法调用该修改方法，因为当调用此方法时无法确定 ？究竟是一个什么类型，没办法传入 ?是一个特定类型 ?想象成无穷小
+      // box.putAnimal(某个类型) 
+       return animal;
+  }
+
+//逆变，可以接受BoxJ&lt;Animal&gt;类型的参数   BoxJ&lt;Animal&gt;也可以
+ private void putAnimalInBox(BoxJ&lt;? super Dog&gt; box){
+  //java func 可以接受子类对象于该类型的对象 所以可以接受Dog（优先去判定声明类型）
+        box.putAnimal(new Dog());
+        // 虽然可以调用读取方法，但返回的类型却是Object，因为我们只能确定 ？的最顶层基类是Object
+        Object animal= box.getAnimal();
+  }
+
+
 </code></pre>
-<p>哥德尔第二不完备定理：包含自然数的公理体系，如果它具有一致性，那么他的一致性无法在这个公理体系下证明</p>
-<h1 id="_2">可证明和是否正确是两码事<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<h1 id="_3">在有限步骤内是无法通过公理来证明公理的一致性<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
-<h1 id="goodstein">在包含自然数的公理体系下，一个正确的命题，可能是不能在这个公理体系下推导出来的 如goodstein定理<a class="headerlink" href="#goodstein" title="Permanent link">#</a></h1>
+<p><strong><em>List<String>和List&lt;?extend String&gt;是不一样的即?是一个具体的类型且不支持协变逆变</em></strong></p>
+<p>Type obj = new _(); X可能为Type 也可能是子类构造器 
+func(obj) java方法调用优先看是否有与对象声明类型类型相同的同名方法再看有没有obj声明类型的父类型的同名方法去调用 即func的调用类似遵循协变但是优先匹配与对象相同的声明类型相同的方法</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sat/" class="btn btn-neutral float-left" title="Sat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Context-free%20grammar/" class="btn btn-neutral float-right" title="Context free grammar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/" class="btn btn-neutral float-left" title="Java的动态绑定的原理"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../CompletableFuture/" class="btn btn-neutral float-right" title="CompletableFuture">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,10 +261,10 @@
         </span>
     
     
-      <span><a href="../sat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Context-free%20grammar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../CompletableFuture/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
