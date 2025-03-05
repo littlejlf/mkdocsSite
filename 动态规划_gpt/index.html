@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>动态规划 gpt - blog from lf</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u52a8\u6001\u89c4\u5212 gpt";
+        var mkdocs_page_input_path = "\u52a8\u6001\u89c4\u5212_gpt.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> blog from lf
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">计算机理论</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">编译原理</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Context-free%20grammar/">Context free grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">访问者模式和编译原理</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">静态分析、程序检测</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">并发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%8A%A2%E5%8D%A0%E5%BC%8F%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">抢占式线程模型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8/">多处理器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BC%82%E6%AD%A5%E5%92%8C%E5%B9%B6%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB/">异步和并发的区别</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lock/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CompletableFuture/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ChatGPT-CHL%E9%94%81%E6%AF%94%E5%B8%B8%E8%A7%84%E8%87%AA%E6%97%8B%E9%94%81%E4%BC%98%E7%82%B9/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency/">Concurrency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lambda/">Lambda</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%90%8C%E6%AD%A5%28caller%29%E5%92%8C%E9%98%BB%E5%A1%9E%28callee%29%E7%9A%84%E6%A6%82%E5%BF%B5%E8%BE%A8%E6%9E%90%E4%BB%A5%E5%8F%8A%E5%90%8C%E6%AD%A5%E9%9D%9E%E9%98%BB%E5%A1%9E/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8D%8F%E7%A8%8B/">协程</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">程序语言</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">java</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/">Java的动态绑定的原理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/">泛型以及协变逆变</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CompletableFuture/">CompletableFuture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lock/">Lock</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ChatGPT-AOT%20vs%20JIT%20%E4%BC%98%E5%8A%A3/">ChatGPT Conversation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%A0%E8%BD%BD/">Java对象的加载</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">javaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javaScript%E4%B8%AD%E7%9A%84this/">javaScript中的this</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../javascript%E5%8E%9F%E5%9E%8B/">Javascript原型</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">操作系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据库</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/">数据库锁</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">计算机网络</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/">网络模式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA/">路由器交换机</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../https/">Https</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">代理工具</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../comand/">Comand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../encoding-issues/">Encoding issues</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../markdown/">Markdown</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pycharm%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5/">Pycharm多模块导入</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%87%E6%BB%A4%E5%99%A8/">Window命令行过滤器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%82%E9%A1%B9/">杂项</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">动态规划 gpt</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">生活</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%90%E6%96%99/">材料</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">blog from lf</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">算法</li>
+      <li class="breadcrumb-item active">动态规划 gpt</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/动态规划_gpt.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p># 用户问题 
+ class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n == 0: return 0 # 边界条件
+        dp = [0] * n
+        minprice = prices[0] </p>
+<pre><code>    for i in range(1, n):
+        minprice = min(minprice, prices[i])
+        dp[i] = max(dp[i - 1], prices[i] - minprice)
+
+    return dp[-1]  解释一下
+</code></pre>
+<p># chatGPT 
+ 已推理，持续 几秒
+这段代码解决的是「买卖股票的最佳时机」问题，即在给定的股票价格数组中，找到一次买入和一次卖出操作能够获得的最大利润。</p>
+<h3 id="_1">详细解释<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>边界条件</strong></li>
+</ol>
+<pre><code class="language-python">if n == 0: return 0  # 边界条件
+</code></pre>
+<p>如果价格数组为空，则直接返回利润为 0。
+2. <strong>初始化</strong></p>
+<pre><code class="language-python">dp = [0] * n
+minprice = prices[0]
+</code></pre>
+<ul>
+<li>dp 数组用来记录到第 i 天为止能够获得的最大利润。</li>
+<li>minprice 用来记录从第 0 天到当前天为止遇到的最低股票价格。初始时设置为第一天的价格。</li>
+<li><strong>遍历价格数组</strong></li>
+</ul>
+<pre><code class="language-python">for i in range(1, n):
+    minprice = min(minprice, prices[i])
+    dp[i] = max(dp[i - 1], prices[i] - minprice)
+</code></pre>
+<ul>
+<li><strong>更新最低价格</strong>：<code>minprice = min(minprice, prices[i])</code>对于每一天，更新目前为止的最低价格。如果当前价格更低，则更新 <code>minprice</code>。</li>
+<li><strong>计算当前利润</strong>：<code>prices[i] - minprice</code> 代表如果在 <code>minprice</code> 那天买入并在当前天卖出所能获得的利润。</li>
+<li><strong>更新最大利润</strong>：<code>dp[i] = max(dp[i - 1], prices[i] - minprice)</code>比较前一天的最大利润 <code>dp[i-1]</code> 和当前卖出得到的利润，选择较大的那个作为到第 <code>i</code> 天为止的最大利润。</li>
+<li><strong>返回结果</strong></li>
+</ul>
+<pre><code class="language-python">return dp[-1]
+</code></pre>
+<p>返回 <code>dp</code> 数组的最后一个元素，即整个时间段内能获得的最大利润。</p>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>时间复杂度</strong>：O(n)，因为只遍历一次数组。</li>
+<li><strong>空间复杂度</strong>：O(n)（可以优化到 O(1) 仅使用两个变量）。
+这段代码利用动态规划和贪心思想，通过实时更新最低价格来决定在何时买入，从而计算每一天卖出时能获得的最大利润，最终找到全局最优解。
+ # 用户问题 
+ dp = [0] * n 是什么意思 
+ # chatGPT 
+ 已推理，持续 几秒
+在 Python 中，表达式 <code>dp = [0] * n</code> 的意思是创建一个长度为 <code>n</code> 的列表，列表中的每个元素都初始化为 <code>0</code>。例如，如果 <code>n = 5</code>，那么执行这行代码后，<code>dp</code> 将变成 <code>[0, 0, 0, 0, 0]</code>。</li>
+</ul>
+<p>在这段代码中，<code>dp</code> 数组用于记录到每一天为止能够获得的最大利润。每个位置 <code>dp[i]</code> 表示在第 <code>i</code> 天（包括之前的所有天）中能获得的最大利润。
+ # 用户问题 
+ 可以优化到 O(1) 仅使用两个变量 优化一下 
+ # chatGPT 
+ 优化后的代码如下：</p>
+<pre><code class="language-python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n == 0: return 0  # 边界条件
+
+        minprice = prices[0]
+        maxprofit = 0
+
+        for i in range(1, n):
+            minprice = min(minprice, prices[i])
+            maxprofit = max(maxprofit, prices[i] - minprice)
+
+        return maxprofit
+</code></pre>
+<h3 id="_3">优化说明：<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<ol>
+<li>原代码中使用了 <code>dp</code> 数组来记录每个日期的最大利润，空间复杂度为 O(n)。</li>
+<li>优化后的代码，没有使用 <code>dp</code> 数组，而是只使用了两个变量：<code>minprice</code> 和 <code>maxprofit</code>。</li>
+<li><code>minprice</code> 记录当前已遍历过的最小价格。</li>
+<li><code>maxprofit</code> 记录当前最大利润，即在某一天卖出时，能够获得的最大利润。</li>
+</ol>
+<h3 id="_4">结果：<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>时间复杂度</strong>：O(n)，因为仍然只需要遍历一次数组。</li>
+<li><strong>空间复杂度</strong>：O(1)，因为不再使用额外的数组，仅使用常数空间。，持续 7 秒
+我们可以不用数组 <code>dp</code> 来记录每天的最大利润，只需要两个变量：一个用来记录当前的最低价格 <code>minprice</code>，另一个用来记录当前的最大利润 <code>maxprofit</code>。下面是优化后的代码：</li>
+</ul>
+<pre><code class="language-python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        if not prices:
+            return 0  # 处理边界条件
+
+        minprice = prices[0]
+        maxprofit = 0
+
+        for price in prices[1:]:
+            minprice = min(minprice, price)
+            maxprofit = max(maxprofit, price - minprice)
+
+        return maxprofit
+</code></pre>
+<h3 id="_5">解释<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>初始判断与变量定义</strong>：</li>
+<li>如果价格列表为空，则直接返回 0。</li>
+<li>minprice 初始化为第一个价格，用于记录迄今为止的最低价格。</li>
+<li>maxprofit 初始化为 0，用于记录最大利润。</li>
+<li><strong>遍历价格</strong>：</li>
+<li>对于每个价格，我们首先更新 minprice，即选择较小的值。</li>
+<li>然后计算当前价格与 minprice 的差值，如果比当前的 maxprofit 大，则更新 maxprofit。</li>
+<li><strong>返回结果</strong>：</li>
+<li>
+<p>最终返回 maxprofit，即整个期间内能够获得的最大利润。
+这样代码的空间复杂度为 O(1)（只使用了两个额外的变量），时间复杂度仍然是 O(n)。
+ # 用户问题 
+ 动态规划做题步骤 
+ # chatGPT 
+ 已推理，持续 5 秒
+动态规划（DP）是一种通过分解问题成重叠子问题来求解最优解的方法。下面是动态规划做题的一般步骤：</p>
+</li>
+<li>
+<p><strong>明确问题与目标</strong></p>
+</li>
+<li><strong>理解题意</strong>：清楚输入、输出及问题要求。</li>
+<li><strong>确定特性</strong>：确认问题是否具有<strong>最优子结构</strong>（最优解可以由子问题的最优解构成）和<strong>重叠子问题</strong>的特点。</li>
+<li><strong>分析子问题</strong></li>
+<li><strong>拆分问题</strong>：将原问题分解成若干子问题。</li>
+<li><strong>子问题之间的关系</strong>：找出各个子问题之间的依赖关系，确定它们如何相互影响。</li>
+<li><strong>定义状态</strong></li>
+<li><strong>状态表示</strong>：明确用 dp 数组（或变量）表示子问题的解。例如，dp[i] 可能表示到第 i 天/步/位置时的最优解。</li>
+<li><strong>状态的维度</strong>：有时问题需要多维状态，比如二维数组 dp[i][j]，用于表示多个变量的状态。</li>
+<li><strong>确定状态转移方程</strong></li>
+<li><strong>递推关系</strong>：推导出如何利用之前计算的子问题结果得到当前问题的解，即状态之间的转换公式。</li>
+<li><strong>数学表达</strong>：用数学公式准确描述状态转移的过程，例如</li>
+</ol>
+<pre><code class="language-python">dp[i] = max(dp[i-1], prices[i] - minprice)
+</code></pre>
+<p>表示当天的最大利润要么等于前一天的利润，要么是当天卖出与之前最低买入价之差的较大值。
+5. <strong>确定初始状态（Base Case）</strong>
+- <strong>初始化</strong>：为 dp 数组或变量设置初始值，比如 dp[0] 或 minprice = prices[0]。
+- <strong>边界条件</strong>：处理输入为空或特殊情况，确保递推公式从初始状态开始正确执行。
+6. <strong>确定计算顺序</strong>
+- <strong>依赖顺序</strong>：根据子问题之间的依赖关系，确定填表（或计算）的顺序。通常是从小规模问题开始逐步扩展到原问题。
+- <strong>迭代还是递归</strong>：选择用递归（配合备忘录）还是迭代的方式实现动态规划。
+7. <strong>实现代码并优化</strong>
+- <strong>编码</strong>：按照前面的步骤将状态定义、状态转移方程和初始状态实现出来。
+- <strong>空间优化</strong>：如果发现某些状态只依赖于前一状态，可以用变量替换数组，将空间复杂度从 O(n) 优化到 O(1)。
+8. <strong>测试与验证</strong>
+- <strong>边界测试</strong>：考虑所有边界情况，确保代码健壮。
+- <strong>样例验证</strong>：使用示例数据检验结果是否正确。
+按照这些步骤，你可以系统性地思考和解决大部分动态规划问题。
+ # 用户问题 
+ 最优子结构和重叠子问题 是什么意思 
+ # chatGPT 
+ 已推理，持续 几秒
+<strong>最优子结构</strong>和<strong>重叠子问题</strong>是动态规划问题的两个重要性质，它们帮助我们判断一个问题是否适合使用动态规划来解决。</p>
+<h3 id="_6">最优子结构<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
+<p><strong>定义</strong>：如果一个问题的最优解可以由其子问题的最优解构成，那么这个问题就具有最优子结构性质。</p>
+<p><strong>举例说明</strong>：</p>
+<ul>
+<li><strong>最短路径问题</strong>：假设你要找从 A 点到 D 点的最短路径，如果路径经过 B 和 C，那么 A 到 D 的最短路径必然是由 A 到 B、B 到 C 和 C 到 D 各段的最短路径构成。</li>
+<li><strong>背包问题</strong>：在 0-1 背包问题中，若知道在前几件物品中如何获得最大价值，那么在加入第 i 件物品时，可以基于前 i-1 件物品的最优结果构建整体最优解。
+<strong>总结</strong>：最优子结构意味着<strong>全局最优解依赖于局部最优解</strong>。当我们能够将问题拆解成若干子问题并且知道子问题的最优解时，就可以组合出原问题的最优解。</li>
+</ul>
+<h3 id="_7">重叠子问题<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
+<p><strong>定义</strong>：如果在分解问题时，很多子问题被重复计算了，那么这些子问题就是重叠子问题。</p>
+<p><strong>举例说明</strong>：</p>
+<ul>
+<li><strong>斐波那契数列</strong>：计算 F(n) = F(n-1) + F(n-2) 时，会多次计算 F(n-2)、F(n-3) 等子问题。如果直接用递归算法，会造成大量重复计算。</li>
+<li><strong>路径计数问题</strong>：在网格中求从左上角到右下角的路径数，每个位置的路径数可以通过它上方和左边的路径数计算得出，这些中间结果会被多次使用。
+<strong>总结</strong>：重叠子问题意味着<strong>子问题在计算过程中会被反复求解</strong>。动态规划正是利用记忆化或自底向上填表的方式，避免重复计算，从而提高效率。</li>
+</ul>
+<p><strong>结合两者</strong>：当一个问题既具有最优子结构（全局最优可以由局部最优构成），又存在重叠子问题（部分子问题重复出现）时，就非常适合使用动态规划来求解。动态规划通过存储子问题的答案，避免了重复计算，同时利用子问题的最优解构建全局最优解。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="btn btn-neutral float-left" title="动态规划"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E6%9D%90%E6%96%99/" class="btn btn-neutral float-right" title="材料">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/littlejlf/mkdocsSite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E6%9D%90%E6%96%99/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/katex.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

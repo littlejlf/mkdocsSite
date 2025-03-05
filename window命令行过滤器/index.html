@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Window命令行过滤器 - blog from lf</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Window\u547d\u4ee4\u884c\u8fc7\u6ee4\u5668";
+        var mkdocs_page_input_path = "window\u547d\u4ee4\u884c\u8fc7\u6ee4\u5668.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> blog from lf
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">计算机理论</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">编译原理</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Context-free%20grammar/">Context free grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">访问者模式和编译原理</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">静态分析、程序检测</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">并发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%8A%A2%E5%8D%A0%E5%BC%8F%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">抢占式线程模型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8/">多处理器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BC%82%E6%AD%A5%E5%92%8C%E5%B9%B6%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB/">异步和并发的区别</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lock/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CompletableFuture/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ChatGPT-CHL%E9%94%81%E6%AF%94%E5%B8%B8%E8%A7%84%E8%87%AA%E6%97%8B%E9%94%81%E4%BC%98%E7%82%B9/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency/">Concurrency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lambda/">Lambda</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%90%8C%E6%AD%A5%28caller%29%E5%92%8C%E9%98%BB%E5%A1%9E%28callee%29%E7%9A%84%E6%A6%82%E5%BF%B5%E8%BE%A8%E6%9E%90%E4%BB%A5%E5%8F%8A%E5%90%8C%E6%AD%A5%E9%9D%9E%E9%98%BB%E5%A1%9E/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8D%8F%E7%A8%8B/">协程</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">程序语言</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">java</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/">Java的动态绑定的原理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/">泛型以及协变逆变</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CompletableFuture/">CompletableFuture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lock/">Lock</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ChatGPT-AOT%20vs%20JIT%20%E4%BC%98%E5%8A%A3/">ChatGPT Conversation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../java%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%A0%E8%BD%BD/">Java对象的加载</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">javaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javaScript%E4%B8%AD%E7%9A%84this/">javaScript中的this</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../javascript%E5%8E%9F%E5%9E%8B/">Javascript原型</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">操作系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据库</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/">数据库锁</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">计算机网络</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/">网络模式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA/">路由器交换机</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../https/">Https</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">代理工具</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../comand/">Comand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../encoding-issues/">Encoding issues</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../markdown/">Markdown</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pycharm%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5/">Pycharm多模块导入</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Window命令行过滤器</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%82%E9%A1%B9/">杂项</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92_gpt/">动态规划 gpt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">生活</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%90%E6%96%99/">材料</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">blog from lf</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">杂项|运维|工具</li>
+      <li class="breadcrumb-item active">Window命令行过滤器</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/window命令行过滤器.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><strong>You:</strong></p>
+<p>PS C:\Users\Administrator&gt; ipconfig |find /I "ipv4"
+FIND: 参数格式不正确
+ResourceUnavailable: Program 'ipconfig.exe' failed to run: 管道正在被关闭。At line:1 char:1
++ ipconfig |find /I "ipv4"
++ ~~~~~~~~.        </p>
+<hr />
+<p><strong>ChatGPT:</strong></p>
+<p>It looks like there's an issue with the command you tried to execute in the PowerShell on Windows. The error message "FIND: 参数格式不正确" suggests that there's a problem with the syntax of the <code>find</code> command, specifically with the <code>/I</code> option. Additionally, the message about the pipe being closed (<code>管道正在被关闭</code>) indicates a possible issue in the execution pipeline.</p>
+<p>Here's a corrected version of the command that should work properly for you. Try running this in your PowerShell:</p>
+<pre><code class="language-powershell">ipconfig | findstr /I &quot;ipv4&quot;
+</code></pre>
+<p>I've replaced <code>find</code> with <code>findstr</code>, which is more commonly used in Windows for string searches in command output. This should correctly filter the IPv4 addresses from the <code>ipconfig</code> output.</p>
+<hr />
+<p><strong>You:</strong></p>
+<p>中文回答我</p>
+<hr />
+<p><strong>ChatGPT:</strong></p>
+<p>好的，看来之前您在 PowerShell 中运行的命令出现了错误。错误信息 "FIND: 参数格式不正确" 表示 <code>find</code> 命令中 <code>/I</code> 选项使用上有问题。另外，"管道正在被关闭" 的错误说明执行管道中有问题。</p>
+<p>您可以尝试下面这个修正后的命令，在 PowerShell 中运行应该能正常工作：</p>
+<pre><code class="language-powershell">ipconfig | findstr /I &quot;ipv4&quot;
+</code></pre>
+<p>这里我用 <code>findstr</code> 替换了 <code>find</code>，因为在 Windows 中 <code>findstr</code> 更常用于命令输出中的字符串搜索。这个命令应该能正确地筛选出 <code>ipconfig</code> 输出中的 IPv4 地址。如果还有其他问题，欢迎继续咨询！</p>
+<hr />
+<p><strong>You:</strong></p>
+<p>findster 的基本使用</p>
+<hr />
+<p><strong>ChatGPT:</strong></p>
+<p><code>findstr</code> 是一个 Windows 命令行工具，用于在文件或输出中搜索特定的文本字符串。这个命令非常强大，支持正则表达式，可以处理多文件搜索，支持多种匹配模式。下面是一些基本用法：</p>
+<h3 id="_1">基本语法<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<pre><code class="language-plaintext">findstr [选项] &quot;字符串&quot; [文件名]
+</code></pre>
+<h3 id="_2">选项<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>/B</code>：匹配行的开始。</li>
+<li><code>/E</code>：匹配行的结束。</li>
+<li><code>/L</code>：使用文字搜索。</li>
+<li><code>/R</code>：使用正则表达式。</li>
+<li><code>/S</code>：搜索当前目录及所有子目录下的所有文件。</li>
+<li><code>/I</code>：忽略大小写。</li>
+<li><code>/C</code>：指定要查找的完整字符串（默认情况下，<code>findstr</code> 把空格分隔的多个字符串视为多个要查找的字符串）。</li>
+<li><code>/N</code>：显示匹配行的行号。</li>
+<li><code>/G:file</code>：从文件中获取搜索模式。</li>
+<li><code>/F:file</code>：从文件中读取文件列表进行搜索。</li>
+<li><code>/P</code>：跳过包含非打印字符的文件。</li>
+<li><code>/OFF[line]</code>：不跳过带有脱机属性集的文件。</li>
+</ul>
+<h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>在文件中搜索字符串</strong>：</p>
+<p><code>powershell
+findstr /I "example" file.txt</code></p>
+<p>这会在 <code>file.txt</code> 中不区分大小写地搜索单词 "example"。</p>
+</li>
+<li>
+<p><strong>使用正则表达式</strong>：</p>
+<p><code>powershell
+findstr /R "^example end$" file.txt</code></p>
+<p>这会在 <code>file.txt</code> 中搜索以 "example" 开始以 "end" 结束的行。</p>
+</li>
+<li>
+<p><strong>搜索多个文件</strong>：</p>
+<p><code>powershell
+findstr /I "example" *.txt</code></p>
+<p>这会在当前目录下所有 <code>.txt</code> 文件中搜索 "example"。</p>
+</li>
+<li>
+<p><strong>搜索字符串并显示行号</strong>：</p>
+<p><code>powershell
+findstr /N /I "example" file.txt</code></p>
+<p>这会显示 <code>file.txt</code> 中包含 "example" 的每行前面带有行号。</p>
+</li>
+<li>
+<p><strong>从其他文件获取搜索模式</strong>：</p>
+<p><code>powershell
+findstr /G:patterns.txt file.txt</code></p>
+<p>这会使用 <code>patterns.txt</code> 中的每一行作为搜索模式来搜索 <code>file.txt</code>。</p>
+</li>
+</ol>
+<p>这些是 <code>findstr</code> 的一些基本用法，可以帮助你在日常工作中快速查找文件内容。如果你有特定的需求或想了解更多高级功能，欢迎提问！</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../pycharm%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5/" class="btn btn-neutral float-left" title="Pycharm多模块导入"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E6%9D%82%E9%A1%B9/" class="btn btn-neutral float-right" title="杂项">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/littlejlf/mkdocsSite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../pycharm%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E6%9D%82%E9%A1%B9/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/katex.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

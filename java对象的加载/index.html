@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Java对象的加载 - blog from lf</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Java\u5bf9\u8c61\u7684\u52a0\u8f7d";
+        var mkdocs_page_input_path = "java\u5bf9\u8c61\u7684\u52a0\u8f7d.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> blog from lf
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">计算机理论</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/">数学逻辑</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BF%A1%E6%81%AF%E8%AE%BA/">信息论</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sat/">Sat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../incompleteness%20theorems/">Incompleteness theorems</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">编译原理</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Context-free%20grammar/">Context free grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">访问者模式和编译原理</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">静态分析、程序检测</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">并发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%8A%A2%E5%8D%A0%E5%BC%8F%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/">抢占式线程模型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8/">多处理器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BC%82%E6%AD%A5%E5%92%8C%E5%B9%B6%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB/">异步和并发的区别</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lock/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CompletableFuture/">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ChatGPT-CHL%E9%94%81%E6%AF%94%E5%B8%B8%E8%A7%84%E8%87%AA%E6%97%8B%E9%94%81%E4%BC%98%E7%82%B9/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency/">Concurrency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lambda/">Lambda</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%90%8C%E6%AD%A5%28caller%29%E5%92%8C%E9%98%BB%E5%A1%9E%28callee%29%E7%9A%84%E6%A6%82%E5%BF%B5%E8%BE%A8%E6%9E%90%E4%BB%A5%E5%8F%8A%E5%90%8C%E6%AD%A5%E9%9D%9E%E9%98%BB%E5%A1%9E/">ChatGPT Conversation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8D%8F%E7%A8%8B/">协程</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">程序语言</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">java</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/">Java的动态绑定的原理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/">泛型以及协变逆变</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CompletableFuture/">CompletableFuture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lock/">Lock</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ChatGPT-AOT%20vs%20JIT%20%E4%BC%98%E5%8A%A3/">ChatGPT Conversation</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Java对象的加载</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">javaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../javaScript%E4%B8%AD%E7%9A%84this/">javaScript中的this</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../javascript%E5%8E%9F%E5%9E%8B/">Javascript原型</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">操作系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据库</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/">数据库锁</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">计算机网络</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/">网络模式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA/">路由器交换机</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../https/">Https</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">杂项|运维|工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">编码格式</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/">代理工具</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../comand/">Comand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../encoding-issues/">Encoding issues</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gradle/">Gradle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../markdown/">Markdown</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pycharm%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5/">Pycharm多模块导入</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%87%E6%BB%A4%E5%99%A8/">Window命令行过滤器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%82%E9%A1%B9/">杂项</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92_gpt/">动态规划 gpt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">生活</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9D%90%E6%96%99/">材料</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">blog from lf</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">程序语言</li>
+          <li class="breadcrumb-item">java</li>
+      <li class="breadcrumb-item active">Java对象的加载</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/java对象的加载.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="_1">初始化顺序<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p><a class="glightbox" href="../image-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="初始化顺序" src="../image-5.png" /></a></p>
+<h3 id="_2">使用初始化块的目的<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<p>直接初始化对象和使用初始化块初始化确实都可以达到初始化对象的目的，但它们之间存在一些关键的区别，这些区别决定了它们在不同场景下的适用性。以下是设计初始化块的几个原因：</p>
+<ol>
+<li><strong>复杂初始化逻辑</strong>：</li>
+<li>
+<p>初始化块允许执行更复杂的初始化逻辑，比如需要多步操作或者需要调用其他方法才能正确初始化的情况。</p>
+</li>
+<li>
+<p><strong>条件判断</strong>：</p>
+</li>
+<li>
+<p>有时候，初始化可能依赖于某些条件。初始化块可以在运行时根据条件执行不同的初始化代码。</p>
+</li>
+<li>
+<p><strong>资源分配</strong>：</p>
+</li>
+<li>
+<p>对于需要分配资源（如文件句柄、数据库连接等）的初始化，使用初始化块可以确保每次创建对象时都进行资源分配，而直接初始化则通常只适用于不需要运行时信息的静态初始化。</p>
+</li>
+<li>
+<p><strong>封装</strong>：</p>
+</li>
+<li>
+<p>初始化块提供了一种封装初始化细节的方式，使得类的用户不需要知道具体的初始化过程。</p>
+</li>
+<li>
+<p><strong>对象状态的一致性</strong>：</p>
+</li>
+<li>
+<p>使用初始化块可以保证对象的状态在构造函数中被设置，这有助于保持对象状态的一致性。</p>
+</li>
+<li>
+<p><strong>多态性</strong>：</p>
+</li>
+<li>
+<p>初始化块中的代码可以利用多态性，调用父类或接口中定义的方法，这些方法可能在子类中有重写实现。</p>
+</li>
+<li>
+<p><strong>延迟初始化</strong>：</p>
+</li>
+<li>
+<p>有时候，对象的某些属性可能依赖于其他属性的值，或者只有在对象的构造过程中才能确定。初始化块允许将这些依赖关系封装起来。</p>
+</li>
+<li>
+<p><strong>初始化顺序</strong>：</p>
+</li>
+<li>
+<p>在类中，初始化块可以按照特定的顺序执行，而不受变量声明顺序的限制。</p>
+</li>
+<li>
+<p><strong>构造函数参数的利用</strong>：</p>
+</li>
+<li>
+<p>初始化块可以利用构造函数传入的参数来初始化对象，而直接初始化则不能。</p>
+</li>
+<li>
+<p><strong>异常处理</strong>：</p>
+<ul>
+<li>在初始化块中，可以包含异常处理逻辑，对可能出现的异常情况进行捕获和处理。</li>
+</ul>
+</li>
+<li>
+<p><strong>代码组织</strong>：</p>
+<ul>
+<li>使用初始化块可以使代码更加清晰和有组织，特别是在类有很多初始化代码时，可以避免构造函数变得过于复杂。</li>
+</ul>
+</li>
+<li>
+<p><strong>与继承和多态的交互</strong>：</p>
+<ul>
+<li>在继承的情况下，初始化块可以确保子类对象在调用父类的构造函数之后、子类构造函数之前进行初始化。</li>
+</ul>
+</li>
+</ol>
+<p>尽管直接初始化简单且直接，但初始化块提供了更多的灵活性和控制，允许开发者根据需要编写更复杂、更灵活的初始化代码。这使得初始化块成为 Java 对象初始化中不可或缺的一部分。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ChatGPT-AOT%20vs%20JIT%20%E4%BC%98%E5%8A%A3/" class="btn btn-neutral float-left" title="ChatGPT Conversation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../javaScript%E4%B8%AD%E7%9A%84this/" class="btn btn-neutral float-right" title="javaScript中的this">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/littlejlf/mkdocsSite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../ChatGPT-AOT%20vs%20JIT%20%E4%BC%98%E5%8A%A3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../javaScript%E4%B8%AD%E7%9A%84this/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/katex.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>
