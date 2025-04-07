@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>CompletableFuture - blog from lf</title>
+    <title>函数式monad问题 - blog from lf</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "CompletableFuture";
-        var mkdocs_page_input_path = "CompletableFuture.md";
+        var mkdocs_page_name = "\u51fd\u6570\u5f0fmonad\u95ee\u9898";
+        var mkdocs_page_input_path = "\u51fd\u6570\u5f0fmonad\u95ee\u9898.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -73,7 +73,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../lock/">None</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="./">None</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../CompletableFuture/">None</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../ChatGPT-CHL%E9%94%81%E6%AF%94%E5%B8%B8%E8%A7%84%E8%87%AA%E6%97%8B%E9%94%81%E4%BC%98%E7%82%B9/">ChatGPT Conversation</a>
                   </li>
@@ -88,13 +88,13 @@
               </ul>
               <p class="caption"><span class="caption-text">程序语言</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">java</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">java</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/">Java的动态绑定的原理</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/">泛型以及协变逆变</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">CompletableFuture</a>
+                <li class="toctree-l2"><a class="reference internal" href="../CompletableFuture/">CompletableFuture</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../lock/">Lock</a>
                 </li>
@@ -114,9 +114,9 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">通用</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/">函数式monad问题</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">通用</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">函数式monad问题</a>
                 </li>
     </ul>
                   </li>
@@ -204,10 +204,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">程序语言</li>
-          <li class="breadcrumb-item">java</li>
-      <li class="breadcrumb-item active">CompletableFuture</li>
+          <li class="breadcrumb-item">通用</li>
+      <li class="breadcrumb-item active">函数式monad问题</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/CompletableFuture.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/函数式monad问题.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -215,13 +215,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <p><a class="glightbox" href="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="把古怪类型的函数应用在盒子类型的值中最终返回一个包裹值的盒子" src="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image.png" /></a>
+把古怪类型的函数应用在盒子类型的值中最终返回一个包裹值的盒子</p>
+<p><a class="glightbox" href="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image-1.png" /></a> bind操作连接多个monad</p>
+<p><a class="glightbox" href="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../images/%E5%87%BD%E6%95%B0%E5%BC%8Fmonad%E9%97%AE%E9%A2%98/image-2.png" /></a>
+flatMap、bind、then 或 &gt;&gt;= 定义的是同一种操作语义</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/" class="btn btn-neutral float-left" title="泛型以及协变逆变"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../lock/" class="btn btn-neutral float-right" title="Lock">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../javascript%E5%8E%9F%E5%9E%8B/" class="btn btn-neutral float-left" title="Javascript原型"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral float-right" title="None">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -248,10 +252,10 @@
         </span>
     
     
-      <span><a href="../%E6%B3%9B%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../javascript%E5%8E%9F%E5%9E%8B/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../lock/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
