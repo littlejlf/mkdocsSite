@@ -5272,7 +5272,7 @@ getLine 的类型是：</p>
 </code></pre></div>
 <code>"."</code> 指临时文件要在当前目录创建，<code>"temp"</code> 指临时文件名字以 temp 开头。最终得到的 tempFile 就是 ./temp.......，temp 后为随机数字，如<code>./temp43620-0</code></p>
 <h3 id="_8">路径操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>相关函数都包含在 <code>System.Directory</code> 模块中，全部内容见 <a href="https://hackage.haskell.org/package/directory-1.3.6.2/docs/System-Directory.html">System.Directory</a></p>
+<p>相关函数都包含在 <code>System.Directory</code> 模块中，全部内容见 <a href="https://hackage.haskell.org/package/directory-1.3.6.2.../System-Directory.html">System.Directory</a></p>
 <h4 id="getcurrentdirectory">getCurrentDirectory<a class="headerlink" href="#getcurrentdirectory" title="Permanent link">&para;</a></h4>
 <p style="text-align: center;">getCurrentDirectory :: IO FilePath</p>
 
@@ -5389,7 +5389,7 @@ getLine 的类型是：</p>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">isDoesNotExistError</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">putStrLn</span><span class="w"> </span><span class="s">&quot;The file doesn&#39;t exist!&quot;</span><span class="w">  </span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">otherwise</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ioError</span><span class="w"> </span><span class="n">e</span><span class="w">  </span>
 </code></pre></div></p>
-<p>具体相关全部函数见文档：<a href="https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO-Error.html">System.IO.Error</a>、<a href="https://hackage.haskell.org/package/base-4.15.0.0/docs/Control-Exception-Base.html">Control.Exception</a></p>
+<p>具体相关全部函数见文档：<a href="https://hackage.haskell.org/package/base-4.15.0.0.../System-IO-Error.html">System.IO.Error</a>、<a href="https://hackage.haskell.org/package/base-4.15.0.0../docs/Control-Exception-Base.html">Control.Exception</a></p>
 <hr />
 <h2 id="functors">Functors<a class="headerlink" href="#functors" title="Permanent link">&para;</a></h2>
 <p>函子（Functor）是一个类型类（typeclass），和其他类型类一样，它规定了其实例类必须实现的功能（例如 Eq 类型类规定了它的实例必须是可以比较是否相等的），Functor 规定类它的实例必须是可以进行映射的。Functor 要求使用 <code>fmap</code> :: (a -&gt; b) -&gt; f a -&gt; f b 函数来实现这个功能，它接收一个 a -&gt; b 类型的函数、一个内部元素为 a 类型的函子，返回一个内部元素为 b 类型的函子</p>
