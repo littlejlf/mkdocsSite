@@ -54,3 +54,8 @@
 
 以上是 Markdown 的一些基本语法，你可以通过这些语法快速轻松地创建格式化的文档。
 
+
+
+8. 实现按钮会执行终端脚本的按钮[![Button](images/markdown/image.png)](bash_script.sh){width=5%}
+
+![Alt text](images/markdown/image-1.png)

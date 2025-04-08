@@ -8,48 +8,109 @@ theme:
   language: 'zh'       # 使用中文
   icon:
     logo: material/notebook-outline
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand   # 自动展开当前活动的目录
+    - navigation.top
+    - navigation.indexes
+    - content.action.edit
+  font: false        
 plugins:
   - glightbox
-  - heti:
-      disable_serve: false
+  - search:
+      lang: [en, ja]  # 多语言搜索（截图未显示搜索框）
+
 markdown_extensions:
   - attr_list
-  - md_in_html    
+  - md_in_html
+  - meta # 支持markdown博客文件头的元数据，比如标题
+  - toc:
+      permalink: "#"
+      baselevel: 1
+      separator: "_"
+  - footnotes # 支持脚注
+  - admonition  # 支持提示块
+  - pymdownx.details  # 提示块可折叠
+  - attr_list 
+  - pymdownx.inlinehilite # 支持行内语法高亮
+  - pymdownx.superfences    # 增强代码块支持（截图中的代码高亮）
+  - pymdownx.tabbed         # 选项卡式内容块
+  - pymdownx.emoji         # Emoji 支持（:smile: → 😄）
+  - admonition              # 彩色提示框（如 !!! note）
+  - toc:                    # 自动生成目录（截图左侧）
+      permalink: true       # 标题旁添加锚点链接    
 
 
 nav:
-
+  - 计算机理论:
+    - 数学逻辑.md
+    - 信息论.md
+    - sat.md
+    - incompleteness theorems.md
   - 编译原理:
     - Context-free grammar.md
-
+    - 访问者模式和编译原理.md
   - 静态分析、程序检测:
     - index.md
   - 并发:
-    - index.md
-
+    - 抢占式线程模型.md
+    - 多处理器.md
+    - 异步和并发的区别.md
+    - lock.md
+    - CompletableFuture.md
+    - ChatGPT-CHL锁比常规自旋锁优点.md
+    - concurrency.md 
+    - lambda.md
+    - 同步(caller)和阻塞(callee)的概念辨析以及同步非阻塞.md
+    - 协程.md
   - 程序语言:
-    - index.md
-
+    - java:
+      - java的动态绑定的原理.md
+      - 泛型以及协变逆变.md
+      - CompletableFuture.md
+      - lock.md
+      - ChatGPT-AOT vs JIT 优劣.md
+      - java对象的加载.md
+      - java继承中修饰符的问题里式原则与逆变协变.md
+      - 泛型擦除.md
+    - javaScript:
+      - javaScript中的this.md
+      - javascript原型.md
+    - 通用:
+      - 函数式monad问题.md  
   - 操作系统:
     - index.md
-
-  - 随记内容:
+    - linux.md
+  - 数据库:
+    - 数据库锁.md 
+  - 计算机网络:
     - index.md
-    
-markdown_extensions:
-    - meta # 支持markdown博客文件头的元数据，比如标题
-    - toc:
-        permalink: "#"
-        baselevel: 1
-        separator: "_"
-    - footnotes # 支持脚注
-    - admonition  # 支持提示块
-    - pymdownx.details  # 提示块可折叠
-    - attr_list 
-    - pymdownx.inlinehilite # 支持行内语法高亮
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+    - 网络模式.md
+    - 路由器交换机.md
+    - https.md
+  - 杂项|运维|工具:
+    - 快捷键.md
+    - 编码格式.md
+    - 代理工具.md
+    - command.md
+    - docker.md
+    - encoding-issues.md
+    - git.md
+    - gradle.md
+    - markdown.md
+    - pycharm多模块导入.md
+    - window命令行过滤器.md
+    - 杂项.md
+    - 环境/conda镜像源访问问题.md
+  - 算法:
+    - 算法tips.md
+    - 动态规划.md
+    - 动态规划 gpt.md
+    - 回溯.md
+  - 生活:
+    - 材料.md
+    - 篮球.md
 
 extra_javascript:
   - javascripts/katex.js 
@@ -58,24 +119,4 @@ extra_javascript:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-    
-theme: readthedocs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-markdown_extensions:
-  - pymdownx.github:
-      html_tables: false   # 如果你希望禁用HTML表格的自动转换，可以将此选项设置为false
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css  # 霞鹜文楷屏幕版字体
