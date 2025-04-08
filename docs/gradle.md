@@ -45,3 +45,6 @@ repositories {
 *而且pluginManagement是在settings.gradle中的 而repositories是设置在build.gradel里的*
 
 *Gradle 插件块（plugins 块）用于声明和应用插件，而不涉及直接的依赖下载。插件的相关信息，包括插件的二进制文件和元数据，通常会被 Gradle 下载到 Gradle 的本地缓存中，而不是 Maven 本地仓库*
+
+
+buildSrc 内是项目内自定义的gradle插件
