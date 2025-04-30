@@ -64,6 +64,8 @@ nav:
     - lambda.md
     - 同步(caller)和阻塞(callee)的概念辨析以及同步非阻塞.md
     - 协程.md
+    - 并发\Java-Concurrency-Core-Extended-Again.md
+    - 并发\从 Java 语言的 Redisson 框架体现的纯函数以及在并发中的优势以及 JVM 内存结构的设计.md 
   - 程序语言:
     - java:
       - java的动态绑定的原理.md
@@ -74,6 +76,8 @@ nav:
       - java对象的加载.md
       - java继承中修饰符的问题里式原则与逆变协变.md
       - 泛型擦除.md
+      - java\stream-reduce-summary.md
+      - java\大营销平台核心流程梳理.md
     - javaScript:
       - javaScript中的this.md
       - javascript原型.md
@@ -84,12 +88,15 @@ nav:
     - linux.md
   - 数据库:
     - 数据库锁.md 
+    - 数据库\database_connection_summary.md
+    - 数据库\mysql_row_lookup_full_summary.md
+    - 数据库\为什么应用层事务代替数据库外键保证一致性.md
   - 计算机网络:
     - index.md
     - 网络模式.md
     - 路由器交换机.md
     - https.md
-  - 杂项|运维|工具:
+  - 杂项|运维|工具|工程规范:
     - 快捷键.md
     - 编码格式.md
     - 代理工具.md
@@ -103,14 +110,21 @@ nav:
     - window命令行过滤器.md
     - 杂项.md
     - 环境/conda镜像源访问问题.md
+    - DTO、Entity、BO、VO、DO 简明整理.md
   - 算法:
     - 算法tips.md
     - 动态规划.md
     - 动态规划 gpt.md
     - 回溯.md
+    - 总结的算法思想.md
+
+  - 设计模式:
+    - 设计模式\职责链.md
+
   - 生活:
     - 材料.md
     - 篮球.md
+    - 生活\优衣库降价表.md
 
 extra_javascript:
   - javascripts/katex.js 

@@ -58,4 +58,5 @@
 
 8. 实现按钮会执行终端脚本的按钮[![Button](images/markdown/image.png)](bash_script.sh){width=5%}
 
-![Alt text](images/markdown/image-1.png)
+![Alt text](images/markdown/image-1.png){width=60% style="display: block; margin: 0 auto;"}
+
