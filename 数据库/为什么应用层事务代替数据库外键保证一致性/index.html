@@ -13,7 +13,7 @@
       
       
         
-          <title>为什么应用层事务代替数据库外键保证一致性 - blog from lf</title>
+          <title>为什么应用层事务代替数据库外键保证一致性 - lfjin's Blog</title>
         
       
       
@@ -117,7 +117,7 @@ var _hmt = _hmt || [];
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="blog from lf" class="md-header__button md-logo" aria-label="blog from lf" data-md-component="logo">
+    <a href="../.." title="lfjin&#39;s Blog" class="md-header__button md-logo" aria-label="lfjin's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2z"/></svg>
@@ -130,7 +130,7 @@ var _hmt = _hmt || [];
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            blog from lf
+            lfjin's Blog
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -461,13 +461,13 @@ var _hmt = _hmt || [];
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="blog from lf" class="md-nav__button md-logo" aria-label="blog from lf" data-md-component="logo">
+    <a href="../.." title="lfjin&#39;s Blog" class="md-nav__button md-logo" aria-label="lfjin's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2z"/></svg>
 
     </a>
-    blog from lf
+    lfjin's Blog
   </label>
   
     <div class="md-nav__source">
@@ -1532,11 +1532,24 @@ var _hmt = _hmt || [];
     🗂️ 两种数据表设计模式对比
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="🗂️ 两种数据表设计模式对比">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    ✨ 扩展版总结
+    不需要使用外键的其他考虑
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    ✨ 总结
   </a>
   
 </li>
@@ -2237,11 +2250,24 @@ var _hmt = _hmt || [];
     🗂️ 两种数据表设计模式对比
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="🗂️ 两种数据表设计模式对比">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    ✨ 扩展版总结
+    不需要使用外键的其他考虑
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    ✨ 总结
   </a>
   
 </li>
@@ -2394,7 +2420,17 @@ var _hmt = _hmt || [];
 </table>
 <p>✅ 结论：大规模、高并发系统必须采用<strong>应用事务控制，无外键设计</strong>。</p>
 <hr />
-<h2 id="_7">✨ 扩展版总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_7">不需要使用外键的其他考虑<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>同时还要考虑是否是逻辑删除，当为逻辑删除时，外键失效</p>
+</li>
+<li>
+<p>同时当时微服务的架构时，<em>table</em>不在同一个数据库也无法建立外键； 如用户表、视频表、视频观看记录表（中间表，需要外键），微服务架构下可能<em>table</em>不在同一个数据库中</p>
+</li>
+<li>有些中间表如员工绩效表。员工离职了但是绩效记录还要保留，不需要保证外键带来的<em>一致性</em></li>
+</ol>
+<h2 id="_8">✨ 总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p><strong>正确的做法就是</strong>：</p>
 <ul>
 <li><strong>外键不建，表靠业务逻辑联系；</strong></li>
@@ -2467,8 +2503,8 @@ var _hmt = _hmt || [];
       Material
     </a>
     modified by
-    <a href="https://github.com/TonyCrane" target="_blank" rel="noopener">
-      TonyCrane
+    <a href="https://github.com/littlejlf" target="_blank" rel="noopener">
+     lfjin
     </a>
   
 </div>
