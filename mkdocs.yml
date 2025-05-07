@@ -112,11 +112,11 @@ nav:
     - 环境/conda镜像源访问问题.md
     - DTO、Entity、BO、VO、DO 简明整理.md
   - 算法:
-    - 算法tips.md
-    - 动态规划.md
-    - 动态规划 gpt.md
-    - 回溯.md
-    - 总结的算法思想.md
+    - 算法/算法tips.md
+    - 算法/动态规划.md
+    - 算法/动态规划 gpt.md
+    - 算法/回溯.md
+    - 算法/总结的算法思想.md
 
   - 设计模式:
     - 设计模式\职责链.md
