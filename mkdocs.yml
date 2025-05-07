@@ -5,6 +5,7 @@ nav:
   - About: about.md
 theme:
   name: material
+  custom_dir: overrides
   language: 'zh'       # 使用中文
   icon:
     logo: material/notebook-outline
@@ -78,6 +79,7 @@ nav:
       - 泛型擦除.md
       - java\stream-reduce-summary.md
       - java\大营销平台核心流程梳理.md
+      - java\java-generics-wildcards.md
     - javaScript:
       - javaScript中的this.md
       - javascript原型.md
@@ -131,6 +133,20 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
+extra:
+  analytics:
+    provider: custom
+    property: G-DYETCPM289
+
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css  # 霞鹜文楷屏幕版字体
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - css/tasklist.css
+  - css/custom.css
+  - css/card.css
+  - css/flink.css
+  - css/changelog_extra.css
+  # - css/heti.css
+

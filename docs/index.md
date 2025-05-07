@@ -10,10 +10,10 @@ statistics: true
 
 时时勤拂拭，勿使惹尘埃 
 
-<!-- [:octicons-info-16: 关于我](about/) /  -->
+<!-- [:octicons-info-16: 关于我](about/) / 
 [:material-clock-time-two-outline: 最近更新](changelog/) / 
 [:octicons-link-16: 朋友们!](links/) / 
-[:material-chart-line: 站点统计](javascript:toggle_statistics();)
+[:material-chart-line: 站点统计](javascript:toggle_statistics();) -->
 
 <div id="statistics" markdown="1" class="card" style="width: 27em; border-color: transparent; opacity: 0; font-size: 75%">
 <div style="padding-left: 1em;" markdown="1">
@@ -28,7 +28,7 @@ statistics: true
 function updateTime() {
     var date = new Date();
     var now = date.getTime();
-    var startDate = new Date("2022/01/03 09:10:00");
+    var startDate = new Date("2025/01/03 09:10:00");
     var start = startDate.getTime();
     var diff = now - start;
     var y, d, h, m;
