@@ -9,7 +9,7 @@
         
         
         <link rel="icon" href="../assets/images/favicon.png">
-        <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.1.4">
+        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.1.4">
       
       
         
@@ -355,6 +355,22 @@ var _hmt = _hmt || [];
     <li class="md-tabs__item">
       <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/" class="md-tabs__link">
         数据库
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E6%A1%86%E6%9E%B6/netty_nio_summary/" class="md-tabs__link">
+        框架
       </a>
     </li>
   
@@ -796,11 +812,231 @@ var _hmt = _hmt || [];
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
-        None
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lock
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lock
       </a>
+      
+        
+  
+  <nav class="md-nav md-nav--secondary " aria-label="目录">
+    
+    
+    
+    
+      <label class="md-nav__title" for="__toc">
+        <span class="md-nav__icon md-icon"></span>
+        目录
+      </label>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+        
+          <li class="md-nav__item">
+  <a href="#mutex-monitor" class="md-nav__link">
+    mutex 和monitor的区别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reentrantlock" class="md-nav__link">
+    ReentrantLock唤醒机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-interruptedexception" class="md-nav__link">
+    interrupt()方法 InterruptedException
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    公平锁和非公平锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    自旋锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csa" class="md-nav__link">
+    CSA乐观锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aqs" class="md-nav__link">
+    AQS相关
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aqs_1" class="md-nav__link">
+    AQS 核心概念及实现
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念及实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aqs_2" class="md-nav__link">
+    AQS 核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setexclusiveownerthreadthread-thread" class="md-nav__link">
+    1. setExclusiveOwnerThread(Thread thread)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compareandsetstateint-expectedstate-int-newstate" class="md-nav__link">
+    2. compareAndSetState(int expectedState, int newState)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 模板方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    独占模式和共享模式
+  </a>
+  
+    <nav class="md-nav" aria-label="独占模式和共享模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-exclusive-mode" class="md-nav__link">
+    1. 独占模式（Exclusive Mode）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-shared-mode" class="md-nav__link">
+    2. 共享模式（Shared Mode）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    示例代码
+  </a>
+  
+    <nav class="md-nav" aria-label="示例代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reentrantlock_1" class="md-nav__link">
+    ReentrantLock 使用独占模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    锁的优化机制
+  </a>
+  
+    <nav class="md-nav" aria-label="锁的优化机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#biased-locking" class="md-nav__link">
+    偏向锁（Biased Locking）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightweight-locking" class="md-nav__link">
+    轻量级锁（Lightweight Locking）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heavyweight-locking" class="md-nav__link">
+    重量级锁（Heavyweight Locking）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
+      </ul>
+    
+  </nav>
+      
     </li>
   
 
@@ -813,7 +1049,7 @@ var _hmt = _hmt || [];
   
     <li class="md-nav__item">
       <a href="../CompletableFuture/" class="md-nav__link">
-        None
+        CompletableFuture
       </a>
     </li>
   
@@ -1144,7 +1380,101 @@ var _hmt = _hmt || [];
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aqs_1" class="md-nav__link">
+    AQS 核心概念及实现
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念及实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aqs_2" class="md-nav__link">
+    AQS 核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setexclusiveownerthreadthread-thread" class="md-nav__link">
+    1. setExclusiveOwnerThread(Thread thread)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compareandsetstateint-expectedstate-int-newstate" class="md-nav__link">
+    2. compareAndSetState(int expectedState, int newState)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 模板方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    独占模式和共享模式
+  </a>
+  
+    <nav class="md-nav" aria-label="独占模式和共享模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-exclusive-mode" class="md-nav__link">
+    1. 独占模式（Exclusive Mode）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-shared-mode" class="md-nav__link">
+    2. 共享模式（Shared Mode）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    示例代码
+  </a>
+  
+    <nav class="md-nav" aria-label="示例代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reentrantlock_1" class="md-nav__link">
+    ReentrantLock 使用独占模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     锁的优化机制
   </a>
   
@@ -1183,7 +1513,7 @@ var _hmt = _hmt || [];
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     总结
   </a>
   
@@ -1644,6 +1974,90 @@ var _hmt = _hmt || [];
       
         
           
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          框架
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="框架" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          框架
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6/netty_nio_summary/" class="md-nav__link">
+        ✅ Java NIO 与 Netty 中非阻塞 IO 机制整理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6/netty_example/" class="md-nav__link">
+        Netty 通信处理流程：物联网场景（JSON 报文/二进制传输）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6/nio%E5%92%8Cevent_model_summary/" class="md-nav__link">
+        🧠 起始问题：事件轮询、回调、本质机制？
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
             
           
         
@@ -1660,14 +2074,14 @@ var _hmt = _hmt || [];
         <div class="md-nav__link md-nav__link--index ">
           <a href="..">计算机网络</a>
           
-            <label for="__nav_8">
+            <label for="__nav_9">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
       <nav class="md-nav" aria-label="计算机网络" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           计算机网络
         </label>
@@ -1734,7 +2148,7 @@ var _hmt = _hmt || [];
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
       
       
       
@@ -1771,13 +2185,13 @@ var _hmt = _hmt || [];
         
       
       
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_10">
           杂项|运维|工具|工程规范
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="杂项|运维|工具|工程规范" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           杂项|运维|工具|工程规范
         </label>
@@ -2010,7 +2424,7 @@ var _hmt = _hmt || [];
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
       
       
       
@@ -2027,13 +2441,13 @@ var _hmt = _hmt || [];
         
       
       
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_11">
           算法
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="算法" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           算法
         </label>
@@ -2126,7 +2540,7 @@ var _hmt = _hmt || [];
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
       
       
       
@@ -2135,13 +2549,13 @@ var _hmt = _hmt || [];
         
       
       
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_12">
           设计模式
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="设计模式" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           设计模式
         </label>
@@ -2178,7 +2592,7 @@ var _hmt = _hmt || [];
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
       
       
       
@@ -2191,13 +2605,13 @@ var _hmt = _hmt || [];
         
       
       
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_13">
           生活
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="生活" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
+        <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           生活
         </label>
@@ -2327,7 +2741,101 @@ var _hmt = _hmt || [];
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aqs_1" class="md-nav__link">
+    AQS 核心概念及实现
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念及实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aqs_2" class="md-nav__link">
+    AQS 核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="AQS 核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setexclusiveownerthreadthread-thread" class="md-nav__link">
+    1. setExclusiveOwnerThread(Thread thread)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compareandsetstateint-expectedstate-int-newstate" class="md-nav__link">
+    2. compareAndSetState(int expectedState, int newState)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 模板方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    独占模式和共享模式
+  </a>
+  
+    <nav class="md-nav" aria-label="独占模式和共享模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-exclusive-mode" class="md-nav__link">
+    1. 独占模式（Exclusive Mode）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-shared-mode" class="md-nav__link">
+    2. 共享模式（Shared Mode）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    示例代码
+  </a>
+  
+    <nav class="md-nav" aria-label="示例代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reentrantlock_1" class="md-nav__link">
+    ReentrantLock 使用独占模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     锁的优化机制
   </a>
   
@@ -2366,7 +2874,7 @@ var _hmt = _hmt || [];
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     总结
   </a>
   
@@ -2455,10 +2963,83 @@ ReentrantLock 类的 unlock() 方法会释放锁，并唤醒等待该锁的线�
 </li>
 </ul>
 <h2 id="aqs">AQS相关<a class="headerlink" href="#aqs" title="Permanent link">&para;</a></h2>
-<pre><code>https://chatgpt.com/share/78c3c54f-cf32-4482-85b9-47fa73840ec2
+<h3 id="aqs_1">AQS 核心概念及实现<a class="headerlink" href="#aqs_1" title="Permanent link">&para;</a></h3>
+<p><code>AQS</code>（AbstractQueuedSynchronizer）是 Java 中实现锁和同步器的基础框架，提供了独占锁和共享锁的管理机制。它的核心部分包括以下几个关键概念和方法：</p>
+<h4 id="aqs_2">AQS 核心概念<a class="headerlink" href="#aqs_2" title="Permanent link">&para;</a></h4>
+<h5 id="1-setexclusiveownerthreadthread-thread">1. <strong><code>setExclusiveOwnerThread(Thread thread)</code></strong><a class="headerlink" href="#1-setexclusiveownerthreadthread-thread" title="Permanent link">&para;</a></h5>
+<ul>
+<li>这个方法用于设置当前持有锁的线程。在 <strong>独占模式</strong> 下（如 <code>ReentrantLock</code>），锁只能被一个线程持有，这个方法帮助确定哪个线程持有锁。</li>
+<li>对于 <strong>共享锁模式</strong>（如 <code>Semaphore</code> 或 <code>ReentrantReadWriteLock</code> 的读锁），不需要调用 <code>setExclusiveOwnerThread</code>，因为共享锁可以被多个线程持有，且不需要记录哪个线程持有锁。</li>
+</ul>
+<h5 id="2-compareandsetstateint-expectedstate-int-newstate">2. <strong><code>compareAndSetState(int expectedState, int newState)</code></strong><a class="headerlink" href="#2-compareandsetstateint-expectedstate-int-newstate" title="Permanent link">&para;</a></h5>
+<ul>
+<li>这是 AQS 的一个核心方法，用于原子地更新同步器的状态。它使用 <strong>CAS（Compare-And-Swap）</strong> 来确保状态的更新是线程安全的。</li>
+<li>在锁的实现中，<code>state</code> 通常表示锁的资源状态（如可用资源的数量，或锁是否被占用）。通过 <code>compareAndSetState</code>，可以在不使用传统锁的情况下实现高效的并发控制。</li>
+</ul>
+<h5 id="3">3. <strong>模板方法</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h5>
+<p><code>AQS</code> 提供了以下四个模板方法，这些方法定义了锁和同步器的核心行为，但没有实现具体的逻辑。实现类需要根据具体的需求来实现这些方法：
+- <strong><code>tryAcquire(int arg)</code></strong>：尝试获取锁（独占模式）。
+- <strong><code>tryRelease(int arg)</code></strong>：尝试释放锁（独占模式）。
+- <strong><code>tryAcquireShared(int arg)</code></strong>：尝试获取共享锁。
+- <strong><code>tryReleaseShared(int arg)</code></strong>：尝试释放共享锁。</p>
+<p>这些方法的实现取决于具体的同步器（如 <code>ReentrantLock</code>、<code>Semaphore</code> 等），而 AQS 通过这些模板方法提供了一套通用的框架来管理锁的获取、释放和线程的排队。</p>
+<hr />
+<h4 id="_3">独占模式和共享模式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h5 id="1-exclusive-mode">1. <strong>独占模式（Exclusive Mode）</strong><a class="headerlink" href="#1-exclusive-mode" title="Permanent link">&para;</a></h5>
+<ul>
+<li>在 <strong>独占模式</strong> 下（如 <code>ReentrantLock</code>），只有一个线程可以持有锁。当一个线程获取锁后，其他线程必须等待锁被释放才能获取。独占模式通过 <code>tryAcquire(int arg)</code> 和 <code>tryRelease(int arg)</code> 方法来控制锁的获取和释放。</li>
+</ul>
+<h5 id="2-shared-mode">2. <strong>共享模式（Shared Mode）</strong><a class="headerlink" href="#2-shared-mode" title="Permanent link">&para;</a></h5>
+<ul>
+<li>在 <strong>共享模式</strong> 下（如 <code>Semaphore</code> 或 <code>ReentrantReadWriteLock</code> 的读锁），多个线程可以共享访问资源。当一个线程释放资源时，其他线程可以获取资源。共享模式通过 <code>tryAcquireShared(int arg)</code> 和 <code>tryReleaseShared(int arg)</code> 方法来控制锁的获取和释放。</li>
+</ul>
+<hr />
+<h4 id="_4">示例代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h5 id="reentrantlock_1"><code>ReentrantLock</code> 使用独占模式<a class="headerlink" href="#reentrantlock_1" title="Permanent link">&para;</a></h5>
+<p>```java
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;</p>
+<p>public class ReentrantLockExample {
+    private static class Sync extends AbstractQueuedSynchronizer {
+        // 尝试获取锁（独占模式）
+        @Override
+        protected boolean tryAcquire(int acquires) {
+            if (compareAndSetState(0, 1)) {  // 如果状态是0（未被占用），则获取锁
+                setExclusiveOwnerThread(Thread.currentThread());  // 设置当前线程为锁持有者
+                return true;
+            }
+            return false;
+        }</p>
+<pre><code>    // 尝试释放锁（独占模式）
+    @Override
+    protected boolean tryRelease(int releases) {
+        if (Thread.currentThread() != getExclusiveOwnerThread()) {
+            throw new IllegalMonitorStateException();  // 非持有锁的线程不能释放锁
+        }
+        setExclusiveOwnerThread(null);  // 释放锁
+        setState(0);  // 设置状态为0（未占用）
+        return true;
+    }
+
+    // 判断当前线程是否持有锁
+    @Override
+    protected boolean isHeldExclusively() {
+        return getState() != 0;
+    }
+}
+
+private final Sync sync = new Sync();
+
+public void lock() {
+    sync.acquire(1);
+}
+
+public void unlock() {
+    sync.release(1);
+}
 </code></pre>
+<p>}</p>
 <p><a class="glightbox" href="../images/lock/image.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="三类锁" src="../images/lock/image.png" /></a></p>
-<h3 id="_3">锁的优化机制<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_5">锁的优化机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <h4 id="biased-locking">偏向锁（Biased Locking）<a class="headerlink" href="#biased-locking" title="Permanent link">&para;</a></h4>
 <ul>
 <li>​<strong>适用场景</strong>: 无竞争的情况下，只有一个线程进入临界区。</li>
@@ -2489,7 +3070,7 @@ ReentrantLock 类的 unlock() 方法会释放锁，并唤醒等待该锁的线�
 <li>系统调用和内核态切换会带来较大的性能开销。</li>
 <li>适用于高竞争场景，但性能较差。</li>
 </ul>
-<h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>​<strong>偏向锁</strong>: 在无竞争时性能最佳，但有竞争时升级开销较大。</li>
 <li>​<strong>轻量级锁</strong>: 适用于低竞争场景，自旋消耗CPU，但避免了内核态切换。</li>
