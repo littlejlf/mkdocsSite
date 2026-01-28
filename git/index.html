@@ -1020,6 +1020,8 @@ var _hmt = _hmt || [];
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_1">
@@ -1224,6 +1226,20 @@ var _hmt = _hmt || [];
     <li class="md-nav__item">
       <a href="../java/%E5%85%AB%E8%82%A1%E6%96%87/jvm/" class="md-nav__link">
         Jvm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/ThreadLocal%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        ThreadLocal知识总结
       </a>
     </li>
   
@@ -1485,6 +1501,8 @@ var _hmt = _hmt || [];
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7">
@@ -1549,6 +1567,20 @@ var _hmt = _hmt || [];
     <li class="md-nav__item">
       <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BA%94%E7%94%A8%E5%B1%82%E4%BA%8B%E5%8A%A1%E4%BB%A3%E6%9B%BF%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%96%E9%94%AE%E4%BF%9D%E8%AF%81%E4%B8%80%E8%87%B4%E6%80%A7/" class="md-nav__link">
         为什么应用层事务代替数据库外键保证一致性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84MVCC/" class="md-nav__link">
+        数据库的MVCC
       </a>
     </li>
   
@@ -1987,6 +2019,13 @@ var _hmt = _hmt || [];
           <li class="md-nav__item">
   <a href="#push-pull-git-pullgit-fetchmergerebase" class="md-nav__link">
     什么时候无法push pull git pull=git fetch+merge|rebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-merge-git-rebase" class="md-nav__link">
+    Git Merge 与 Git Rebase：原理对比与黄金法则
   </a>
   
 </li>
@@ -2496,6 +2535,13 @@ var _hmt = _hmt || [];
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-merge-git-rebase" class="md-nav__link">
+    Git Merge 与 Git Rebase：原理对比与黄金法则
+  </a>
+  
+</li>
+        
       </ul>
     
   </nav>
@@ -2580,6 +2626,68 @@ footer：解决 issue 了可以写 Fixes #id 或 Closes #id</p>
 <h4 id="push-pull-git-pullgit-fetchmergerebase">什么时候无法push pull git pull=git fetch+merge|rebase<a class="headerlink" href="#push-pull-git-pullgit-fetchmergerebase" title="Permanent link">&para;</a></h4>
 <pre><code>远程仓库和本地仓库不是同一个commitId||远程本地有冲突||未提交本地或者暂存区内容
 </code></pre>
+<h4 id="git-merge-git-rebase">Git Merge 与 Git Rebase：原理对比与黄金法则<a class="headerlink" href="#git-merge-git-rebase" title="Permanent link">&para;</a></h4>
+<p>在 Git 工作流中，合并代码主要有两种方式：Merge（合并）和 Rebase（变基）。理解它们的区别对于维护清晰的项目历史至关重要。</p>
+<p><strong>1. Git Merge (合并)</strong></p>
+<p>定义：<code>git merge</code> 是一种非破坏性的操作。它会创建一个新的"合并提交"（Merge Commit），将两个分支的历史连接在一起。</p>
+<ul>
+<li><strong>特点</strong>：保留了完整的历史记录，包括分支的起始位置和合并位置。</li>
+<li><strong>优点</strong>：真实记录了开发的发生过程，安全，不会改变现有的提交 ID。</li>
+<li><strong>缺点</strong>：如果频繁合并，提交历史会变得像"地铁线路图"一样错综复杂，不利于阅读。</li>
+</ul>
+<p><strong>2. Git Rebase (变基)</strong></p>
+<p>定义：<code>git rebase</code> 会将当前分支的提交"移动"到目标分支的最新提交之后，形成一条线性的历史记录。</p>
+<ul>
+<li><strong>特点</strong>：会改变提交历史，重写提交 ID。</li>
+<li><strong>优点</strong>：历史记录整洁，是一条直线，���于阅读和理解。</li>
+<li><strong>缺点</strong>：会改变历史，如果已经 push 到远程，会造成严重问题。</li>
+</ul>
+<p>(注：在 Rebase 中，C 和 D 会被重新应用为 C' 和 D'，接在 E 后面，形成一条直线)</p>
+<p><strong>3. 黄金法则：绝对禁止的操作</strong></p>
+<p>⚠️ <strong>警告：永远不要在公共分支（Public Branch）上执行 Rebase！</strong></p>
+<p>定义"公共分支"：任何你已经 push 到远程仓库（如 GitHub/GitLab），并且你的同事可能正在基于此分支进行开发的分支。</p>
+<p><strong>为什么？（灾难演示）</strong></p>
+<p>假设你和同事小王都在 feature-login 分支上开发：</p>
+<ol>
+<li><strong>同步状态</strong>：你和小王都拉取了远程分支，本地都有提交 A -&gt; B -&gt; C。</li>
+<li><strong>你的操作（Rebase）</strong>：你想同步主干代码，在本地执行了 <code>git rebase main</code>。Git 会把你本地的 C 变成 C'（内容一样，但 ID 变了）。你强制推送（force push）了这一变更。</li>
+<li><strong>小王的状态（灾难发生）</strong>：小王准备提交代码，他执行 <code>git pull</code>。</li>
+<li>Git 发现远程是 A -&gt; B -&gt; C'。</li>
+<li>但小王本地还保留着旧的 A -&gt; B -&gt; C。</li>
+<li><strong>结果</strong>：Git 会认为 C 和 C' 是两个完全不同的提交。合并后，历史记录里会出现两份内容一模一样的提交，不仅历史线混乱，还极易引发严重的冲突。</li>
+</ol>
+<p><strong>总结建议</strong></p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐操作</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地个人分支</td>
+<td><code>git rebase</code></td>
+<td>在 push 之前整理自己的代码，保持历史整洁</td>
+</tr>
+<tr>
+<td>拉取公共代码</td>
+<td><code>git pull --rebase</code></td>
+<td>避免产生不必要的"Merge branch 'master' into ..."提交</td>
+</tr>
+<tr>
+<td>合并回主干</td>
+<td><code>git merge</code></td>
+<td>如果需要保留功能开发的上下文（即显示这是一个独立功能）</td>
+</tr>
+<tr>
+<td>公共/共享分支</td>
+<td>严禁 Rebase</td>
+<td>遵守黄金法则，避免破坏团队协作历史</td>
+</tr>
+</tbody>
+</table>
 
                   
                 
