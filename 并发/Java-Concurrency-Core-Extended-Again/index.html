@@ -8,8 +8,10 @@
         
         
         
+          <link rel="canonical" href="https://littlejlf.github.io/mkdocsSite/%E5%B9%B6%E5%8F%91/Java-Concurrency-Core-Extended-Again/">
+        
         <link rel="icon" href="../../assets/images/favicon.png">
-        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.1.4">
+        <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.1.4">
       
       
         
@@ -18,10 +20,6 @@
       
       
         <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
-        
-          
-          <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
-          
         
       
       
@@ -48,7 +46,7 @@
         <link rel="stylesheet" href="../../css/changelog_extra.css">
       
       
-      <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
       
         
   
@@ -70,32 +68,30 @@ var _hmt = _hmt || [];
   <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-DYETCPM289"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-DYETCPM289",{page_path:e.pathname})})})</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYETCPM289"></script>
 
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
       
       
      <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-        html.glightbox-open { overflow: initial; height: 100%; }
-        .gslide-title { margin-top: 0px; user-select: text; }
-        .gslide-desc { color: #666; user-select: text; }
-        .gslide-image img { background: white; }
-        
-            .gscrollbar-fixer { padding-right: 15px; }
-            .gdesc-inner { font-size: 0.75rem; }
-            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
     
     
-      
-      
-      
-      
-      
-      <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      <body dir="ltr">
     
       <script src="../../js/scheme.js" type="text/javascript"></script>
       
+      
+        <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
       
       <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
       <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -103,8 +99,8 @@ var _hmt = _hmt || [];
       <div data-md-component="skip">
         
           
-          <a href="#java-casmesi" class="md-skip">
-            跳转至
+          <a href="#java_casmesi" class="md-skip">
+            skip.link.title
           </a>
         
       </div>
@@ -116,15 +112,15 @@ var _hmt = _hmt || [];
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
     <a href="../.." title="lfjin&#39;s Blog" class="md-header__button md-logo" aria-label="lfjin's Blog" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -150,7 +146,7 @@ var _hmt = _hmt || [];
             class="light-mode"
           >
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
           </a>
           <a
             href="javascript:toggleScheme();"
@@ -158,7 +154,7 @@ var _hmt = _hmt || [];
             class="dark-mode"
           >
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
           </a>
           <a
             href="javascript:toggleScheme();"
@@ -166,7 +162,7 @@ var _hmt = _hmt || [];
             class="system-mode"
           >
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
           </a>
            <a
             href="javascript:toggleScheme();"
@@ -174,50 +170,17 @@ var _hmt = _hmt || [];
             class="unknown-mode"
           >
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.07 11.25-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-2-2 2 2 0 0 0-2 2H8a4 4 0 0 1 4-4 4 4 0 0 1 4 4 3.2 3.2 0 0 1-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.07 11.25-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-2-2 2 2 0 0 0-2 2H8a4 4 0 0 1 4-4 4 4 0 0 1 4 4 3.2 3.2 0 0 1-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10Z"/></svg>
           </a>
       </div>
     </div>
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="查找">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            正在初始化搜索引擎
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     
     
       <div class="md-header__source">
         <a href="https://github.com/littlejlf/mkdocsSite" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -236,54 +199,66 @@ var _hmt = _hmt || [];
             
               
 <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/" class="md-tabs__link">
+          
+  
+    
+  
+  计算机理论
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E6%95%B0%E5%AD%A6%E9%80%BB%E8%BE%91/" class="md-tabs__link">
-        计算机理论
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../Context-free%20grammar/" class="md-tabs__link">
-        编译原理
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Context-free%20grammar/" class="md-tabs__link">
+          
+  
+    
+  
+  编译原理
 
+        </a>
+      </li>
+    
+  
 
+      
+        
   
   
   
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        静态分析、程序检测
-      </a>
-    </li>
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  静态分析、程序检测
+
+        </a>
+      </li>
+    
   
 
       
@@ -292,167 +267,229 @@ var _hmt = _hmt || [];
   
     
   
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../%E6%8A%A2%E5%8D%A0%E5%BC%8F%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+          
+  
+    
+  
+  并发
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E6%8A%A2%E5%8D%A0%E5%BC%8F%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B/" class="md-tabs__link md-tabs__link--active">
-        并发
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
-  
-  
-
-
   
   
   
     
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/" class="md-tabs__link">
+          
+  
+    
+  
+  程序语言
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../java%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86/" class="md-tabs__link">
-        程序语言
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  操作系统
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        操作系统
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/" class="md-tabs__link">
-        数据库
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81/" class="md-tabs__link">
+          
+  
+    
+  
+  数据库
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E6%A1%86%E6%9E%B6/netty_nio_summary/" class="md-tabs__link">
-        框架
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        计算机网络
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%A1%86%E6%9E%B6/netty_nio_summary/" class="md-tabs__link">
+          
+  
+    
+  
+  框架
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-tabs__link">
-        杂项|运维|工具|工程规范
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95tips/" class="md-tabs__link">
-        算法
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  计算机网络
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%81%8C%E8%B4%A3%E9%93%BE/" class="md-tabs__link">
-        设计模式
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-tabs__link">
+          
+  
+    
+  
+  杂项|运维|工具|工程规范
 
+        </a>
+      </li>
+    
+  
 
+      
+        
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../%E6%9D%90%E6%96%99/" class="md-tabs__link">
-        生活
-      </a>
-    </li>
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95tips/" class="md-tabs__link">
+          
+  
+    
+  
+  算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/ai%20agent%20%E5%B0%8F%E9%BE%99%E8%99%BE/" class="md-tabs__link">
+          
+  
+    
+  
+  人工智能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%81%8C%E8%B4%A3%E9%93%BE/" class="md-tabs__link">
+          
+  
+    
+  
+  设计模式
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%9D%90%E6%96%99/" class="md-tabs__link">
+          
+  
+    
+  
+  生活
+
+        </a>
+      </li>
+    
   
 
       
@@ -472,6 +509,7 @@ var _hmt = _hmt || [];
                       
                         
 
+
   
 
 
@@ -480,7 +518,7 @@ var _hmt = _hmt || [];
     <a href="../.." title="lfjin&#39;s Blog" class="md-nav__button md-logo" aria-label="lfjin's Blog" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
 
     </a>
     lfjin's Blog
@@ -490,7 +528,7 @@ var _hmt = _hmt || [];
       <a href="https://github.com/littlejlf/mkdocsSite" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -502,8 +540,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -602,8 +638,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -670,8 +704,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -714,8 +746,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
     
@@ -817,7 +847,7 @@ var _hmt = _hmt || [];
   
     <li class="md-nav__item">
       <a href="../../lock/" class="md-nav__link">
-        Lock
+        None
       </a>
     </li>
   
@@ -831,7 +861,7 @@ var _hmt = _hmt || [];
   
     <li class="md-nav__item">
       <a href="../../CompletableFuture/" class="md-nav__link">
-        CompletableFuture
+        None
       </a>
     </li>
   
@@ -934,7 +964,7 @@ var _hmt = _hmt || [];
       
         
   
-  <nav class="md-nav md-nav--secondary " aria-label="目录">
+  <nav class="md-nav md-nav--secondary " aria-label="toc.title">
     
     
     
@@ -943,13 +973,15 @@ var _hmt = _hmt || [];
     
       <label class="md-nav__title" for="__toc">
         <span class="md-nav__icon md-icon"></span>
-        目录
+        toc.title
       </label>
       <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一、原子性是什么？
+    <span class="md-ellipsis">
+      一、原子性是什么？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="一、原子性是什么？">
@@ -957,7 +989,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    示例：非原子操作的危险
+    <span class="md-ellipsis">
+      示例：非原子操作的危险
+    </span>
   </a>
   
 </li>
@@ -969,7 +1003,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas" class="md-nav__link">
-    二、CAS：实现原子性的硬件机制
+    <span class="md-ellipsis">
+      二、CAS：实现原子性的硬件机制
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="二、CAS：实现原子性的硬件机制">
@@ -977,7 +1013,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    底层实现
+    <span class="md-ellipsis">
+      底层实现
+    </span>
   </a>
   
 </li>
@@ -988,8 +1026,10 @@ var _hmt = _hmt || [];
 </li>
         
           <li class="md-nav__item">
-  <a href="#cpu-cas" class="md-nav__link">
-    三、现代 CPU 是如何实现 CAS 原子性的？
+  <a href="#cpu_cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、现代 CPU 是如何实现 CAS 原子性的？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="三、现代 CPU 是如何实现 CAS 原子性的？">
@@ -997,14 +1037,18 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#mesi" class="md-nav__link">
-    MESI 协议四个状态
+    <span class="md-ellipsis">
+      MESI 协议四个状态
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mesi-cas" class="md-nav__link">
-    MESI 如何保障 CAS 原子性？
+  <a href="#mesi_cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      MESI 如何保障 CAS 原子性？
+    </span>
   </a>
   
 </li>
@@ -1016,7 +1060,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas_1" class="md-nav__link">
-    四、CAS 本身是否足够？
+    <span class="md-ellipsis">
+      四、CAS 本身是否足够？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="四、CAS 本身是否足够？">
@@ -1024,7 +1070,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#-" class="md-nav__link">
-    示例：发布-消费模型中的重排序问题
+    <span class="md-ellipsis">
+      示例：发布-消费模型中的重排序问题
+    </span>
   </a>
   
 </li>
@@ -1036,7 +1084,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    五、内存屏障的作用：保证可见性与有序性
+    <span class="md-ellipsis">
+      五、内存屏障的作用：保证可见性与有序性
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="五、内存屏障的作用：保证可见性与有序性">
@@ -1044,7 +1094,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas_2" class="md-nav__link">
-    CAS 搭配的内存屏障
+    <span class="md-ellipsis">
+      CAS 搭配的内存屏障
+    </span>
   </a>
   
 </li>
@@ -1056,92 +1108,118 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    六、总结：并发安全三要素协同工作
+    <span class="md-ellipsis">
+      六、总结：并发安全三要素协同工作
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    七、关键反驳与实验证明
+    <span class="md-ellipsis">
+      七、关键反驳与实验证明
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    八、延伸思考
+    <span class="md-ellipsis">
+      八、延伸思考
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#redislock" class="md-nav__link">
-    九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议
+    <span class="md-ellipsis">
+      九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-redis" class="md-nav__link">
-    1. Redis 的并发模型与原子性
+  <a href="#1_redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Redis 的并发模型与原子性
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-decr" class="md-nav__link">
-    2. DECR 在硬件上的类比
+  <a href="#2_decr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. DECR 在硬件上的类比
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-lock" class="md-nav__link">
-    3. lock 前缀：请求原子性的标志
+  <a href="#3_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. lock 前缀：请求原子性的标志
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-bus-lock" class="md-nav__link">
-    4. 总线锁（Bus Lock）：早期机制
+  <a href="#4_bus_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 总线锁（Bus Lock）：早期机制
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-mesi" class="md-nav__link">
-    5. 缓存一致性协议（MESI）：现代机制
+  <a href="#5_mesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 缓存一致性协议（MESI）：现代机制
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-vs" class="md-nav__link">
-    6. 总线锁 vs 缓存一致性协议：区别对比
+  <a href="#6_vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 总线锁 vs 缓存一致性协议：区别对比
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-mesi-lock" class="md-nav__link">
-    7. MESI 协议 + lock 的执行流程
+  <a href="#7_mesi_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. MESI 协议 + lock 的执行流程
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#8" class="md-nav__link">
-    8. 特殊情况：仍然使用总线锁的场景
+    <span class="md-ellipsis">
+      8. 特殊情况：仍然使用总线锁的场景
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#9" class="md-nav__link">
-    9. 总结
+    <span class="md-ellipsis">
+      9. 总结
+    </span>
   </a>
   
 </li>
@@ -1182,8 +1260,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -1195,6 +1271,8 @@ var _hmt = _hmt || [];
       
       
       
+        
+          
         
           
         
@@ -1647,6 +1725,75 @@ var _hmt = _hmt || [];
 
             
           
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" data-md-state="indeterminate" type="checkbox" id="__nav_5_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/python/%F0%9F%A7%AD%20Python%20%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        🧭 Python 文件路径完全指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/python/blog_async_await/" class="md-nav__link">
+        深入理解 Python 异步编程：async / await + Event Loop 本质解析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1655,8 +1802,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -1719,8 +1864,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -1732,6 +1875,8 @@ var _hmt = _hmt || [];
       
       
       
+        
+          
         
           
         
@@ -1827,6 +1972,20 @@ var _hmt = _hmt || [];
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E7%94%A8join%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        为什么不能用join联表查询
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1835,8 +1994,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -1919,8 +2076,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -2015,8 +2170,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -2028,6 +2181,10 @@ var _hmt = _hmt || [];
       
       
       
+        
+          
+        
+          
         
           
         
@@ -2283,6 +2440,34 @@ var _hmt = _hmt || [];
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B7%A5%E5%85%B7/git/Git%20%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6%E3%80%81%E5%86%B2%E7%AA%81%E6%9C%BA%E5%88%B6%E4%B8%8E%E5%8D%8F%E4%BD%9C%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B7%A5%E5%85%B7/git/Git%20%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6%E3%80%81%E5%86%B2%E7%AA%81%E6%9C%BA%E5%88%B6%E4%B8%8E%E5%8D%8F%E4%BD%9C%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        Git 合并机制、冲突模型与协作实践完整总结
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2291,8 +2476,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -2407,8 +2590,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -2423,17 +2604,67 @@ var _hmt = _hmt || [];
         
           
         
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          人工智能
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="人工智能" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          人工智能
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/ai%20agent%20%E5%B0%8F%E9%BE%99%E8%99%BE/" class="md-nav__link">
+        小龙虾 AI Agent 架构解析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
+      
+      
+      
+        
+          
+        
           
         
       
       
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_13">
           设计模式
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="设计模式" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
+        <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           设计模式
         </label>
@@ -2475,8 +2706,6 @@ var _hmt = _hmt || [];
     
       
       
-      
-
   
   
   
@@ -2484,7 +2713,7 @@ var _hmt = _hmt || [];
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" data-md-state="indeterminate" type="checkbox" id="__nav_14" checked>
       
       
       
@@ -2499,13 +2728,13 @@ var _hmt = _hmt || [];
         
       
       
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_14">
           生活
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="生活" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+        <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           生活
         </label>
@@ -2587,7 +2816,7 @@ var _hmt = _hmt || [];
                       
                         
   
-  <nav class="md-nav md-nav--secondary " aria-label="目录">
+  <nav class="md-nav md-nav--secondary " aria-label="toc.title">
     
     
     
@@ -2596,13 +2825,15 @@ var _hmt = _hmt || [];
     
       <label class="md-nav__title" for="__toc">
         <span class="md-nav__icon md-icon"></span>
-        目录
+        toc.title
       </label>
       <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一、原子性是什么？
+    <span class="md-ellipsis">
+      一、原子性是什么？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="一、原子性是什么？">
@@ -2610,7 +2841,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    示例：非原子操作的危险
+    <span class="md-ellipsis">
+      示例：非原子操作的危险
+    </span>
   </a>
   
 </li>
@@ -2622,7 +2855,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas" class="md-nav__link">
-    二、CAS：实现原子性的硬件机制
+    <span class="md-ellipsis">
+      二、CAS：实现原子性的硬件机制
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="二、CAS：实现原子性的硬件机制">
@@ -2630,7 +2865,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    底层实现
+    <span class="md-ellipsis">
+      底层实现
+    </span>
   </a>
   
 </li>
@@ -2641,8 +2878,10 @@ var _hmt = _hmt || [];
 </li>
         
           <li class="md-nav__item">
-  <a href="#cpu-cas" class="md-nav__link">
-    三、现代 CPU 是如何实现 CAS 原子性的？
+  <a href="#cpu_cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、现代 CPU 是如何实现 CAS 原子性的？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="三、现代 CPU 是如何实现 CAS 原子性的？">
@@ -2650,14 +2889,18 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#mesi" class="md-nav__link">
-    MESI 协议四个状态
+    <span class="md-ellipsis">
+      MESI 协议四个状态
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mesi-cas" class="md-nav__link">
-    MESI 如何保障 CAS 原子性？
+  <a href="#mesi_cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      MESI 如何保障 CAS 原子性？
+    </span>
   </a>
   
 </li>
@@ -2669,7 +2912,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas_1" class="md-nav__link">
-    四、CAS 本身是否足够？
+    <span class="md-ellipsis">
+      四、CAS 本身是否足够？
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="四、CAS 本身是否足够？">
@@ -2677,7 +2922,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#-" class="md-nav__link">
-    示例：发布-消费模型中的重排序问题
+    <span class="md-ellipsis">
+      示例：发布-消费模型中的重排序问题
+    </span>
   </a>
   
 </li>
@@ -2689,7 +2936,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    五、内存屏障的作用：保证可见性与有序性
+    <span class="md-ellipsis">
+      五、内存屏障的作用：保证可见性与有序性
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="五、内存屏障的作用：保证可见性与有序性">
@@ -2697,7 +2946,9 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#cas_2" class="md-nav__link">
-    CAS 搭配的内存屏障
+    <span class="md-ellipsis">
+      CAS 搭配的内存屏障
+    </span>
   </a>
   
 </li>
@@ -2709,92 +2960,118 @@ var _hmt = _hmt || [];
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    六、总结：并发安全三要素协同工作
+    <span class="md-ellipsis">
+      六、总结：并发安全三要素协同工作
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    七、关键反驳与实验证明
+    <span class="md-ellipsis">
+      七、关键反驳与实验证明
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    八、延伸思考
+    <span class="md-ellipsis">
+      八、延伸思考
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#redislock" class="md-nav__link">
-    九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议
+    <span class="md-ellipsis">
+      九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-redis" class="md-nav__link">
-    1. Redis 的并发模型与原子性
+  <a href="#1_redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Redis 的并发模型与原子性
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-decr" class="md-nav__link">
-    2. DECR 在硬件上的类比
+  <a href="#2_decr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. DECR 在硬件上的类比
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-lock" class="md-nav__link">
-    3. lock 前缀：请求原子性的标志
+  <a href="#3_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. lock 前缀：请求原子性的标志
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-bus-lock" class="md-nav__link">
-    4. 总线锁（Bus Lock）：早期机制
+  <a href="#4_bus_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 总线锁（Bus Lock）：早期机制
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-mesi" class="md-nav__link">
-    5. 缓存一致性协议（MESI）：现代机制
+  <a href="#5_mesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 缓存一致性协议（MESI）：现代机制
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-vs" class="md-nav__link">
-    6. 总线锁 vs 缓存一致性协议：区别对比
+  <a href="#6_vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 总线锁 vs 缓存一致性协议：区别对比
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-mesi-lock" class="md-nav__link">
-    7. MESI 协议 + lock 的执行流程
+  <a href="#7_mesi_lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. MESI 协议 + lock 的执行流程
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#8" class="md-nav__link">
-    8. 特殊情况：仍然使用总线锁的场景
+    <span class="md-ellipsis">
+      8. 特殊情况：仍然使用总线锁的场景
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#9" class="md-nav__link">
-    9. 总结
+    <span class="md-ellipsis">
+      9. 总结
+    </span>
   </a>
   
 </li>
@@ -2819,22 +3096,22 @@ var _hmt = _hmt || [];
               <article class="md-content__inner md-typeset">
                 
                   
-<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/并发/Java-Concurrency-Core-Extended-Again.md" title="编辑此页" class="md-content__button md-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/并发/Java-Concurrency-Core-Extended-Again.md" title="edit.link.title" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
 </a>
 
 
-<h1 id="java-casmesi">Java 并发核心机制总结：原子性、CAS、内存屏障、缓存一致性协议（MESI）<a class="headerlink" href="#java-casmesi" title="Permanent link">&para;</a></h1>
+<h1 id="java_casmesi">Java 并发核心机制总结：原子性、CAS、内存屏障、缓存一致性协议（MESI）<a class="headerlink" href="#java_casmesi" title="Permanent link">#</a></h1>
 <p>本笔记围绕以下几个关键词展开：<strong>原子性（Atomicity）</strong>、<strong>CAS（Compare-And-Swap）</strong>、<strong>内存屏障（Memory Barrier）</strong>、<strong>缓存一致性协议（MESI）</strong>。通过逐步深入的逻辑与具体示例，我们将从根源解释这些机制是如何协同工作以确保并发安全的。</p>
 <hr />
-<h2 id="_1">一、原子性是什么？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">一、原子性是什么？<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><strong>原子性</strong>指操作是<strong>不可中断的最小执行单元</strong>，要么全部执行完成，要么完全不执行。在并发环境中，原子性可防止“线程间中间状态可见”。</p>
-<h3 id="_2">示例：非原子操作的危险<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">示例：非原子操作的危险<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// 实际上包括：读取 i → 自增 → 写回 i</span>
 </code></pre></div>
 <p>在并发中，多个线程可能读取同一值，导致结果不一致。</p>
 <hr />
-<h2 id="cas">二、CAS：实现原子性的硬件机制<a class="headerlink" href="#cas" title="Permanent link">&para;</a></h2>
+<h2 id="cas">二、CAS：实现原子性的硬件机制<a class="headerlink" href="#cas" title="Permanent link">#</a></h2>
 <p>CAS（Compare-And-Swap）是一种乐观锁机制，基于硬件指令实现原子更新。</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">memory</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newValue</span><span class="p">;</span>
@@ -2843,18 +3120,18 @@ var _hmt = _hmt || [];
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="_3">底层实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">底层实现<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <ul>
 <li>x86 架构：使用 <code>lock cmpxchg</code> 实现。</li>
 <li><strong><code>lock</code> 前缀</strong>在多核中用于通知其他核心暂停对该缓存行的访问（通过总线锁或缓存一致性协议）。</li>
 </ul>
 <hr />
-<h2 id="cpu-cas">三、现代 CPU 是如何实现 CAS 原子性的？<a class="headerlink" href="#cpu-cas" title="Permanent link">&para;</a></h2>
+<h2 id="cpu_cas">三、现代 CPU 是如何实现 CAS 原子性的？<a class="headerlink" href="#cpu_cas" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>锁住总线</strong>（旧方法，昂贵，影响性能）</li>
 <li><strong>缓存一致性协议（MESI）</strong>：现代 CPU 优选方案，精细控制缓存同步。</li>
 </ul>
-<h3 id="mesi">MESI 协议四个状态<a class="headerlink" href="#mesi" title="Permanent link">&para;</a></h3>
+<h3 id="mesi">MESI 协议四个状态<a class="headerlink" href="#mesi" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -2881,15 +3158,15 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<h3 id="mesi-cas">MESI 如何保障 CAS 原子性？<a class="headerlink" href="#mesi-cas" title="Permanent link">&para;</a></h3>
+<h3 id="mesi_cas">MESI 如何保障 CAS 原子性？<a class="headerlink" href="#mesi_cas" title="Permanent link">#</a></h3>
 <ul>
 <li>CAS 操作前获取该地址缓存行的 <strong>Exclusive</strong> 或 <strong>Modified</strong> 权限。</li>
 <li>其他核心如需访问该地址，需先通过协议协商，不能直接从 L3 或主存读取。</li>
 </ul>
 <hr />
-<h2 id="cas_1">四、CAS 本身是否足够？<a class="headerlink" href="#cas_1" title="Permanent link">&para;</a></h2>
+<h2 id="cas_1">四、CAS 本身是否足够？<a class="headerlink" href="#cas_1" title="Permanent link">#</a></h2>
 <p>虽然 CAS 能保证原子性，但<strong>无法防止前后的指令被 CPU 或编译器重排</strong>，导致并发错误。</p>
-<h3 id="-">示例：发布-消费模型中的重排序问题<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<h3 id="-">示例：发布-消费模型中的重排序问题<a class="headerlink" href="#-" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">obj</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 <span class="n">cas</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">flag</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 发布完成信号</span>
 </code></pre></div>
@@ -2899,7 +3176,7 @@ var _hmt = _hmt || [];
 </code></pre></div>
 <p>另一个线程看到 flag == 1 后读取 value，可能读到旧值。</p>
 <hr />
-<h2 id="_4">五、内存屏障的作用：保证可见性与有序性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">五、内存屏障的作用：保证可见性与有序性<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>内存屏障（Memory Barrier）用于防止重排序、控制可见性。</p>
 <table>
 <thead>
@@ -2927,13 +3204,13 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<h3 id="cas_2">CAS 搭配的内存屏障<a class="headerlink" href="#cas_2" title="Permanent link">&para;</a></h3>
+<h3 id="cas_2">CAS 搭配的内存屏障<a class="headerlink" href="#cas_2" title="Permanent link">#</a></h3>
 <ul>
 <li>CAS 前：插入 <strong>StoreStore 屏障</strong>，确保之前写的内容（如 obj.value）不会被重排到 CAS 之后。</li>
 <li>CAS 后：插入 <strong>LoadLoad + LoadStore 屏障</strong>，保证读写操作不会被提前到 CAS 之前。</li>
 </ul>
 <hr />
-<h2 id="_5">六、总结：并发安全三要素协同工作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">六、总结：并发安全三要素协同工作<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -2961,7 +3238,7 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 <hr />
-<h2 id="_6">七、关键反驳与实验证明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">七、关键反驳与实验证明<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p>有人认为：</p>
 <blockquote>
 <p>“即使顺序是 CAS -&gt; value 写也没事，线程看到 flag==1 后 value 应该也有了。”</p>
@@ -2990,24 +3267,24 @@ var _hmt = _hmt || [];
 <p>结论：<strong>原子性 ≠ 并发安全。完整并发语义必须靠内存屏障保障顺序性与可见性。</strong></p>
 </blockquote>
 <hr />
-<h2 id="_7">八、延伸思考<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">八、延伸思考<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <ul>
 <li>MESI 之外还有 MOESI、MESIF 等协议，进一步优化缓存共享。</li>
 <li>Java 9 之后的 VarHandle 提供更底层可控的内存语义。</li>
 <li>高性能队列（如 Disruptor）广泛应用 CAS + 内存屏障技术。</li>
 </ul>
 <hr />
-<h2 id="redislock">九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议<a class="headerlink" href="#redislock" title="Permanent link">&para;</a></h2>
+<h2 id="redislock">九、深入扩展：Redis、Lock 前缀、总线锁与缓存一致性协议<a class="headerlink" href="#redislock" title="Permanent link">#</a></h2>
 <p>本节我们从 Redis 的单线程模型引出硬件级并发控制机制，深入理解 <code>lock</code> 指令、总线锁、MESI 缓存一致性协议三者的关系与区别。</p>
 <hr />
-<h3 id="1-redis">1. Redis 的并发模型与原子性<a class="headerlink" href="#1-redis" title="Permanent link">&para;</a></h3>
+<h3 id="1_redis">1. Redis 的并发模型与原子性<a class="headerlink" href="#1_redis" title="Permanent link">#</a></h3>
 <ul>
 <li>Redis 是单线程处理命令（事件循环 + IO 多路复用）</li>
 <li>命令如 <code>DECR key</code> 是逻辑原子的，但<strong>不是 CPU 层面的单指令</strong></li>
 <li>实际操作：<code>LOAD → DEC → STORE</code>，但 Redis 串行执行，天然顺序和线程安全</li>
 </ul>
 <hr />
-<h3 id="2-decr">2. <code>DECR</code> 在硬件上的类比<a class="headerlink" href="#2-decr" title="Permanent link">&para;</a></h3>
+<h3 id="2_decr">2. <code>DECR</code> 在硬件上的类比<a class="headerlink" href="#2_decr" title="Permanent link">#</a></h3>
 <p>在 CPU 层，相当于：</p>
 <div class="highlight"><pre><span></span><code>LOAD R1, [key]   ; 加载
 DEC R1           ; 自减
@@ -3017,7 +3294,7 @@ STORE [key], R1  ; 写回
 <li>并非原子，需要额外机制来保证“整体不可中断”</li>
 </ul>
 <hr />
-<h3 id="3-lock">3. <code>lock</code> 前缀：请求原子性的标志<a class="headerlink" href="#3-lock" title="Permanent link">&para;</a></h3>
+<h3 id="3_lock">3. <code>lock</code> 前缀：请求原子性的标志<a class="headerlink" href="#3_lock" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>lock cmpxchg [mem], eax
 </code></pre></div>
 <ul>
@@ -3025,7 +3302,7 @@ STORE [key], R1  ; 写回
 <li>不能被中断、不能和其他核心交错执行</li>
 </ul>
 <hr />
-<h3 id="4-bus-lock">4. 总线锁（Bus Lock）：早期机制<a class="headerlink" href="#4-bus-lock" title="Permanent link">&para;</a></h3>
+<h3 id="4_bus_lock">4. 总线锁（Bus Lock）：早期机制<a class="headerlink" href="#4_bus_lock" title="Permanent link">#</a></h3>
 <ul>
 <li>早期 CPU 使用 <strong>锁定地址总线</strong> 的方式来阻止其他核心访问共享内存</li>
 <li>优点：实现简单</li>
@@ -3034,7 +3311,7 @@ STORE [key], R1  ; 写回
 <li>影响大，不可扩展</li>
 </ul>
 <hr />
-<h3 id="5-mesi">5. 缓存一致性协议（MESI）：现代机制<a class="headerlink" href="#5-mesi" title="Permanent link">&para;</a></h3>
+<h3 id="5_mesi">5. 缓存一致性协议（MESI）：现代机制<a class="headerlink" href="#5_mesi" title="Permanent link">#</a></h3>
 <ul>
 <li>当 <code>lock</code> 操作针对的是<strong>可缓存地址</strong>时（RAM），现代 CPU 使用 MESI 协议</li>
 <li>将目标地址所在缓存行标记为 <code>M</code>（Modified）</li>
@@ -3042,7 +3319,7 @@ STORE [key], R1  ; 写回
 <li>达到锁定缓存行、保持原子性的效果</li>
 </ul>
 <hr />
-<h3 id="6-vs">6. 总线锁 vs 缓存一致性协议：区别对比<a class="headerlink" href="#6-vs" title="Permanent link">&para;</a></h3>
+<h3 id="6_vs">6. 总线锁 vs 缓存一致性协议：区别对比<a class="headerlink" href="#6_vs" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -3080,7 +3357,7 @@ STORE [key], R1  ; 写回
 </tbody>
 </table>
 <hr />
-<h3 id="7-mesi-lock">7. MESI 协议 + lock 的执行流程<a class="headerlink" href="#7-mesi-lock" title="Permanent link">&para;</a></h3>
+<h3 id="7_mesi_lock">7. MESI 协议 + lock 的执行流程<a class="headerlink" href="#7_mesi_lock" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>Core A            Core B
 ------            ------
 L1: [X:M]         L1: [X:I]  ← B 无效
@@ -3094,7 +3371,7 @@ L1: [X:M]         L1: [X:I]  ← B 无效
 <li><strong>无需锁总线</strong></li>
 </ul>
 <hr />
-<h3 id="8">8. 特殊情况：仍然使用总线锁的场景<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<h3 id="8">8. 特殊情况：仍然使用总线锁的场景<a class="headerlink" href="#8" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -3118,7 +3395,7 @@ L1: [X:M]         L1: [X:I]  ← B 无效
 </tbody>
 </table>
 <hr />
-<h3 id="9">9. 总结<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<h3 id="9">9. 总结<a class="headerlink" href="#9" title="Permanent link">#</a></h3>
 <blockquote>
 <p><code>lock</code> 是语义标志，具体如何实现原子性取决于底层硬件：</p>
 <ul>
@@ -3135,48 +3412,13 @@ L1: [X:M]         L1: [X:I]  ← B 无效
           </div>
           
             <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-              回到页面顶部
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              top.title
             </a>
           
         </main>
         
           <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="页脚">
-      
-        
-        <a href="../../%E5%8D%8F%E7%A8%8B/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 协程" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              协程
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../%E4%BB%8E%20Java%20%E8%AF%AD%E8%A8%80%E7%9A%84%20Redisson%20%E6%A1%86%E6%9E%B6%E4%BD%93%E7%8E%B0%E7%9A%84%E7%BA%AF%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E5%9C%A8%E5%B9%B6%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BC%98%E5%8A%BF%E4%BB%A5%E5%8F%8A%20JVM%20%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="md-footer__link md-footer__link--next" aria-label="下一页: 从 Java 语言的 Redisson 框架体现的纯函数以及在并发中的优势以及 JVM 内存结构的设计" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              从 Java 语言的 Redisson 框架体现的纯函数以及在并发中的优势以及 JVM 内存结构的设计
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3207,7 +3449,7 @@ L1: [X:M]         L1: [X:I]  ← B 无效
       <div class="md-dialog" data-md-component="dialog">
         <div class="md-dialog__inner md-typeset"></div>
       </div>
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "content.action.edit"], "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "content.action.edit"], "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "en", "search.config.pipeline": "stemmer", "search.config.separator": "[\\s\\u200b\\u3000\\-\u3001\u3002\uff0c\uff0e\uff1f\uff01\uff1b]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "select.version.title"}}</script>
       
       
         <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
