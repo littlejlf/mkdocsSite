@@ -2229,6 +2229,24 @@ var _hmt = _hmt || [];
 </li>
         
           <li class="md-nav__item">
+  <a href="#2-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CPU 执行权是怎么让出去的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-os-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 操作系统（OS）会自动把 CPU 让出去吗？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#event-loop" class="md-nav__link">
     <span class="md-ellipsis">
       五、Event Loop（事件循环）：核心引擎 ⭐
@@ -2459,7 +2477,7 @@ var _hmt = _hmt || [];
               <article class="md-content__inner md-typeset">
                 
                   
-<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/程序语言/python/blog_async_await.md" title="edit.link.title" class="md-content__button md-icon">
+<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/程序语言/python/python协程(1).md" title="edit.link.title" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
 </a>
 
@@ -2610,7 +2628,7 @@ var _hmt = _hmt || [];
 <span class="k">await</span> <span class="n">result</span>         <span class="c1"># 这里函数体才真正开始执行</span>
 </code></pre></div>
 <blockquote>
-<p>⚠️ <strong>关键纠正</strong>：调用 <code>async def</code> 函数的那一刻，函数体里的代码<strong>还没有执行</strong>，只是生成了一个「待执行的任务对象」。</p>
+<p>⚠️ <strong>关键纠正</strong>：调用 <code>async def</code> 函数的那一刻，函数体里的代码<strong>还没有执行</strong>，只是生成了一个「待执行的任务对象」。 同时如果不用await 去修饰async 函数，async不会被挂载到eventloop上</p>
 </blockquote>
 <hr />
 <h2 id="await">四、<code>await</code> 的本质<a class="headerlink" href="#await" title="Permanent link">&para;</a></h2>
@@ -2629,7 +2647,63 @@ var _hmt = _hmt || [];
 <h3 id="_9">本质上<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p><code>await</code> 的作用是：</p>
 <ol>
-<li><strong>暂停当前协程</strong>，把它移出执行队列  <strong>“当前协程”指的是 <code>await</code> 所在的那个函数（caller）</strong>而不是 <code>await</code> 后面的那个callee(foo())</li>
+<li><strong>暂停当前协程</strong>，把它移出执行队列（Ready Queue）  <strong>“当前协程”指的是 <code>await</code> 所在的那个函数（caller）</strong>而不是 <code>await</code> 后面的那个callee(foo())，foo一般是一个io密集型的任务，比如 reader.read()
+. Callee 为什么没有被“阻塞”？
+在异步语境下，我们说一个函数“阻塞”，通常是指它霸占着 CPU 却在干等。</li>
+</ol>
+<p>在异步 IO 中：Callee（比如 reader.read()）执行的操作极其迅速。它只是向操作系统内核发起一个非阻塞系统调用（Non-blocking Syscall），告诉内核：“我要读这个 Socket，没数据就立刻回我，别让我等。”</p>
+<p>结果：内核秒回一个“还没好”的消息，Callee 随即返回一个 Future 对象给 Caller。</p>
+<p>结论：Callee 的逻辑瞬间跑完并返回了，它并没有在 CPU 上“死等”，所以它没有被阻塞。</p>
+<h2 id="2-cpu">2. CPU 执行权是怎么让出去的？<a class="headerlink" href="#2-cpu" title="Permanent link">&para;</a></h2>
+<p>既然 Callee 没阻塞，为什么 CPU 还会切换去跑别的任务呢？这是 Event Loop（事件循环） 的功劳。</p>
+<p>主动权在 Python 手里：当 Caller 看到 Callee 返回的是一个“没完成的 Future”并执行 await 时，Caller 意识到：“既然还没好，那我也没法往下跑了。”</p>
+<p>主动归还：Caller 此时会主动把执行权还给 Event Loop。</p>
+<p>重新分配：Event Loop 拿到执行权后，去 Ready Queue 看看还有没有别的 Task 能跑。如果有，就切换过去。</p>
+<p>所以：CPU 权力的让出，不是因为被“卡住”了，而是因为 Caller 发现需要等待，从而“发扬风格”主动申请休眠。
+和操作系统的io事件处理的不同</p>
+<h2 id="3-os-cpu">3. 操作系统（OS）会自动把 CPU 让出去吗？<a class="headerlink" href="#3-os-cpu" title="Permanent link">&para;</a></h2>
+<p>会，但逻辑和 Python 协程完全不同。</p>
+<p>A. 硬件层面的“休眠”
+如果整个操作系统里所有的进程都在等待 IO（比如大家都在等下载），OS 会把 CPU 切入低功耗状态或运行 idle 进程。这时 CPU 确实被 OS 让出去了。</p>
+<p>B. 进程/线程层面的“抢占”
+如果你用的是多线程（Thread），OS 会强行掐断当前线程（即便它还在算数），把 CPU 给别人。这叫抢占式调度。</p>
+<p>C. 异步 IO 模式下（我们的场景）
+对于 asyncio 这种协作式调度：</p>
+<p>OS 的角色：它不会“自动”帮你的协程让出 CPU，它只负责接收申请（IO 请求）和发送通知（IO 好了）。</p>
+<p>让出的真相：是 Python 的代码逻辑在发现 IO 没好时，手动（通过 await）把控制权交还给了 Event Loop，从而让同一进程内的其他协程有机会运行。</p>
+<p>操作系统（OS）的调度逻辑与 Python 协程有本质区别：</p>
+<table>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th><strong>操作系统调度 (OS)</strong></th>
+<th><strong>Python 异步调度 (asyncio)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>调度类型</strong></td>
+<td><strong>抢占式 (Preemptive)</strong></td>
+<td><strong>协作式 (Cooperative)</strong></td>
+</tr>
+<tr>
+<td><strong>切换动机</strong></td>
+<td>OS 强行掐断当前线程（如时间片用完）。</td>
+<td>协程通过 <code>await</code> 主动发现 IO 未就绪并让出。</td>
+</tr>
+<tr>
+<td><strong>IO 角色</strong></td>
+<td>OS 内核负责监控硬件并将进程挂起。</td>
+<td>OS 只负责收申请和发通知，不负责切换协程。</td>
+</tr>
+<tr>
+<td><strong>性能消耗</strong></td>
+<td>涉及内核态切换，上下文切换成本高。</td>
+<td>纯用户态切换，成本极低。</td>
+</tr>
+</tbody>
+</table>
+<ol>
 <li><strong>把控制权交回 Event Loop</strong></li>
 <li><strong>等被调用的协程执行完毕</strong></li>
 <li><strong>Event Loop 重新调度当前协程，继续往下执行</strong></li>
