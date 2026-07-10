@@ -367,3 +367,98 @@
   background-color: rgba(255, 235, 59, 0.08);
   border-left-color: rgba(255, 235, 59, 0.5);
 }
+
+/* ===== 导航展开/收起平滑动画 ===== */
+.md-nav--primary .md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__list {
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.md-nav--primary .md-nav__item--nested .md-nav__list {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.15s ease;
+}
+
+/* instant 加载时防止闪烁 */
+.md-content__inner {
+  transition: opacity 0.15s ease;
+}
+
+/* ===== 搜索框美化 ===== */
+.md-search__inner {
+  border-radius: 6px !important;
+}
+
+.md-search__input {
+  border-radius: 6px !important;
+  font-size: 0.8rem !important;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-md-color-scheme="default"] .md-search__input:focus {
+  background-color: #fff !important;
+  box-shadow: 0 0 0 2px rgba(68, 138, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-search__input {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__input:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 2px rgba(68, 138, 255, 0.3);
+}
+
+/* 搜索结果卡片美化 */
+.md-search-result__meta {
+  font-size: 0.65rem;
+}
+
+.md-search-result__article {
+  border-radius: 4px;
+}
+
+/* ===== 代码块复制按钮美化 ===== */
+.md-clipboard {
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 4px;
+  padding: 0.4em;
+}
+
+.md-clipboard:focus,
+.md-clipboard:hover {
+  color: var(--md-accent-fg-color);
+  background-color: rgba(128, 128, 128, 0.08);
+}
+
+/* ===== 加载进度条(instant模式) ===== */
+[data-md-component="progress"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--md-accent-fg-color, #448aff);
+  z-index: 10;
+  transition: width 0.3s ease;
+}
+
+/* ===== 导航 TOC（右侧目录）折叠动画 ===== */
+.md-sidebar--secondary .md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__list {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+}
+
+.md-sidebar--secondary .md-nav__item--nested .md-nav__list {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.15s ease;
+}
