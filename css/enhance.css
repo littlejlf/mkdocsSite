@@ -216,6 +216,107 @@
   font-weight: 600;
 }
 
+/* ===== 侧边导航：多级竖线引导 ===== */
+/* 左侧导航容器：留出竖线空间 */
+.md-sidebar--primary .md-nav__list {
+  position: relative;
+}
+
+/* 每个导航项左侧竖线引导 */
+.md-sidebar--primary .md-nav__item {
+  position: relative;
+  padding-left: 0;
+}
+
+/* 竖线：连接父级到子级，不伸入最后一项 */
+.md-sidebar--primary .md-nav__item .md-nav__list {
+  position: relative;
+  margin-left: 0.8em;
+  border-left: 1px solid rgba(128, 128, 128, 0.18);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item .md-nav__list {
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 每层缩进微调 */
+.md-sidebar--primary .md-nav__item .md-nav__link {
+  padding-left: 0.4em;
+}
+
+/* 可折叠指示器：用三角形箭头代替默认的 +/- */
+.md-nav__item--nested > .md-nav__link .md-nav__icon {
+  transition: transform 0.2s ease;
+  font-size: 0.6rem;
+}
+
+/* 展开状态的箭头旋转 */
+.md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon {
+  transform: rotate(90deg);
+}
+
+/* ===== 侧边导航圆点指示器 ===== */
+/* 当前活跃页面左侧圆点指示 */
+.md-nav__link--active {
+  position: relative;
+}
+
+.md-sidebar--primary .md-nav__link--active::before {
+  content: '';
+  position: absolute;
+  left: -0.65em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--md-typeset-a-color);
+}
+
+/* ===== 左侧导航间距优化 ===== */
+.md-sidebar--primary .md-nav__item {
+  margin-top: 0.05em;
+  margin-bottom: 0.05em;
+}
+
+.md-sidebar--primary .md-nav__link {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-size: 0.78rem;
+}
+
+/* ===== 多层嵌套优化（兼容深层级） ===== */
+.md-sidebar--primary .md-nav__item .md-nav__item .md-nav__link {
+  font-size: 0.75rem;
+}
+
+/* ===== 右侧目录(TOC)同样加竖线 ===== */
+.md-sidebar--secondary .md-nav__list {
+  position: relative;
+}
+
+.md-sidebar--secondary .md-nav__item {
+  position: relative;
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__list {
+  border-left: 1px solid rgba(128, 128, 128, 0.15);
+  margin-left: 0.8em;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__item .md-nav__list {
+  border-left-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== TOC 活跃项左侧指示条 ===== */
+.md-sidebar--secondary .md-nav__link--active {
+  border-left: 2px solid var(--md-typeset-a-color);
+  padding-left: 0.5em;
+  margin-left: -0.65em;
+}
+
 /* ===== 页面标题微调 ===== */
 .md-typeset h1 {
   margin-bottom: 0.5em;
