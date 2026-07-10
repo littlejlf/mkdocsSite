@@ -1,0 +1,268 @@
+/*
+ * ============================================
+ *  MkDocs Material 视觉增强样式
+ *  兼容 mkdocs-material 8.1.4
+ *  浅色: data-md-color-scheme="default"
+ *  深色: data-md-color-scheme="slate"
+ * ============================================
+ */
+
+/* ===== 表格：斑马纹 + 悬停高亮 ===== */
+.md-typeset table:not([class]) {
+  border-radius: 4px;
+  overflow: hidden;
+  display: table;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(68, 138, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover {
+  background-color: rgba(68, 138, 255, 0.12);
+}
+
+/* ===== 引用块：左色块 + 微背景 ===== */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 0 6px 6px 0;
+  background-color: rgba(128, 128, 128, 0.03);
+  padding: 0.6em 1.2em;
+  position: relative;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* ===== 行内代码：更精致的背景 ===== */
+.md-typeset code:not(pre code) {
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+  background-color: rgba(128, 128, 128, 0.07);
+  font-size: 0.85em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== 代码块 header 区（如果存在文件名标签） ===== */
+.md-typeset .highlighttable .linenodiv {
+  border-right: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+/* ===== 图片：悬停微动效 ===== */
+.md-typeset img {
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== 提示块(Admonition)：左侧色条增强 ===== */
+.md-typeset .admonition,
+.md-typeset details {
+  border-left-width: 4px !important;
+  border-radius: 4px;
+}
+
+/* 按类型着色左侧边框 */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: #448aff !important;
+}
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-left-color: #00b0ff !important;
+}
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-left-color: #00b8d4 !important;
+}
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: #00bfa5 !important;
+}
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-left-color: #00c853 !important;
+}
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-left-color: #64dd17 !important;
+}
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: #ff9100 !important;
+}
+.md-typeset .admonition.failure,
+.md-typeset details.failure {
+  border-left-color: #ff5252 !important;
+}
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-left-color: #ff1744 !important;
+}
+.md-typeset .admonition.bug,
+.md-typeset details.bug {
+  border-left-color: #f50057 !important;
+}
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-left-color: #7c4dff !important;
+}
+.md-typeset .admonition.quote,
+.md-typeset details.quote {
+  border-left-color: #9e9e9e !important;
+}
+
+/* ===== 侧边栏滚动条美化 ===== */
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 2px;
+}
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.35);
+}
+
+/* ===== 键盘按键(kbd)美化 ===== */
+.md-typeset kbd {
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* ===== 任务列表(Tasklist)复选框美化 ===== */
+.md-typeset .task-list-control [type="checkbox"] + .task-list-indicator::before {
+  border-radius: 3px;
+}
+
+/* ===== 图片标题/说明文字 ===== */
+.md-typeset figcaption {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--lighter);
+  text-align: center;
+  margin-top: 0.3em;
+}
+
+/* ===== 链接悬停下划线动画 ===== */
+.md-typeset a {
+  transition: color 0.15s ease;
+}
+
+.md-content__inner a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ===== 数学公式(KaTeX) 渲染优化 ===== */
+.katex {
+  font-size: 1.05em !important;
+}
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}
+
+/* ===== 标签页(Tabbed)美化 ===== */
+.md-typeset .tabbed-set {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ===== 页脚版权区微调 ===== */
+.md-copyright {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+/* ===== 编辑页面按钮微调 ===== */
+.md-content__button {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.md-content__button:hover {
+  opacity: 1;
+}
+
+/* ===== 导航高亮增强 ===== */
+.md-nav__link--active {
+  font-weight: 600;
+}
+
+/* ===== 页面标题微调 ===== */
+.md-typeset h1 {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.md-typeset h2 {
+  margin-top: 1.2em;
+}
+
+/* ===== 行间距优化 ===== */
+.md-typeset {
+  line-height: 1.7;
+}
+
+.md-typeset p {
+  margin: 0.6em 0;
+}
+
+/* ===== 摘要/details 优化 ===== */
+.md-typeset details {
+  transition: border-color 0.2s ease;
+}
+
+/* ===== 搜索弹窗微调 ===== */
+[data-md-toggle="search"]:checked ~ .md-header .md-search__overlay {
+  opacity: 0.3;
+}
+
+/* ===== 移动端优化 ===== */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== 代码行高亮增强 ===== */
+.md-typeset .highlight .hll {
+  display: block;
+  margin: 0 -0.8em;
+  padding: 0 0.8em;
+  background-color: rgba(255, 235, 59, 0.12);
+  border-left: 3px solid #ffeb3b;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight .hll {
+  background-color: rgba(255, 235, 59, 0.08);
+  border-left-color: rgba(255, 235, 59, 0.5);
+}
