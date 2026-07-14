@@ -546,12 +546,12 @@
 }
 
 /* ===== 侧边栏填满视口高度 ===== */
-.md-sidebar--primary,
-.md-sidebar--secondary {
+.md-sidebar.md-sidebar--primary,
+.md-sidebar.md-sidebar--secondary {
   height: calc(100vh - 2.4rem) !important;
   max-height: calc(100vh - 2.4rem) !important;
 }
 .md-sidebar--primary .md-sidebar__scrollwrap,
 .md-sidebar--secondary .md-sidebar__scrollwrap {
-  overflow-y: auto !important;
+  overflow: auto !important;
 }
