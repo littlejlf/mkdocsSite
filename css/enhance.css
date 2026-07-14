@@ -548,5 +548,5 @@
 /* ===== 侧边栏填满视口高度 ===== */
 .md-sidebar--primary,
 .md-sidebar--secondary {
-  max-height: calc(100vh - 4.8rem);
+  max-height: calc(100vh - 4.8rem) !important;
 }
