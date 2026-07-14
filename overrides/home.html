@@ -78,6 +78,14 @@
     <link rel="stylesheet" href="/assets/cards/index.c9fa2768.css">
   </head>
   {% set direction = config.theme.direction or lang.t('direction') %}
+  <style>
+    body {
+      background-image: url(/assets/images/home/light.jpg);
+    }
+    body[data-md-color-scheme="slate"] {
+      background-image: url(/assets/images/home/dark.jpg);
+    }
+  </style>
   {% if config.theme.palette %}
     {% set palette = config.theme.palette %}
     {% if not palette is mapping %}
@@ -86,17 +94,9 @@
     {% set scheme  = palette.scheme  | replace(" ", "-") | lower %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
-    <style>
-      body {
-        background-image: url(/assets/images/home/light.jpg);
-      }
-      body[data-md-color-scheme="slate"] {
-        background-image: url(/assets/images/home/dark.jpg);
-      }
-    </style>
     <body dir="{{ direction }}" data-md-color-scheme="{{ scheme }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}" style="background-size: cover;">
   {% else %}
-    <body dir="{{ direction }}">
+    <body dir="{{ direction }}" style="background-size: cover;">
   {% endif %}
     <script src="{{ 'js/scheme.js' | url }}" type="text/javascript"></script>
     {% set features = config.theme.features or [] %}
