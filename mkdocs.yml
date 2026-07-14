@@ -10,7 +10,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
-    - navigation.sections
+    - navigation.tracking
     - navigation.top
     - navigation.indexes
     - content.action.edit
@@ -56,6 +56,8 @@ nav:
     - 编译原理/index.md
     - 编译原理/Context-free grammar.md
     - 编译原理/访问者模式和编译原理.md
+  - 静态分析、程序检测:
+    - 静态分析、程序检测/index.md
   - 并发:
     - 并发/index.md
     - 并发/抢占式线程模型.md
@@ -174,9 +176,8 @@ extra:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  - https://cdn.tonycrane.cc/utils/katex.min.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap
+  - https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap
   - css/tasklist.css
   - css/custom.css
   - css/card.css

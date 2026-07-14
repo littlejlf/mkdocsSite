@@ -65,7 +65,7 @@
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
     {% if page and page.meta and page.meta.counter %}
-      <link rel="stylesheet" href="/css/counter.css">
+      <link rel="stylesheet" href="{{ 'css/counter.css' | url }}">
     {% endif %}
     {% include "partials/javascripts/base.html" %}
     {% block analytics %}

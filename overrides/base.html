@@ -139,30 +139,29 @@
           <div class="md-main__inner md-grid">
             {% block site_nav %}
               {% if nav %}
+                {% if not (page and page.meta and page.meta.hide and "navigation" in page.meta.hide) %}
                 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                   <div class="md-sidebar__scrollwrap">
                     <div class="md-sidebar__inner">
-                      {% if page and page.meta and page.meta.hide and "navigation" in page.meta.hide %}
-                      {% else %}
-                        {% include "partials/nav.html" %}
-                      {% endif %}
+                      {% include "partials/nav.html" %}
                     </div>
                   </div>
                 </div>
+                {% endif %}
               {% endif %}
-              {% if page.toc and not "toc.integrate" in features %}
+              {% if not "toc.integrate" in features %}
                 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                   <div class="md-sidebar__scrollwrap">
                     <div class="md-sidebar__inner">
                       {% if page and page.meta and page.meta.hide and "toc" in page.meta.hide %}
-                      {% else %}
+                      {% elif page.toc %}
                         {% include "partials/toc.html" %}
                       {% endif %}
                     </div>
                   </div>
                 </div>
-                <script src="/js/toc.js" defer></script>
-                <link rel="stylesheet" href="/css/fold_toc.css">
+                <script src="{{ 'js/toc.js' | url }}" defer></script>
+                <link rel="stylesheet" href="{{ 'css/fold_toc.css' | url }}">
               {% endif %}
             {% endblock %}
             <div class="md-content" data-md-component="content">
