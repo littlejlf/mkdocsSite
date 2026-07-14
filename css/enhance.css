@@ -587,3 +587,129 @@
   overflow: hidden;
   transition: max-height 0.2s ease, opacity 0.15s ease;
 }
+
+/* ===== 代码块视觉增强 ===== */
+/* 代码块容器圆角 + 微阴影 */
+.md-typeset .highlight {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.md-typeset .highlight pre {
+  border-radius: 6px;
+}
+
+/* 代码块顶部细色条装饰 */
+.md-typeset .highlight::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #448aff, #00c853, #ff9100);
+}
+
+/* 代码区 padding 微调 */
+.md-typeset .highlight pre code {
+  padding: 0.8em 1em;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+/* 代码块在对话页面内进一步优化 */
+.ai-conversation .conv-body .highlight pre code {
+  font-size: 0.75rem;
+  padding: 0.6em 0.9em;
+}
+
+/* 行号区域优化 */
+.md-typeset .highlighttable .linenodiv {
+  border-right: 1px solid rgba(128, 128, 128, 0.12);
+  padding: 0.8em 0.5em !important;
+}
+
+.md-typeset .highlighttable .linenodiv pre {
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* 代码复制按钮位置微调 */
+.md-clipboard {
+  top: 0.4em;
+  right: 0.4em;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-clipboard:focus,
+.md-clipboard:hover {
+  color: var(--md-accent-fg-color);
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* 长代码块横向滚动优化 */
+.md-typeset .highlight pre {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.md-typeset .highlight pre::-webkit-scrollbar {
+  height: 4px;
+}
+
+.md-typeset .highlight pre::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 2px;
+}
+
+/* 代码注释颜色微调（增强可读性） */
+.md-typeset .highlight .c1,
+.md-typeset .highlight .cm,
+.md-typeset .highlight .cp,
+.md-typeset .highlight .c {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight .c1,
+[data-md-color-scheme="slate"] .md-typeset .highlight .cm,
+[data-md-color-scheme="slate"] .md-typeset .highlight .cp,
+[data-md-color-scheme="slate"] .md-typeset .highlight .c {
+  opacity: 0.7;
+}
+
+/* 代码关键字加粗 */
+.md-typeset .highlight .k,
+.md-typeset .highlight .kd,
+.md-typeset .highlight .kn,
+.md-typeset .highlight .kt,
+.md-typeset .highlight .kp {
+  font-weight: 600;
+}
+
+/* 字符串颜色舒适化 */
+[data-md-color-scheme="default"] .md-typeset .highlight .s,
+[data-md-color-scheme="default"] .md-typeset .highlight .s2,
+[data-md-color-scheme="default"] .md-typeset .highlight .s1 {
+  color: #0b8235;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight .s,
+[data-md-color-scheme="slate"] .md-typeset .highlight .s2,
+[data-md-color-scheme="slate"] .md-typeset .highlight .s1 {
+  color: #7ee787;
+}
+
+/* ===== 代码块的 macOS 风格圆点 ===== */
+.md-typeset .highlight pre {
+  padding-top: 0.5em !important;
+  position: relative;
+}
+
+/* 代码块内联代码修复 */
+.md-typeset p code {
+  font-size: 0.82em;
+}
