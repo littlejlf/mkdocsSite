@@ -449,129 +449,72 @@
   transition: width 0.3s ease;
 }
 
-/* ===== AI 对话页面样式 ===== */
-/* 整体容器 */
-.ai-conversation {
-  margin: 1em 0;
-}
-
-/* 消息块通用 */
-.ai-conversation .conv-block {
-  margin: 1em 0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* 消息头部 */
-.ai-conversation .conv-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-  padding: 0.5em 1em;
-  font-size: 0.8rem;
-}
-
-/* 角色徽章 */
-.ai-conversation .conv-badge {
-  display: inline-block;
-  padding: 0.15em 0.6em;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-}
-
-.ai-conversation .conv-badge-user {
-  background-color: rgba(68, 138, 255, 0.12);
-  color: #448aff;
-}
-
-[data-md-color-scheme="slate"] .ai-conversation .conv-badge-user {
-  background-color: rgba(68, 138, 255, 0.2);
-  color: #82b1ff;
-}
-
-.ai-conversation .conv-badge-ai {
-  background-color: rgba(0, 200, 83, 0.12);
-  color: #00c853;
-}
-
-[data-md-color-scheme="slate"] .ai-conversation .conv-badge-ai {
-  background-color: rgba(0, 200, 83, 0.2);
-  color: #69f0ae;
-}
-
-/* 时间戳 */
-.ai-conversation .conv-time {
-  color: var(--md-default-fg-color--lighter);
-  font-size: 0.75rem;
-}
-
-/* 消息内容体 */
-.ai-conversation .conv-body {
-  padding: 0 1em 0.8em;
-  line-height: 1.7;
-}
-
-/* 用户消息块 */
-.ai-conversation .conv-user {
-  background-color: rgba(68, 138, 255, 0.03);
-  border-left: 3px solid rgba(68, 138, 255, 0.35);
-  border-radius: 0 8px 8px 0;
-}
-
-[data-md-color-scheme="slate"] .ai-conversation .conv-user {
-  background-color: rgba(68, 138, 255, 0.04);
-  border-left-color: rgba(68, 138, 255, 0.3);
-}
-
-/* AI 回复块 */
-.ai-conversation .conv-ai {
-  background-color: rgba(0, 200, 83, 0.03);
-  border-left: 3px solid rgba(0, 200, 83, 0.35);
-  border-radius: 0 8px 8px 0;
-}
-
-[data-md-color-scheme="slate"] .ai-conversation .conv-ai {
-  background-color: rgba(0, 200, 83, 0.04);
-  border-left-color: rgba(0, 200, 83, 0.3);
-}
-
-/* 来源引用块 */
+/* ===== AI 对话页面样式（灰度极简） ===== */
+/* 来源引用：灰色小字，不抢眼 */
 .conv-source {
-  font-size: 0.7rem !important;
-  padding: 0.4em 1em !important;
-  margin-bottom: 1.5em !important;
-  opacity: 0.7;
-  border-left-color: var(--md-default-fg-color--lighter) !important;
-  border-left-width: 2px !important;
-  border-radius: 0 4px 4px 0 !important;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  border-left: 2px solid var(--md-default-fg-color--lighter) !important;
+  padding: 0.3em 0.8em !important;
+  margin-bottom: 1.2em !important;
   background: transparent !important;
+  border-radius: 0 !important;
 }
 
 .conv-source a {
   word-break: break-all;
 }
 
-/* 对话内代码块增强 */
-.ai-conversation .conv-body pre code {
-  font-size: 0.78rem;
+/* 对话轮次块：仅顶部一条细线区分 */
+.conv-block {
+  margin: 1.2em 0;
+  padding-top: 0.5em;
+  border-top: 1px solid rgba(128, 128, 128, 0.12);
 }
 
-.ai-conversation .conv-body code:not(pre code) {
-  font-size: 0.82em;
+[data-md-color-scheme="slate"] .conv-block {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+/* 第一轮无需顶部分隔线 */
+.conv-block:first-of-type {
+  border-top: none;
+  margin-top: 0;
+}
+
+/* 角色标签：[问] / [答] */
+.conv-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 0 0.3em 0;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.conv-label-q {
+  opacity: 0.7;
+}
+
+.conv-label-a {
+  opacity: 0.5;
+}
+
+/* 时间戳 */
+.conv-time {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lightest);
+  margin: -0.2em 0 0.6em 0;
+}
+
+/* 对话内代码块 */
+.conv-block .highlight pre code {
+  font-size: 0.75rem;
 }
 
 /* 对话内分隔线淡化 */
-.ai-conversation hr {
-  margin: 1.5em 0;
-  opacity: 0.3;
-}
-
-/* 对话内列表优化 */
-.ai-conversation .conv-body li {
-  margin: 0.2em 0;
+.conv-block hr {
+  margin: 0.8em 0;
+  opacity: 0.2;
 }
 
 /* ===== 导航 TOC（右侧目录）折叠动画 ===== */
@@ -589,7 +532,7 @@
 }
 
 /* ===== 代码块视觉增强 ===== */
-/* 代码块容器圆角 + 微阴影 */
+/* 代码块容器圆角 */
 .md-typeset .highlight {
   border-radius: 6px;
   overflow: hidden;
@@ -598,14 +541,6 @@
 
 .md-typeset .highlight pre {
   border-radius: 6px;
-}
-
-/* 代码块顶部细色条装饰 */
-.md-typeset .highlight::before {
-  content: '';
-  display: block;
-  height: 3px;
-  background: linear-gradient(90deg, #448aff, #00c853, #ff9100);
 }
 
 /* 代码区 padding 微调 */
@@ -704,10 +639,6 @@
 }
 
 /* ===== 代码块的 macOS 风格圆点 ===== */
-.md-typeset .highlight pre {
-  padding-top: 0.5em !important;
-  position: relative;
-}
 
 /* 代码块内联代码修复 */
 .md-typeset p code {
