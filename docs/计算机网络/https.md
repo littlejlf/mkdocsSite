@@ -1,6 +1,6 @@
 https://xie.infoq.cn/article/e021a8389f783e65d46149cc8
 https://namangupta01.medium.com/how-ssl-works-23d8e5ed0cfa
-<img src="../images/image-12.png" alt="ROOTCA,中间CA，SSL证书链" style="zoom: 67%;" />
+<img src="../../images/image-12.png" alt="ROOTCA,中间CA，SSL证书链" style="zoom: 67%;" />
 
 ROOTCA,中间CA,SSL证书 都包括一个公钥和签名（签名由对应私钥签署，签名可以用公钥验证，公钥解开的hash值）
 
@@ -12,10 +12,10 @@ https://www.bilibili.com/video/BV1mj421d7VE/?spm_id_from=333.788&vd_source=95ec7
 
 
 根CA是去验证中间CA的公钥是中间CA的而不是中间人的，验证根ca的公钥是不是自己的是用是原本就安装在自己的计算机里的证书签发（该证书有根ca私钥签名后安装在本机）
-<img src="../images/image-16.png" alt="Alt text" style="zoom: 33%;" />
-<img src="../images/image-15.png" alt="Alt text" style="zoom: 33%;" />
-<img src="../images/image-14.png" alt="Alt text" style="zoom: 33%;" />
-<img src="../images/image-13.png" alt="Charles SSL代理的原理" style="zoom: 67%;" />
+<img src="../../images/image-16.png" alt="Alt text" style="zoom: 33%;" />
+<img src="../../images/image-15.png" alt="Alt text" style="zoom: 33%;" />
+<img src="../../images/image-14.png" alt="Alt text" style="zoom: 33%;" />
+<img src="../../images/image-13.png" alt="Charles SSL代理的原理" style="zoom: 67%;" />
 客户端使用服务器公钥加密对称密钥的过程被Charles代理   客户端是使用的charles的证书
 
 数字证书通常包含以下内容：
