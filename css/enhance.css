@@ -544,3 +544,13 @@
 .md-typeset p code {
   font-size: 0.82em;
 }
+
+/* ===== 强制显示左侧导航（兼容 navigation.tabs） ===== */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: block;
+  }
+  .md-sidebar--secondary {
+    display: block;
+  }
+}
