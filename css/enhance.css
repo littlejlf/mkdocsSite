@@ -553,4 +553,10 @@
   .md-sidebar--secondary {
     display: block;
   }
+  /* 修复强制显示后的高度问题：让侧边栏填满视口 */
+  .md-sidebar__scrollwrap {
+    height: 100%;
+    max-height: calc(100vh - 4.8rem);
+    overflow-y: auto;
+  }
 }
