@@ -219,30 +219,6 @@
   opacity: 1;
 }
 
-/* ===== 导航高亮增强 ===== */
-.md-nav__link--active {
-  font-weight: 600;
-}
-
-/* ===== 侧边导航间距优化 ===== */
-.md-sidebar--primary .md-nav__item {
-  margin-top: 0.05em;
-  margin-bottom: 0.05em;
-}
-
-.md-sidebar--primary .md-nav__link {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  font-size: 0.78rem;
-}
-
-/* ===== 多层嵌套优化（兼容深层级） ===== */
-.md-sidebar--primary .md-nav__item .md-nav__item .md-nav__link {
-  font-size: 0.75rem;
-}
-
 /* ===== 页面标题微调 ===== */
 .md-typeset h1 {
   margin-bottom: 0.5em;
