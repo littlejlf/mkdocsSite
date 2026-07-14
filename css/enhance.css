@@ -450,6 +450,11 @@
 }
 
 /* ===== AI 对话页面样式（灰度极简） ===== */
+/* 整体容器 */
+.ai-conversation {
+  margin: 1em 0;
+}
+
 /* 来源引用：灰色小字，不抢眼 */
 .conv-source {
   font-size: 0.7rem;
