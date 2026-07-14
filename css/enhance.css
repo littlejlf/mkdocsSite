@@ -470,20 +470,13 @@
   word-break: break-all;
 }
 
-/* 对话轮次块：仅顶部一条细线区分 */
+/* 对话轮次块：仅靠间距自然区分，不加分割线 */
 .conv-block {
   margin: 1.2em 0;
-  padding-top: 0.5em;
-  border-top: 1px solid rgba(128, 128, 128, 0.12);
 }
 
-[data-md-color-scheme="slate"] .conv-block {
-  border-top-color: rgba(255, 255, 255, 0.06);
-}
-
-/* 第一轮无需顶部分隔线 */
+/* 第一轮无需上边距 */
 .conv-block:first-of-type {
-  border-top: none;
   margin-top: 0;
 }
 
