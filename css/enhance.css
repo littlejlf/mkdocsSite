@@ -549,11 +549,19 @@
 @media screen and (min-width: 76.25em) {
   .md-sidebar--primary {
     display: block;
+    position: sticky;
+    top: 4.8rem;
+    max-height: calc(100vh - 4.8rem);
+    align-self: flex-start;
   }
   .md-sidebar--secondary {
     display: block;
+    position: sticky;
+    top: 4.8rem;
+    max-height: calc(100vh - 4.8rem);
+    align-self: flex-start;
   }
-  /* 修复强制显示后的高度问题：让侧边栏填满视口 */
+  /* 让侧边栏内容滚动 */
   .md-sidebar__scrollwrap {
     height: 100%;
     max-height: calc(100vh - 4.8rem);
