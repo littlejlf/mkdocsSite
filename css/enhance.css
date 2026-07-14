@@ -546,9 +546,10 @@
 }
 
 /* ===== 侧边栏填满视口高度 ===== */
-.md-sidebar--primary .md-sidebar__scrollwrap,
-.md-sidebar--secondary .md-sidebar__scrollwrap {
-  height: 100% !important;
-  max-height: calc(100vh - 4.8rem) !important;
-  overflow-y: auto !important;
+@media screen and (min-height: 400px) {
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    height: calc(100vh - 4.8rem) !important;
+    overflow-y: auto !important;
+  }
 }
