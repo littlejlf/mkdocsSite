@@ -491,14 +491,10 @@ var _hmt = _hmt || [];
                 <script src="../js/toc.js" defer=""></script>
                 <link rel="stylesheet" href="../css/fold_toc.css">
                 <style>
-                  .md-sidebar.md-sidebar--primary,
-                  .md-sidebar.md-sidebar--secondary {
-                    display: block !important;
-                    min-height: calc(100vh - 2.4rem) !important;
-                  }
-                  .md-sidebar--primary .md-sidebar__scrollwrap,
-                  .md-sidebar--secondary .md-sidebar__scrollwrap {
-                    overflow: auto !important;
+                  @media screen and (min-width: 76.25em) {
+                    .md-sidebar--primary {
+                      display: block !important;
+                    }
                   }
                 </style>
               

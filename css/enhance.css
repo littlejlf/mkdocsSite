@@ -544,13 +544,3 @@
 .md-typeset p code {
   font-size: 0.82em;
 }
-
-/* ===== 侧边栏填满视口高度 ===== */
-.md-sidebar.md-sidebar--primary,
-.md-sidebar.md-sidebar--secondary {
-  min-height: calc(100vh - 2.4rem) !important;
-}
-.md-sidebar--primary .md-sidebar__scrollwrap,
-.md-sidebar--secondary .md-sidebar__scrollwrap {
-  overflow: auto !important;
-}
