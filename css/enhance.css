@@ -270,20 +270,6 @@
   border-left-color: rgba(255, 235, 59, 0.5);
 }
 
-/* ===== 导航展开/收起平滑动画 ===== */
-.md-nav--primary .md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__list {
-  transition: max-height 0.25s ease, opacity 0.2s ease;
-  max-height: 2000px;
-  opacity: 1;
-}
-
-.md-nav--primary .md-nav__item--nested .md-nav__list {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease, opacity 0.15s ease;
-}
-
 /* instant 加载时防止闪烁 */
 .md-content__inner {
   transition: opacity 0.15s ease;
@@ -417,21 +403,91 @@
   opacity: 0.2;
 }
 
-/* ===== 导航 TOC（右侧目录）折叠动画 ===== */
-.md-sidebar--secondary .md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__list {
-  max-height: 1000px;
-  opacity: 1;
-  transition: max-height 0.25s ease, opacity 0.2s ease;
+/* 注意：不要给 .md-nav__list 写 max-height:0 折叠动画。
+   Material 的 DOM 是 toggle ~ nav > ul.md-nav__list，
+   错误选择器 toggle:checked ~ .md-nav__list 永远匹配不上，
+   会导致左侧目录树永远折叠到只有分类标题、看不到文章。 */
+
+/* ===== 左侧导航：层级展开/收起箭头（TonyCrane 同类交互，灰度） =====
+   Material 8.x 用 .md-nav__icon + mask 画 chevron；在 lifted/灰主题下
+   可能过淡或被 display:none。这里只强化「可折叠嵌套项」的箭头可见性，
+   不改折叠逻辑（仍靠 input.md-nav__toggle + 主题 display 规则）。 */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link--index {
+  position: relative;
+  padding-right: 1.4rem;
 }
 
-.md-sidebar--secondary .md-nav__item--nested .md-nav__list {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease, opacity 0.15s ease;
+/* 子分类 label 上的箭头（如 程序语言 > java） */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link > .md-nav__icon,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link--index > label > .md-nav__icon {
+  display: inline-block !important;
+  position: absolute;
+  right: 0.15rem;
+  top: 50%;
+  float: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  opacity: 0.55;
+  transition: transform 0.2s ease, opacity 0.15s ease, background-color 0.15s ease;
+  color: var(--md-default-fg-color--light);
 }
 
-/* ===== 代码块视觉增强 ===== */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link > .md-nav__icon:hover,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link--index > label > .md-nav__icon:hover {
+  opacity: 0.9;
+  background-color: rgba(128, 128, 128, 0.12);
+}
+
+/* 折叠态：向右 chevron；展开态：向下（旋转 90deg） */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link > .md-nav__icon:after,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link--index > label > .md-nav__icon:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask-image: var(--md-nav-icon--next);
+  mask-image: var(--md-nav-icon--next);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav__link > .md-nav__icon,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav__link--index > label > .md-nav__icon,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:indeterminate ~ .md-nav__link > .md-nav__icon,
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:indeterminate ~ .md-nav__link--index > label > .md-nav__icon {
+  transform: translateY(-50%) rotate(90deg);
+  opacity: 0.8;
+}
+
+/* index 型嵌套：点击区域只在箭头 label 上，保证能 toggle */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link--index > label {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1.4rem;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 深色主题略提亮 */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item--nested > .md-nav__link > .md-nav__icon,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item--nested > .md-nav__link--index > label > .md-nav__icon {
+  opacity: 0.7;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* instant 加载时防止闪烁 */
 /* 代码块容器圆角 */
 .md-typeset .highlight {
   border-radius: 6px;
