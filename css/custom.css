@@ -1,27 +1,31 @@
 :root {
-  --md-text-font: "JetBrains Mono", "Noto Sans SC"; 
-  --md-code-font: "JetBrains Mono";
+  /* 正文：无衬线中文优先；代码：等宽专用。不要把 Mono 当正文字体。 */
+  --md-text-font: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Segoe UI", system-ui, -apple-system, sans-serif;
+  /* Mono 不含中文时回退到 Noto，避免代码块里中文掉到系统丑字体 */
+  --md-code-font: "JetBrains Mono", "Cascadia Code", "Consolas",
+    "SF Mono", ui-monospace, "Noto Sans SC", "Microsoft YaHei",
+    "PingFang SC", sans-serif;
+  --lf-code-size: 0.62rem;   /* 代码块字号：必须小于正文 */
+  --lf-code-lh: 1.55;
 }
 
-
+/* 桌面略放大可读性，但别顶到 137.5%（会让代码块显得过大） */
 @media screen and (min-width: 960px) {
-  /* body {
-    zoom: 1.1;
-  } */
   html {
-    font-size: 137.5%;
+    font-size: 118.75%;
   }
 }
 
 @media screen and (min-width: 100em) {
   html {
-    font-size: 137.5%;
+    font-size: 118.75%;
   }
 }
 
 @media screen and (min-width: 125em) {
   html {
-    font-size: 137.5%;
+    font-size: 125%;
   }
 }
 
@@ -30,23 +34,27 @@
 }
 
 .md-typeset h3 {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
   letter-spacing: 0;
+  font-family: var(--md-text-font);
 }
 
 .md-typeset {
-  font-size: .7rem;
+  font-size: 0.72rem;
+  font-family: var(--md-text-font);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.md-typeset h3 {
-  font-weight: 600;
-}
-
+/* 行内 code 略小于正文；块级 code 走 enhance 统一规则 */
 .md-typeset code:not(pre code) {
-  font-size: inherit;
+  font-family: var(--md-code-font);
+  font-size: 0.88em;
+  font-weight: 450;
 }
 
 [data-md-color-scheme="default"] {

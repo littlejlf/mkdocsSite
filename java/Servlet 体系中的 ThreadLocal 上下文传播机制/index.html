@@ -10,7 +10,7 @@
       
       
         
-          <title>材料 - blog from lf</title>
+          <title>Servlet 体系中的 ThreadLocal 上下文传播机制 - blog from lf</title>
         
       
       
@@ -98,6 +98,11 @@ var _hmt = _hmt || [];
       <label class="md-overlay" for="__drawer"></label>
       <div data-md-component="skip">
         
+          
+          <a href="#servlet-threadlocal" class="md-skip">
+            跳转至
+          </a>
+        
       </div>
       <div data-md-component="announce">
         
@@ -127,7 +132,7 @@ var _hmt = _hmt || [];
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              材料
+              Servlet 体系中的 ThreadLocal 上下文传播机制
             
           </span>
         </div>
@@ -405,15 +410,13 @@ var _hmt = _hmt || [];
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../%E7%94%9F%E6%B4%BB/" class="md-tabs__link">
         生活
       </a>
     </li>
@@ -1213,7 +1216,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/stream-reduce-summary/" class="md-nav__link">
+      <a href="../stream-reduce-summary/" class="md-nav__link">
         Java Stream API — reduce(identity, accumulator) 使用总结
       </a>
     </li>
@@ -1227,7 +1230,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%A4%A7%E8%90%A5%E9%94%80%E5%B9%B3%E5%8F%B0%E6%A0%B8%E5%BF%83%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/" class="md-nav__link">
+      <a href="../%E5%A4%A7%E8%90%A5%E9%94%80%E5%B9%B3%E5%8F%B0%E6%A0%B8%E5%BF%83%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/" class="md-nav__link">
         大营销平台核心流程梳理
       </a>
     </li>
@@ -1241,7 +1244,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/java-generics-wildcards/" class="md-nav__link">
+      <a href="../java-generics-wildcards/" class="md-nav__link">
         Java 泛型中的通配符详解：? extends T 与 ? super T
       </a>
     </li>
@@ -1255,7 +1258,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/ThreadLocal%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../ThreadLocal%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
         ThreadLocal知识总结
       </a>
     </li>
@@ -1269,7 +1272,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%85%AB%E8%82%A1%E6%96%87/java_classloader_delegation_model/" class="md-nav__link">
+      <a href="../%E5%85%AB%E8%82%A1%E6%96%87/java_classloader_delegation_model/" class="md-nav__link">
         ✅ Java 双亲委派模型
       </a>
     </li>
@@ -1283,7 +1286,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%85%AB%E8%82%A1%E6%96%87/jvm/" class="md-nav__link">
+      <a href="../%E5%85%AB%E8%82%A1%E6%96%87/jvm/" class="md-nav__link">
         Jvm
       </a>
     </li>
@@ -1297,7 +1300,7 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%85%AB%E8%82%A1%E6%96%87/%E5%85%AB%E8%82%A1%E6%96%87%E5%9B%9E%E7%AD%94/" class="md-nav__link">
+      <a href="../%E5%85%AB%E8%82%A1%E6%96%87/%E5%85%AB%E8%82%A1%E6%96%87%E5%9B%9E%E7%AD%94/" class="md-nav__link">
         八股文回答
       </a>
     </li>
@@ -2393,14 +2396,12 @@ var _hmt = _hmt || [];
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked="">
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13">
       
       
       
@@ -2424,7 +2425,7 @@ var _hmt = _hmt || [];
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">生活</a>
+          <a href="../../%E7%94%9F%E6%B4%BB/">生活</a>
           
             <label for="__nav_13">
               <span class="md-nav__icon md-icon"></span>
@@ -2445,32 +2446,10 @@ var _hmt = _hmt || [];
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        材料
-      </a>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../%E7%AF%AE%E7%90%83/" class="md-nav__link">
-        篮球
+      <a href="../../生活/材料.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2483,8 +2462,8 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../%E4%BC%98%E8%A1%A3%E5%BA%93%E9%99%8D%E4%BB%B7%E8%A1%A8/" class="md-nav__link">
-        优衣库降价表
+      <a href="../../生活/篮球.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2497,8 +2476,22 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B0%8F%E8%B4%B4%E5%A3%AB/%E4%BC%98%E8%A1%A3%E5%BA%93%E9%99%8D%E4%BB%B7%E8%A1%A8/" class="md-nav__link">
-        优衣库降价表
+      <a href="../../生活/优衣库降价表.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../生活/小贴士/优衣库降价表.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2697,6 +2690,17 @@ var _hmt = _hmt || [];
                   <div class="md-sidebar__scrollwrap">
                     <div class="md-sidebar__inner">
                       
+                        
+  
+  <nav class="md-nav md-nav--secondary " aria-label="目录">
+    
+    
+    
+      
+    
+    
+  </nav>
+                      
                     </div>
                   </div>
                 </div>
@@ -2715,16 +2719,614 @@ var _hmt = _hmt || [];
               <article class="md-content__inner md-typeset">
                 
                   
-<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/生活/材料.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/littlejlf/mkdocsSite/edit/master/docs/java/Servlet 体系中的 ThreadLocal 上下文传播机制.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 
 
-  <h1>材料</h1>
+<h1 id="servlet-threadlocal">Servlet 体系中的 ThreadLocal 上下文传播机制<a class="headerlink" href="#servlet-threadlocal" title="Permanent link">¶</a></h1>
+<p>在传统 Servlet 体系中，一个非常重要的设计思想是：</p>
+<blockquote>
+<p>一个 HTTP 请求通常由一个线程处理，因此很多上下文信息默认绑定在线程上。</p>
+</blockquote>
+<p>例如：</p>
+<ul>
+<li>当前请求信息</li>
+<li>当前登录用户</li>
+<li>当前事务</li>
+<li>日志 TraceId</li>
+</ul>
+<p>这些信息大量依赖 <code>ThreadLocal</code> 保存。</p>
+<p>这种设计在同步模型下非常简单、高效，但一旦进入异步、多线程场景，就会出现一个核心问题：</p>
+<blockquote>
+<p>请求生命周期 ≠ 线程生命周期</p>
+</blockquote>
+<p>线程发生切换后，原来的上下文可能就丢失了。</p>
+<hr>
+<h1 id="1-servlet">1. Servlet 模型中的线程与请求关系<a class="headerlink" href="#1-servlet" title="Permanent link">¶</a></h1>
+<p>传统 Servlet 请求流程：</p>
+<div class="highlight"><pre><span></span><code>HTTP Request
 
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/image-9.png" data-desc-position="bottom"><img alt="Alt text" src="../../images/image-9.png"></a>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/image-10.png" data-desc-position="bottom"><img alt="Alt text" src="../../images/image-10.png"></a>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/image-11.png" data-desc-position="bottom"><img alt="Alt text" src="../../images/image-11.png"></a></p>
+        |
+        v
+
+Tomcat 工作线程 Thread-1
+
+        |
+        v
+
+Controller
+
+        |
+        v
+
+Service
+
+        |
+        v
+
+DAO
+</code></pre></div>
+<p>在同步调用中：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+ |
+ +-- RequestContext
+ |
+ +-- SecurityContext
+ |
+ +-- Transaction
+ |
+ +-- TraceId
+</code></pre></div>
+<p>所有代码都运行在同一个线程中。</p>
+<p>因此框架可以通过：</p>
+<div class="highlight"><pre><span></span><code><span class="n">ThreadLocal</span>
+</code></pre></div>
+<p>保存当前请求相关信息。</p>
+<hr>
+<h1 id="2-threadlocal">2. ThreadLocal 为什么可以保存上下文？<a class="headerlink" href="#2-threadlocal" title="Permanent link">¶</a></h1>
+<p>ThreadLocal 的结构：</p>
+<div class="highlight"><pre><span></span><code>Thread
+
+ |
+ +-- ThreadLocalMap
+
+        |
+        +-- key=value
+</code></pre></div>
+<p>也就是说：</p>
+<blockquote>
+<p>ThreadLocal 的数据属于线程，而不是属于请求。</p>
+</blockquote>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+ThreadLocal
+
+{
+    user="张三",
+    traceId="abc123"
+}
+</code></pre></div>
+<p>只要代码仍然运行在 Thread-1：</p>
+<div class="highlight"><pre><span></span><code><span class="n">SecurityContextHolder</span><span class="p">.</span><span class="na">getContext</span><span class="p">();</span>
+</code></pre></div>
+<p>就能获取这些信息。</p>
+<hr>
+<h1 id="3-spring-threadlocal">3. Spring 中常见的 ThreadLocal 上下文<a class="headerlink" href="#3-spring-threadlocal" title="Permanent link">¶</a></h1>
+<h2 id="31-spring-security">3.1 Spring Security 用户上下文<a class="headerlink" href="#31-spring-security" title="Permanent link">¶</a></h2>
+<p>Spring Security：</p>
+<div class="highlight"><pre><span></span><code>SecurityContextHolder
+
+        |
+        v
+
+ThreadLocal
+
+        |
+        v
+
+SecurityContext
+
+        |
+        v
+
+Authentication
+
+        |
+        v
+
+当前用户
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">Authentication</span><span class="w"> </span><span class="n">authentication</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">SecurityContextHolder</span>
+<span class="w">        </span><span class="p">.</span><span class="na">getContext</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">getAuthentication</span><span class="p">();</span>
+</code></pre></div>
+<p>可以直接获取当前登录用户。</p>
+<p>原因：</p>
+<p>用户信息已经绑定到了当前线程。</p>
+<hr>
+<h1 id="32-requestcontext">3.2 RequestContext 请求上下文<a class="headerlink" href="#32-requestcontext" title="Permanent link">¶</a></h1>
+<p>Spring：</p>
+<div class="highlight"><pre><span></span><code>RequestContextHolder
+</code></pre></div>
+<p>保存：</p>
+<div class="highlight"><pre><span></span><code>HttpServletRequest
+HttpServletResponse
+Session
+Locale
+Cookie
+Header
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">RequestAttributes</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">RequestContextHolder</span><span class="p">.</span><span class="na">getRequestAttributes</span><span class="p">();</span>
+</code></pre></div>
+<p>业务代码无需层层传递：</p>
+<div class="highlight"><pre><span></span><code><span class="n">request</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">controller</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">service</span>
+</code></pre></div>
+<p>即可访问请求信息。</p>
+<hr>
+<h1 id="33-spring">3.3 Spring 事务上下文<a class="headerlink" href="#33-spring" title="Permanent link">¶</a></h1>
+<p>Spring 事务：</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(){</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>底层：</p>
+<div class="highlight"><pre><span></span><code>TransactionSynchronizationManager
+
+        |
+        v
+
+ThreadLocal
+
+        |
+        v
+
+数据库连接 Connection
+事务状态
+资源绑定
+</code></pre></div>
+<p>所以 DAO 层不需要手动传 Connection。</p>
+<p>因为：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+事务开启
+
+ThreadLocal
+ |
+ +-- Connection
+
+
+DAO
+
+从 ThreadLocal 获取连接
+</code></pre></div>
+<hr>
+<h1 id="34-traceid">3.4 日志 TraceId<a class="headerlink" href="#34-traceid" title="Permanent link">¶</a></h1>
+<p>日志框架通常使用：</p>
+<div class="highlight"><pre><span></span><code>MDC
+</code></pre></div>
+<p>内部也是：</p>
+<div class="highlight"><pre><span></span><code>ThreadLocal&lt;Map&gt;
+</code></pre></div>
+<p>保存：</p>
+<div class="highlight"><pre><span></span><code>traceId
+requestId
+userId
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>2026-07-20
+traceId=abc123
+查询订单
+</code></pre></div>
+<p>日志系统可以通过 traceId 串联整个请求链路。</p>
+<hr>
+<h1 id="35-locale">3.5 Locale 国际化上下文<a class="headerlink" href="#35-locale" title="Permanent link">¶</a></h1>
+<p>Spring：</p>
+<div class="highlight"><pre><span></span><code>LocaleContextHolder
+</code></pre></div>
+<p>保存：</p>
+<div class="highlight"><pre><span></span><code>zh_CN
+en_US
+</code></pre></div>
+<p>用于：</p>
+<ul>
+<li>国际化提示</li>
+<li>日期格式</li>
+<li>金额格式</li>
+</ul>
+<hr>
+<h1 id="4">4. 为什么异步会导致上下文丢失？<a class="headerlink" href="#4" title="Permanent link">¶</a></h1>
+<p>同步：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+Request
+
+ |
+ SecurityContext
+
+ |
+ Transaction
+
+ |
+ TraceId
+</code></pre></div>
+<p>没有问题。</p>
+<p>但是异步：</p>
+<div class="highlight"><pre><span></span><code><span class="n">CompletableFuture</span><span class="p">.</span><span class="na">runAsync</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">service</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+
+<span class="p">});</span>
+</code></pre></div>
+<p>执行流程：</p>
+<div class="highlight"><pre><span></span><code>请求线程 Thread-1
+
+        |
+        |
+        | 提交任务
+        |
+        v
+
+线程池
+
+
+        |
+        v
+
+
+异步线程 Thread-2
+
+        |
+        |
+        +-- service.run()
+</code></pre></div>
+<p>此时：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+ThreadLocal
+
+{
+ user,
+ traceId,
+ transaction
+}
+
+
+Thread-2
+
+ThreadLocal
+
+{}
+</code></pre></div>
+<p>因为：</p>
+<blockquote>
+<p>ThreadLocal 不会自动跨线程复制。</p>
+</blockquote>
+<hr>
+<h1 id="5">5. 为什么需要上下文传播？<a class="headerlink" href="#5" title="Permanent link">¶</a></h1>
+<p>异步任务虽然换了线程，但是业务上可能仍然属于同一个请求。</p>
+<p>例如：</p>
+<p>用户：</p>
+<div class="highlight"><pre><span></span><code>张三
+</code></pre></div>
+<p>提交订单。</p>
+<p>主线程：</p>
+<div class="highlight"><pre><span></span><code>创建订单
+</code></pre></div>
+<p>异步线程：</p>
+<div class="highlight"><pre><span></span><code>发送邮件
+发送短信
+记录日志
+</code></pre></div>
+<p>这些操作仍然需要：</p>
+<div class="highlight"><pre><span></span><code>当前用户
+TraceId
+租户信息
+</code></pre></div>
+<p>否则：</p>
+<div class="highlight"><pre><span></span><code>用户=null
+
+traceId=null
+</code></pre></div>
+<p>导致：</p>
+<ul>
+<li>日志无法关联</li>
+<li>权限丢失</li>
+<li>多租户错误</li>
+</ul>
+<hr>
+<h1 id="6">6. 什么叫“手动传递”？<a class="headerlink" href="#6" title="Permanent link">¶</a></h1>
+<p>最简单方式：</p>
+<div class="highlight"><pre><span></span><code><span class="n">SecurityContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">SecurityContextHolder</span><span class="p">.</span><span class="na">getContext</span><span class="p">();</span>
+
+
+<span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">SecurityContextHolder</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setContext</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="n">doSomething</span><span class="p">();</span>
+
+<span class="p">});</span>
+</code></pre></div>
+<p>流程：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+获取上下文
+
+      |
+      v
+
+传递给任务
+
+      |
+      v
+
+Thread-2
+
+恢复上下文
+</code></pre></div>
+<p>缺点：</p>
+<ul>
+<li>代码重复</li>
+<li>容易遗漏</li>
+<li>维护困难</li>
+</ul>
+<hr>
+<h1 id="7">7. 什么叫“各种包装”？<a class="headerlink" href="#7" title="Permanent link">¶</a></h1>
+<p>包装的本质：</p>
+<blockquote>
+<p>给异步任务套一层，在执行前恢复上下文，执行后清理上下文。</p>
+</blockquote>
+<hr>
+<h2 id="71-runnable">7.1 Runnable 包装<a class="headerlink" href="#71-runnable" title="Permanent link">¶</a></h2>
+<p>原始：</p>
+<div class="highlight"><pre><span></span><code><span class="n">executor</span><span class="p">.</span><span class="na">submit</span><span class="p">(</span><span class="n">task</span><span class="p">);</span>
+</code></pre></div>
+<p>包装后：</p>
+<div class="highlight"><pre><span></span><code>Runnable
+
+     |
+     v
+
+ContextAwareRunnable
+
+     |
+     v
+
+执行前:
+
+恢复 ThreadLocal
+
+
+执行后:
+
+清理 ThreadLocal
+</code></pre></div>
+<hr>
+<h2 id="72-spring-security">7.2 Spring Security 包装<a class="headerlink" href="#72-spring-security" title="Permanent link">¶</a></h2>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>DelegatingSecurityContextRunnable
+</code></pre></div>
+<p>作用：</p>
+<div class="highlight"><pre><span></span><code>捕获 SecurityContext
+
+        |
+
+异步线程恢复
+
+        |
+
+执行任务
+</code></pre></div>
+<hr>
+<h2 id="73-taskdecorator">7.3 TaskDecorator<a class="headerlink" href="#73-taskdecorator" title="Permanent link">¶</a></h2>
+<p>Spring 在线程池中常用：</p>
+<div class="highlight"><pre><span></span><code><span class="n">executor</span><span class="p">.</span><span class="na">setTaskDecorator</span><span class="p">(...)</span>
+</code></pre></div>
+<p>效果：</p>
+<div class="highlight"><pre><span></span><code>提交任务
+
+      |
+      v
+
+自动复制上下文
+
+      |
+      v
+
+线程池执行
+</code></pre></div>
+<p>业务代码不用关心。</p>
+<hr>
+<h2 id="74">7.4 上下文传播框架<a class="headerlink" href="#74" title="Permanent link">¶</a></h2>
+<p>常见方案：</p>
+<ul>
+<li>Alibaba TransmittableThreadLocal</li>
+<li>Micrometer Context Propagation</li>
+<li>OpenTelemetry Context</li>
+</ul>
+<p>它们解决：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+上下文
+
+    |
+    |
+    v
+
+Thread-2
+
+恢复上下文
+</code></pre></div>
+<hr>
+<h1 id="8-threadlocal">8. 哪些 ThreadLocal 值适合传播？<a class="headerlink" href="#8-threadlocal" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>是否推荐传播</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TraceId</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td>RequestId</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td>当前用户信息</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td>租户ID</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td>Locale</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>Request对象</td>
+<td>⚠️ 谨慎</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>⚠️ 谨慎</td>
+</tr>
+<tr>
+<td>Transaction</td>
+<td>❌ 通常不要</td>
+</tr>
+<tr>
+<td>数据库连接</td>
+<td>❌ 不允许</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="9">9. 为什么事务一般不跨线程传播？<a class="headerlink" href="#9" title="Permanent link">¶</a></h1>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(){</span>
+
+<span class="w">    </span><span class="n">CompletableFuture</span><span class="p">.</span><span class="na">runAsync</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">dao</span><span class="p">.</span><span class="na">save</span><span class="p">();</span>
+
+<span class="w">    </span><span class="p">});</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>很多人认为：</p>
+<blockquote>
+<p>异步任务应该还在事务里面。</p>
+</blockquote>
+<p>实际上：</p>
+<div class="highlight"><pre><span></span><code>Thread-1
+
+事务
+
+ |
+ Connection
+
+
+Thread-2
+
+没有事务
+
+ |
+ 新连接
+</code></pre></div>
+<p>原因：</p>
+<p>事务绑定在线程。</p>
+<p>跨线程传播事务可能导致：</p>
+<ul>
+<li>数据库连接混乱</li>
+<li>提交时间不可控</li>
+<li>事务边界不明确</li>
+</ul>
+<hr>
+<h1 id="10-spring-threadlocal">10. 为什么 Spring 不自动复制所有 ThreadLocal？<a class="headerlink" href="#10-spring-threadlocal" title="Permanent link">¶</a></h1>
+<p>因为不是所有上下文都适合复制。</p>
+<p>例如：</p>
+<h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">¶</a></h2>
+<p>里面包含：</p>
+<div class="highlight"><pre><span></span><code>Socket
+输入流
+输出流
+</code></pre></div>
+<p>请求结束后可能已经失效。</p>
+<h2 id="transaction">Transaction<a class="headerlink" href="#transaction" title="Permanent link">¶</a></h2>
+<p>里面包含：</p>
+<div class="highlight"><pre><span></span><code>数据库连接
+事务状态
+</code></pre></div>
+<p>跨线程非常危险。</p>
+<p>所以框架通常只传播明确安全的上下文。</p>
+<hr>
+<h1 id="11">11. 核心总结<a class="headerlink" href="#11" title="Permanent link">¶</a></h1>
+<p>Servlet 时代：</p>
+<div class="highlight"><pre><span></span><code>请求 = 线程
+</code></pre></div>
+<p>所以：</p>
+<div class="highlight"><pre><span></span><code>ThreadLocal
+      |
+      v
+保存上下文
+</code></pre></div>
+<p>非常方便。</p>
+<p>但是现代应用：</p>
+<div class="highlight"><pre><span></span><code>异步
+线程池
+CompletableFuture
+消息队列
+Reactive
+微服务
+</code></pre></div>
+<p>导致：</p>
+<div class="highlight"><pre><span></span><code>请求生命周期
+
+不等于
+
+线程生命周期
+</code></pre></div>
+<p>于是产生：</p>
+<div class="highlight"><pre><span></span><code>线程切换
+
+      |
+      v
+
+ThreadLocal丢失
+
+      |
+      v
+
+上下文传播
+</code></pre></div>
+<p>解决方式：</p>
+<ol>
+<li>手动传递</li>
+<li>Runnable / Callable 包装</li>
+<li>TaskDecorator</li>
+<li>Context Propagation 框架</li>
+</ol>
+<p>一句话理解：</p>
+<blockquote>
+<p>ThreadLocal 解决的是“同一个线程内共享上下文”，而上下文传播解决的是“业务请求跨线程执行时如何保持上下文连续”。</p>
+</blockquote>
 
                   
                 
@@ -2740,41 +3342,6 @@ var _hmt = _hmt || [];
         </main>
         
           <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="页脚">
-      
-        
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 生活" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              生活
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../%E7%AF%AE%E7%90%83/" class="md-footer__link md-footer__link--next" aria-label="下一页: 篮球" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              篮球
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

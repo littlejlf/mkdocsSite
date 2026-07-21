@@ -7,7 +7,7 @@
  * ============================================
  */
 
-/* ===== 表格：斑马纹 + 悬停高亮 ===== */
+/* ===== 表格：斑马纹 + 悬停高亮（灰度） ===== */
 .md-typeset table:not([class]) {
   border-radius: 4px;
   overflow: hidden;
@@ -23,11 +23,11 @@
 }
 
 .md-typeset table:not([class]) tr:hover {
-  background-color: rgba(68, 138, 255, 0.08);
+  background-color: rgba(128, 128, 128, 0.08);
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover {
-  background-color: rgba(68, 138, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 /* ===== 引用块：左色块 + 微背景 ===== */
@@ -43,16 +43,19 @@
   background-color: rgba(255, 255, 255, 0.015);
 }
 
-/* ===== 行内代码：更精致的背景 ===== */
+/* ===== 行内代码：灰度微背景，字号随正文 ===== */
 .md-typeset code:not(pre code) {
   border-radius: 3px;
-  padding: 0.15em 0.4em;
-  background-color: rgba(128, 128, 128, 0.07);
-  font-size: 0.85em;
+  padding: 0.12em 0.35em;
+  background-color: rgba(128, 128, 128, 0.08);
+  font-family: var(--md-code-font);
+  font-size: 0.88em;
+  border: 1px solid rgba(128, 128, 128, 0.08);
 }
 
 [data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
   background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 /* ===== 代码块 header 区（如果存在文件名标签） ===== */
@@ -230,13 +233,17 @@
   margin-top: 1.2em;
 }
 
-/* ===== 行间距优化 ===== */
+/* ===== 正文节奏 ===== */
 .md-typeset {
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .md-typeset p {
-  margin: 0.6em 0;
+  margin: 0.65em 0;
+}
+
+.md-typeset li {
+  margin: 0.25em 0;
 }
 
 /* ===== 摘要/details 优化 ===== */
@@ -256,18 +263,18 @@
   }
 }
 
-/* ===== 代码行高亮增强 ===== */
+/* ===== 代码行高亮（灰度，不插黄条） ===== */
 .md-typeset .highlight .hll {
   display: block;
   margin: 0 -0.8em;
   padding: 0 0.8em;
-  background-color: rgba(255, 235, 59, 0.12);
-  border-left: 3px solid #ffeb3b;
+  background-color: rgba(128, 128, 128, 0.12);
+  border-left: 2px solid rgba(128, 128, 128, 0.45);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlight .hll {
-  background-color: rgba(255, 235, 59, 0.08);
-  border-left-color: rgba(255, 235, 59, 0.5);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-left-color: rgba(255, 255, 255, 0.35);
 }
 
 /* instant 加载时防止闪烁 */
@@ -291,7 +298,7 @@
 
 [data-md-color-scheme="default"] .md-search__input:focus {
   background-color: #fff !important;
-  box-shadow: 0 0 0 2px rgba(68, 138, 255, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 [data-md-color-scheme="slate"] .md-search__input {
@@ -300,7 +307,7 @@
 
 [data-md-color-scheme="slate"] .md-search__input:focus {
   background-color: rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 0 0 2px rgba(68, 138, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
 /* 搜索结果卡片美化 */
@@ -337,70 +344,167 @@
   transition: width 0.3s ease;
 }
 
-/* ===== AI 对话页面样式（灰度极简） ===== */
-/* 整体容器 */
+/* ===== AI 对话页面样式（灰度极简，贴合博客） =====
+   无彩色气泡；用左边线 + 字重/灰阶 + 间距让「问/答」一眼可分。 */
 .ai-conversation {
-  margin: 1em 0;
+  margin: 0.8em 0 1.4em;
 }
 
-/* 来源引用：灰色小字，不抢眼 */
-.conv-source {
-  font-size: 0.7rem;
-  opacity: 0.6;
-  border-left: 2px solid var(--md-default-fg-color--lighter) !important;
-  padding: 0.3em 0.8em !important;
-  margin-bottom: 1.2em !important;
-  background: transparent !important;
-  border-radius: 0 !important;
+/* 来源：普通小字，不用 blockquote 色条 */
+.md-typeset .conv-source {
+  font-size: 0.66rem;
+  line-height: 1.5;
+  margin: 0 0 1.25em;
+  color: var(--md-default-fg-color--lighter);
 }
 
 .conv-source a {
+  color: inherit;
   word-break: break-all;
+  text-decoration: underline;
+  text-decoration-color: rgba(128, 128, 128, 0.35);
+  text-underline-offset: 2px;
 }
 
-/* 对话轮次块：仅靠间距自然区分，不加分割线 */
+.conv-source a:hover {
+  color: var(--md-default-fg-color--light);
+}
+
+/* 轮次公共：容器承载整块缩进，标题/列表/代码/表格一起移动。 */
 .conv-block {
-  margin: 1.2em 0;
+  box-sizing: border-box;
+  margin: 1.5em 0 0;
+  background: transparent;
+  border: 0;
+  border-left: 2px solid transparent;
 }
 
-/* 第一轮无需上边距 */
 .conv-block:first-of-type {
   margin-top: 0;
 }
 
-/* 角色标签：[问] / [答] */
-.conv-label {
-  font-size: 0.7rem;
+/* 问题是每轮的视觉锚点：靠左、深线、极淡灰底，不做聊天气泡。 */
+.conv-block-q {
+  margin-right: 0.4rem;
+  padding: 0.48rem 0.72rem 0.5rem;
+  border-left-color: rgba(52, 52, 52, 0.68);
+  background-color: rgba(0, 0, 0, 0.025);
+}
+
+/* 回答整体向右退一级：回答内所有 Markdown 元素随容器一起缩进。 */
+.conv-block-a {
+  margin-top: 0.72rem;
+  margin-left: 0.72rem;
+  padding: 0.18rem 0 0.2rem 0.72rem;
+  border-left-color: rgba(128, 128, 128, 0.22);
+}
+
+/* 一轮回答结束到下一轮问题，留出明确轮次间隔。 */
+.conv-block-a + .conv-block-q {
+  margin-top: 1.55rem;
+}
+
+[data-md-color-scheme="slate"] .conv-block-q {
+  border-left-color: rgba(235, 235, 235, 0.68);
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+[data-md-color-scheme="slate"] .conv-block-a {
+  border-left-color: rgba(255, 255, 255, 0.16);
+}
+
+/* [问] / [答]：同一字号，灰阶与字重拉开角色 */
+.md-typeset .conv-label {
+  display: block;
+  font-family: var(--md-text-font);
+  font-size: 0.66rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin: 0 0 0.3em 0;
-  color: var(--md-default-fg-color--lighter);
+  letter-spacing: 0.1em;
+  margin: 0 0 0.36rem;
+  padding: 0;
+  line-height: 1.3;
+  background: transparent;
+  border: 0;
 }
 
 .conv-label-q {
-  opacity: 0.9;
+  color: #3a3a3a;
 }
 
 .conv-label-a {
-  opacity: 0.8;
+  color: #8a8a8a;
+  font-weight: 500;
+  letter-spacing: 0.14em;
 }
 
-/* 时间戳 */
-.conv-time {
-  font-size: 0.65rem;
-  color: var(--md-default-fg-color--lightest);
-  margin: -0.2em 0 0.6em 0;
+[data-md-color-scheme="slate"] .conv-label-q {
+  color: #e6e6e6;
 }
 
-/* 对话内代码块 */
-.conv-block .highlight pre code {
-  font-size: 0.75rem;
+[data-md-color-scheme="slate"] .conv-label-a {
+  color: #9a9a9a;
 }
 
-/* 对话内分隔线淡化 */
-.conv-block hr {
-  margin: 0.8em 0;
-  opacity: 0.2;
+/* 时间戳：次要但可读，不使用 lightest（当前主题下过淡） */
+.md-typeset .conv-time {
+  font-size: 0.61rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.58);
+  margin: 0 0 0.38rem;
+  letter-spacing: 0.015em;
+  line-height: 1.45;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .conv-time {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* 问句正文：略沉、略重，像“用户原话” */
+.conv-block-q {
+  color: var(--md-default-fg-color);
+  font-weight: 500;
+}
+
+/* 问题通常只有一段：适当增大并收紧行高，形成每轮定位锚点。 */
+.md-typeset .conv-block-q > p:not(.conv-label):not(.conv-time) {
+  font-size: 14.25px;
+  line-height: 1.65;
+  font-weight: 500;
+  margin: 0.18rem 0 0;
+}
+
+/* 答：正常字重与对比，信息主体 */
+.conv-block-a {
+  color: var(--md-default-fg-color);
+  font-weight: 400;
+}
+
+/* 回答中的粗体只承担句内强调，不升级成小标题。 */
+.md-typeset .conv-block-a strong,
+.md-typeset .conv-block-a b {
+  font-weight: 500;
+  color: inherit;
+}
+
+/* 首段若整段加粗，也不能比回答内部标题更抢眼。 */
+.md-typeset .conv-block-a > p > strong:only-child,
+.md-typeset .conv-block-a > p > b:only-child {
+  font-weight: 500;
+}
+
+.conv-block > p:not(.conv-label):not(.conv-time) {
+  margin-top: 0.3em;
+}
+
+/* 对话内代码块的最终覆盖放在全局代码规则之后，见文件末尾。 */
+
+/* 若仍有 hr，压淡 */
+.conv-block hr,
+.ai-conversation > hr {
+  margin: 0.9em 0;
+  border: 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.18);
+  opacity: 1;
 }
 
 /* 注意：不要给 .md-nav__list 写 max-height:0 折叠动画。
@@ -487,64 +591,88 @@
   color: var(--md-default-fg-color--lighter);
 }
 
-/* instant 加载时防止闪烁 */
-/* 代码块容器圆角 */
+/* ===== 代码块排版（核心：小于正文、等宽、灰度容器） =====
+   拉丁走 Mono；中文自动回退到 Noto Sans SC（见 --md-code-font） */
+.md-typeset pre,
+.md-typeset pre > code,
+.md-typeset .highlight,
+.md-typeset .highlightcode,
+.md-typeset .highlight pre,
+.md-typeset .highlight code {
+  font-family: var(--md-code-font);
+  font-variant-east-asian: proportional-width;
+  -webkit-font-smoothing: antialiased;
+}
+
 .md-typeset .highlight {
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .md-typeset .highlight pre {
-  border-radius: 6px;
+  border-radius: 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  margin: 0;
 }
 
-/* 代码区 padding 微调 */
+/* 字号统一压小：正文 0.72rem 时，代码约 0.62rem，视觉上更“附属于正文” */
+.md-typeset pre > code,
+.md-typeset .highlight pre,
+.md-typeset .highlight pre code,
+.md-typeset .highlightcode > pre,
+.md-typeset .highlightcode > pre > code {
+  font-size: var(--lf-code-size, 0.62rem) !important;
+  line-height: var(--lf-code-lh, 1.55) !important;
+  font-weight: 400;
+  letter-spacing: 0;
+  tab-size: 2;
+}
+
 .md-typeset .highlight pre code {
-  padding: 0.8em 1em;
-  font-size: 0.78rem;
-  line-height: 1.6;
+  padding: 0.7em 0.9em;
+  display: block;
 }
 
-/* 代码块在对话页面内进一步优化 */
-.ai-conversation .conv-body .highlight pre code {
-  font-size: 0.75rem;
-  padding: 0.6em 0.9em;
-}
+/* 对话页代码块在上方对话模块中单独定义，避免在这里重复覆盖。 */
 
-/* 行号区域优化 */
+/* 行号 */
 .md-typeset .highlighttable .linenodiv {
   border-right: 1px solid rgba(128, 128, 128, 0.12);
-  padding: 0.8em 0.5em !important;
+  padding: 0.7em 0.45em !important;
 }
 
 .md-typeset .highlighttable .linenodiv pre {
   text-align: right;
-  font-size: 0.7rem;
+  font-size: calc(var(--lf-code-size, 0.62rem) * 0.92) !important;
+  line-height: var(--lf-code-lh, 1.55) !important;
   color: var(--md-default-fg-color--lighter);
+  opacity: 0.75;
 }
 
-/* 代码复制按钮位置微调 */
+/* 复制按钮：灰度，不抢眼 */
 .md-clipboard {
-  top: 0.4em;
-  right: 0.4em;
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  top: 0.35em;
+  right: 0.35em;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 3px;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
   color: var(--md-default-fg-color--lighter);
+  opacity: 0.55;
 }
 
 .md-clipboard:focus,
 .md-clipboard:hover {
-  color: var(--md-accent-fg-color);
-  background-color: rgba(128, 128, 128, 0.1);
-}
-
-/* 长代码块横向滚动优化 */
-.md-typeset .highlight pre {
-  overflow-x: auto;
-  scrollbar-width: thin;
+  color: var(--md-default-fg-color);
+  background-color: rgba(128, 128, 128, 0.12);
+  opacity: 1;
 }
 
 .md-typeset .highlight pre::-webkit-scrollbar {
@@ -552,51 +680,162 @@
 }
 
 .md-typeset .highlight pre::-webkit-scrollbar-thumb {
-  background: rgba(128, 128, 128, 0.2);
+  background: rgba(128, 128, 128, 0.22);
   border-radius: 2px;
 }
 
-/* 代码注释颜色微调（增强可读性） */
+/* 注释略淡；关键字略重；字符串跟主题，不强制高饱和绿 */
 .md-typeset .highlight .c1,
 .md-typeset .highlight .cm,
 .md-typeset .highlight .cp,
 .md-typeset .highlight .c {
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.72;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlight .c1,
 [data-md-color-scheme="slate"] .md-typeset .highlight .cm,
 [data-md-color-scheme="slate"] .md-typeset .highlight .cp,
 [data-md-color-scheme="slate"] .md-typeset .highlight .c {
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
-/* 代码关键字加粗 */
 .md-typeset .highlight .k,
 .md-typeset .highlight .kd,
 .md-typeset .highlight .kn,
 .md-typeset .highlight .kt,
 .md-typeset .highlight .kp {
-  font-weight: 600;
+  font-weight: 550;
 }
 
-/* 字符串颜色舒适化 */
-[data-md-color-scheme="default"] .md-typeset .highlight .s,
-[data-md-color-scheme="default"] .md-typeset .highlight .s2,
-[data-md-color-scheme="default"] .md-typeset .highlight .s1 {
-  color: #0b8235;
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlight .s,
-[data-md-color-scheme="slate"] .md-typeset .highlight .s2,
-[data-md-color-scheme="slate"] .md-typeset .highlight .s1 {
-  color: #7ee787;
-}
-
-/* ===== 代码块的 macOS 风格圆点 ===== */
-
-/* 代码块内联代码修复 */
+/* 行内 code 在段落里与全局一致 */
 .md-typeset p code {
-  font-size: 0.82em;
+  font-size: 0.88em;
+}
+
+/* ===== GPT 对话页最终覆盖层 =====
+   必须位于全局 code 规则之后，确保 computed style 不被 Material/全局规则反盖。 */
+.md-typeset .conv-label-a {
+  font-weight: 500;
+}
+
+.ai-conversation .highlight {
+  margin: 0.55em 0;
+  border-radius: 3px;
+  border-color: rgba(128, 128, 128, 0.1);
+}
+
+[data-md-color-scheme="slate"] .ai-conversation .highlight {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.md-typeset .ai-conversation .highlight pre,
+.md-typeset .ai-conversation .highlight pre code {
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas,
+    "Noto Sans SC", "Microsoft YaHei", "PingFang SC", monospace;
+  /* 固定像素值，避免根字号在桌面/移动端变化时让短代码块忽大忽小。 */
+  font-size: 11px !important;
+  line-height: 16px !important;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset .ai-conversation .highlight pre code {
+  padding: 0.5em 0.72em;
+}
+
+/* 块级 Markdown 现在会正常生成标题/列表/表格，收紧其块内节奏。 */
+.ai-conversation .conv-block > :first-child {
+  margin-top: 0;
+}
+
+.ai-conversation .conv-block > :last-child {
+  margin-bottom: 0;
+}
+
+/* 对话中的 Markdown 标题只是“回答内部提纲”，不能与页面主标题争夺视觉。
+   保留 h2/h3/h4 语义与 TOC，只降低视觉等级。 */
+.md-typeset .ai-conversation .conv-block h2,
+.md-typeset .ai-conversation .conv-block h3,
+.md-typeset .ai-conversation .conv-block h4 {
+  font-family: var(--md-text-font);
+  color: var(--md-default-fg-color);
+  letter-spacing: 0;
+  padding: 0;
+  border: 0;
+}
+
+.md-typeset .ai-conversation .conv-block h2 {
+  font-size: 15.5px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 1.15rem 0 0.42rem;
+}
+
+.md-typeset .ai-conversation .conv-block h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 550;
+  margin: 0.9rem 0 0.34rem;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .ai-conversation .conv-block h4 {
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0.72rem 0 0.3rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* 永久链接符号跟随标题，但弱化，避免形成第二视觉焦点。 */
+.ai-conversation .headerlink {
+  color: inherit;
+  font-size: 0.78em;
+  opacity: 0.28;
+}
+
+.ai-conversation .headerlink:hover,
+.ai-conversation .headerlink:focus {
+  opacity: 0.62;
+}
+
+.ai-conversation .conv-block ul,
+.ai-conversation .conv-block ol {
+  margin-top: 0.45em;
+  margin-bottom: 0.65em;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .conv-block-q {
+    margin-right: 0;
+    padding: 0.42rem 0.55rem 0.45rem;
+  }
+
+  .conv-block-a {
+    margin-left: 0.38rem;
+    padding-left: 0.52rem;
+  }
+
+  .conv-block-a + .conv-block-q {
+    margin-top: 1.25rem;
+  }
+
+  .md-typeset .conv-block-q > p:not(.conv-label):not(.conv-time) {
+    font-size: 14px;
+  }
+
+  /* 移动端内容宽度更窄，内部提纲再克制一点。 */
+  .md-typeset .ai-conversation .conv-block h2 {
+    font-size: 15px;
+    margin-top: 1rem;
+  }
+
+  .md-typeset .ai-conversation .conv-block h3 {
+    font-size: 13.75px;
+  }
+
+  .md-typeset .ai-conversation .conv-block h4 {
+    font-size: 13px;
+  }
 }

@@ -98,6 +98,11 @@ var _hmt = _hmt || [];
       <label class="md-overlay" for="__drawer"></label>
       <div data-md-component="skip">
         
+          
+          <a href="#1-https-ca" class="md-skip">
+            跳转至
+          </a>
+        
       </div>
       <div data-md-component="announce">
         
@@ -1882,9 +1887,421 @@ var _hmt = _hmt || [];
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HTTPS抓包与CA证书与加密 (ai 对谈)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         HTTPS抓包与CA证书与加密 (ai 对谈)
       </a>
+      
+        
+  
+  <nav class="md-nav md-nav--secondary " aria-label="目录">
+    
+    
+    
+    
+      <label class="md-nav__title" for="__toc">
+        <span class="md-nav__icon md-icon"></span>
+        目录
+      </label>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+        
+          <li class="md-nav__item">
+  <a href="#1-https-ca" class="md-nav__link">
+    1. 为什么 HTTPS 抓包需要 CA 证书？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca" class="md-nav__link">
+    2. CA 证书的作用是什么？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-https" class="md-nav__link">
+    3. HTTPS 会加密哪些内容？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. HTTPS 会加密哪些内容？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    加密：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-url" class="md-nav__link">
+    ① URL路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    ② 请求参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-header" class="md-nav__link">
+    ③ Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    ④ 返回数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-https" class="md-nav__link">
+    4. 哪些东西 HTTPS 默认不加密？
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 哪些东西 HTTPS 默认不加密？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ip" class="md-nav__link">
+    ① IP 地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    ② 端口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dns" class="md-nav__link">
+    ③ DNS 查询（传统情况）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tls" class="md-nav__link">
+    ④ TLS握手信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-app" class="md-nav__link">
+    5. 为什么 App 抓包经常需要安装证书？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-app" class="md-nav__link">
+    6. 但是现在很多 App 仍然抓不到
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 但是现在很多 App 仍然抓不到">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssl-pinning" class="md-nav__link">
+    SSL Pinning（证书锁定）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mitmproxy" class="md-nav__link">
+    7. 你之前提到的 mitmproxy + 微信小程序场景
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 你之前提到的 mitmproxy + 微信小程序场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iphoneios" class="md-nav__link">
+    iPhone（iOS）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ca" class="md-nav__link">
+    1. 「假设根 CA 私钥在本机」——这个不准确
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca_1" class="md-nav__link">
+    2. 为什么根 CA 私钥不需要传输？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 用户为什么能验证？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 用户为什么能验证？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    私钥：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公钥：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-https_1" class="md-nav__link">
+    4. 那么 HTTPS 私钥在哪里？
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 那么 HTTPS 私钥在哪里？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ca" class="md-nav__link">
+    第一套：CA 私钥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    第二套：服务器私钥
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 「除非本机失窃」这个也需要改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-https-ca" class="md-nav__link">
+    6. HTTPS 抓包为什么安装 CA？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正确的流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    客户端如何验证？
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端如何验证？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    第一步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    第二步
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    为什么说"不是加密"？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    可以这样记忆
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ca_1" class="md-nav__link">
+    1. 根 CA 私钥太重要，不能频繁使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca_2" class="md-nav__link">
+    2. 引入中间 CA 后
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3. 为什么这样更安全？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 为什么这样更安全？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aca" class="md-nav__link">
+    情况A：没有中间CA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bca" class="md-nav__link">
+    情况B：有中间CA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4. 类似公司权限模型
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 类似公司权限模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ca_1" class="md-nav__link">
+    没有中间CA：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ca_2" class="md-nav__link">
+    有中间CA：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    5. 那验证过程是不是更复杂？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 为什么不无限增加？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 回到你的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    
+  </nav>
       
     </li>
   
@@ -2455,8 +2872,8 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%9F%E6%B4%BB/%E6%9D%90%E6%96%99/" class="md-nav__link">
-        材料
+      <a href="../../生活/材料.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2469,8 +2886,8 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%9F%E6%B4%BB/%E7%AF%AE%E7%90%83/" class="md-nav__link">
-        篮球
+      <a href="../../生活/篮球.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2483,8 +2900,8 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%9F%E6%B4%BB/%E4%BC%98%E8%A1%A3%E5%BA%93%E9%99%8D%E4%BB%B7%E8%A1%A8/" class="md-nav__link">
-        优衣库降价表
+      <a href="../../生活/优衣库降价表.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2497,8 +2914,8 @@ var _hmt = _hmt || [];
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%9F%E6%B4%BB/%E5%B0%8F%E8%B4%B4%E5%A3%AB/%E4%BC%98%E8%A1%A3%E5%BA%93%E9%99%8D%E4%BB%B7%E8%A1%A8/" class="md-nav__link">
-        优衣库降价表
+      <a href="../../生活/小贴士/优衣库降价表.md" class="md-nav__link">
+        None
       </a>
     </li>
   
@@ -2697,6 +3114,413 @@ var _hmt = _hmt || [];
                   <div class="md-sidebar__scrollwrap">
                     <div class="md-sidebar__inner">
                       
+                        
+  
+  <nav class="md-nav md-nav--secondary " aria-label="目录">
+    
+    
+    
+    
+      <label class="md-nav__title" for="__toc">
+        <span class="md-nav__icon md-icon"></span>
+        目录
+      </label>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+        
+          <li class="md-nav__item">
+  <a href="#1-https-ca" class="md-nav__link">
+    1. 为什么 HTTPS 抓包需要 CA 证书？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca" class="md-nav__link">
+    2. CA 证书的作用是什么？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-https" class="md-nav__link">
+    3. HTTPS 会加密哪些内容？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. HTTPS 会加密哪些内容？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    加密：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-url" class="md-nav__link">
+    ① URL路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    ② 请求参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-header" class="md-nav__link">
+    ③ Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    ④ 返回数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-https" class="md-nav__link">
+    4. 哪些东西 HTTPS 默认不加密？
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 哪些东西 HTTPS 默认不加密？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ip" class="md-nav__link">
+    ① IP 地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    ② 端口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dns" class="md-nav__link">
+    ③ DNS 查询（传统情况）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tls" class="md-nav__link">
+    ④ TLS握手信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-app" class="md-nav__link">
+    5. 为什么 App 抓包经常需要安装证书？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-app" class="md-nav__link">
+    6. 但是现在很多 App 仍然抓不到
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 但是现在很多 App 仍然抓不到">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssl-pinning" class="md-nav__link">
+    SSL Pinning（证书锁定）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mitmproxy" class="md-nav__link">
+    7. 你之前提到的 mitmproxy + 微信小程序场景
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 你之前提到的 mitmproxy + 微信小程序场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iphoneios" class="md-nav__link">
+    iPhone（iOS）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ca" class="md-nav__link">
+    1. 「假设根 CA 私钥在本机」——这个不准确
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca_1" class="md-nav__link">
+    2. 为什么根 CA 私钥不需要传输？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 用户为什么能验证？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 用户为什么能验证？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    私钥：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公钥：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-https_1" class="md-nav__link">
+    4. 那么 HTTPS 私钥在哪里？
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 那么 HTTPS 私钥在哪里？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ca" class="md-nav__link">
+    第一套：CA 私钥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    第二套：服务器私钥
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 「除非本机失窃」这个也需要改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-https-ca" class="md-nav__link">
+    6. HTTPS 抓包为什么安装 CA？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正确的流程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    客户端如何验证？
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端如何验证？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    第一步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    第二步
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    为什么说"不是加密"？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    可以这样记忆
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ca_1" class="md-nav__link">
+    1. 根 CA 私钥太重要，不能频繁使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ca_2" class="md-nav__link">
+    2. 引入中间 CA 后
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3. 为什么这样更安全？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 为什么这样更安全？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aca" class="md-nav__link">
+    情况A：没有中间CA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bca" class="md-nav__link">
+    情况B：有中间CA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4. 类似公司权限模型
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 类似公司权限模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ca_1" class="md-nav__link">
+    没有中间CA：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ca_2" class="md-nav__link">
+    有中间CA：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    5. 那验证过程是不是更复杂？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 为什么不无限增加？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 回到你的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    
+  </nav>
+                      
                     </div>
                   </div>
                 </div>
@@ -2723,50 +3547,34 @@ var _hmt = _hmt || [];
   <h1>HTTPS抓包与CA证书与加密 (ai 对谈)</h1>
 
 <div class="ai-conversation">
-<blockquote class="conv-source">来源：<a href="https://chatgpt.com/c/6a55920f-56a4-83ee-b8e1-24a0b643aa1f">https://chatgpt.com/c/6a55920f-56a4-83ee-b8e1-24a0b643aa1f</a></blockquote>
-
-<div class="conv-block">
+<p class="conv-source">来源：<a href="https://chatgpt.com/c/6a55920f-56a4-83ee-b8e1-24a0b643aa1f">https://chatgpt.com/c/6a55920f-56a4-83ee-b8e1-24a0b643aa1f</a></p>
+<div class="conv-block conv-block-q">
 <p class="conv-label conv-label-q">[问]</p>
-message time: 2026-07-14 09:34:06
-
-抓https的包是不是一定要用安装ca证书 https 是会加密哪些内容
-
----
-
+<p class="conv-time">2026-07-14 09:34:06</p>
+<p>抓https的包是不是一定要用安装ca证书 https 是会加密哪些内容</p>
 </div>
-<div class="conv-block">
+<div class="conv-block conv-block-a">
 <p class="conv-label conv-label-a">[答]</p>
-
-是的，**抓 HTTPS 包通常需要安装 CA 证书**，但要看你抓包的方式。
-
-## 1. 为什么 HTTPS 抓包需要 CA 证书？
-
-HTTPS 本质是：
-
+<p>是的，<strong>抓 HTTPS 包通常需要安装 CA 证书</strong>，但要看你抓包的方式。</p>
+<h2 id="1-https-ca">1. 为什么 HTTPS 抓包需要 CA 证书？<a class="headerlink" href="#1-https-ca" title="Permanent link">¶</a></h2>
+<p>HTTPS 本质是：</p>
 <div class="highlight"><pre><span></span><code>客户端（浏览器/App）
         |
         |  TLS 加密
         |
 服务器
 </code></pre></div>
-
-中间的数据是加密的。
-
-例如你访问：
-
+<p>中间的数据是加密的。</p>
+<p>例如你访问：</p>
 <div class="highlight"><pre><span></span><code>https://www.example.com/login
 </code></pre></div>
-
-正常抓包工具（Wireshark、Charles、Fiddler、mitmproxy）只能看到：
-
+<p>正常抓包工具（Wireshark、Charles、Fiddler、mitmproxy）只能看到：</p>
 <div class="highlight"><pre><span></span><code>客户端 -&gt; IP地址
 目标端口 -&gt; 443
 TLS握手
 加密数据
 </code></pre></div>
-
-看不到：
-
+<p>看不到：</p>
 <div class="highlight"><pre><span></span><code>GET /login
 username=xxx
 password=xxx
@@ -2774,26 +3582,17 @@ Cookie=xxx
 JSON参数
 返回内容
 </code></pre></div>
-
-因为这些都在 TLS 加密层里面。
-
----
-
-## 2. CA 证书的作用是什么？
-
-抓包工具一般采用 **HTTPS 中间人代理（MITM）**：
-
-原本：
-
+<p>因为这些都在 TLS 加密层里面。</p>
+<h2 id="2-ca">2. CA 证书的作用是什么？<a class="headerlink" href="#2-ca" title="Permanent link">¶</a></h2>
+<p>抓包工具一般采用 <strong>HTTPS 中间人代理（MITM）</strong>：</p>
+<p>原本：</p>
 <div class="highlight"><pre><span></span><code>客户端
    |
    | HTTPS
    |
 服务器
 </code></pre></div>
-
-变成：
-
+<p>变成：</p>
 <div class="highlight"><pre><span></span><code>客户端
    |
    | HTTPS
@@ -2804,221 +3603,122 @@ JSON参数
    |
 服务器
 </code></pre></div>
-
-抓包工具需要伪造一个服务器证书：
-
-比如：
-
-真实：
-
+<p>抓包工具需要伪造一个服务器证书：</p>
+<p>比如：</p>
+<p>真实：</p>
 <div class="highlight"><pre><span></span><code>www.baidu.com
 证书：
 百度CA签发
 </code></pre></div>
-
-抓包工具生成：
-
+<p>抓包工具生成：</p>
 <div class="highlight"><pre><span></span><code>www.baidu.com
 证书：
 你的抓包工具CA签发
 </code></pre></div>
-
-客户端收到：
-
+<p>客户端收到：</p>
 <div class="highlight"><pre><span></span><code>www.baidu.com证书
 </code></pre></div>
-
-会检查：
-
+<p>会检查：</p>
 <div class="highlight"><pre><span></span><code>这个证书是谁签发的？
 </code></pre></div>
-
-如果系统信任：
-
+<p>如果系统信任：</p>
 <div class="highlight"><pre><span></span><code>你的抓包工具CA
 </code></pre></div>
-
-那么认为合法。
-
-所以你需要安装：
-
+<p>那么认为合法。</p>
+<p>所以你需要安装：</p>
 <div class="highlight"><pre><span></span><code>Charles Root CA
 Fiddler Root Certificate
 mitmproxy CA
 </code></pre></div>
-
-等。
-
----
-
-## 3. HTTPS 会加密哪些内容？
-
-HTTPS = HTTP + TLS
-
-TLS 加密的是 HTTP 层内容。
-
-### 加密：
-
-### ① URL路径
-
-例如：
-
+<p>等。</p>
+<h2 id="3-https">3. HTTPS 会加密哪些内容？<a class="headerlink" href="#3-https" title="Permanent link">¶</a></h2>
+<p>HTTPS = HTTP + TLS</p>
+<p>TLS 加密的是 HTTP 层内容。</p>
+<h3 id="_1">加密：<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="1-url">① URL路径<a class="headerlink" href="#1-url" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>https://example.com/user/info?id=100
 </code></pre></div>
-
-HTTP层：
-
+<p>HTTP层：</p>
 <div class="highlight"><pre><span></span><code>GET /user/info?id=100 HTTP/1.1
 </code></pre></div>
-
-会加密。
-
-
-但是：
-
-域名通常在 TLS 握手前通过：
-
+<p>会加密。</p>
+<p>但是：</p>
+<p>域名通常在 TLS 握手前通过：</p>
 <div class="highlight"><pre><span></span><code>SNI(Server Name Indication)
 </code></pre></div>
-
-暴露。
-
-所以运营商可能知道：
-
+<p>暴露。</p>
+<p>所以运营商可能知道：</p>
 <div class="highlight"><pre><span></span><code>你访问 example.com
 </code></pre></div>
-
-但不知道：
-
+<p>但不知道：</p>
 <div class="highlight"><pre><span></span><code>/user/info?id=100
 </code></pre></div>
-
----
-
-### ② 请求参数
-
-例如：
-
-POST：
-
+<h3 id="2">② 请求参数<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<p>POST：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w"> </span><span class="nt">"username"</span><span class="p">:</span><span class="s2">"admin"</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">"password"</span><span class="p">:</span><span class="s2">"123456"</span>
 <span class="p">}</span>
 </code></pre></div>
-
-加密。
-
-
----
-
-### ③ Header
-
-例如：
-
+<p>加密。</p>
+<h3 id="3-header">③ Header<a class="headerlink" href="#3-header" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>Authorization: Bearer xxxx
 
 Cookie: JSESSIONID=abc
 </code></pre></div>
-
-加密。
-
-
----
-
-### ④ 返回数据
-
-例如：
-
-服务器返回：
-
+<p>加密。</p>
+<h3 id="4">④ 返回数据<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<p>服务器返回：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"张三"</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">"age"</span><span class="p">:</span><span class="mi">20</span>
 <span class="p">}</span>
 </code></pre></div>
-
-加密。
-
----
-
-## 4. 哪些东西 HTTPS 默认不加密？
-
-### ① IP 地址
-
-例如：
-
+<p>加密。</p>
+<h2 id="4-https">4. 哪些东西 HTTPS 默认不加密？<a class="headerlink" href="#4-https" title="Permanent link">¶</a></h2>
+<h3 id="1-ip">① IP 地址<a class="headerlink" href="#1-ip" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>192.168.1.10 -&gt; 443
 </code></pre></div>
-
-网络层信息无法隐藏。
-
----
-
-### ② 端口
-
-例如：
-
+<p>网络层信息无法隐藏。</p>
+<h3 id="2_1">② 端口<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>TCP 443
 </code></pre></div>
-
-可见。
-
-
----
-
-### ③ DNS 查询（传统情况）
-
-以前：
-
+<p>可见。</p>
+<h3 id="3-dns">③ DNS 查询（传统情况）<a class="headerlink" href="#3-dns" title="Permanent link">¶</a></h3>
+<p>以前：</p>
 <div class="highlight"><pre><span></span><code>www.baidu.com
 </code></pre></div>
-
-DNS 查询是明文。
-
-现在有：
-
-- DoH
-- DoT
-
-可以加密 DNS。
-
-
----
-
-### ④ TLS握手信息
-
-例如：
-
+<p>DNS 查询是明文。</p>
+<p>现在有：</p>
+<ul>
+<li>DoH</li>
+<li>DoT</li>
+</ul>
+<p>可以加密 DNS。</p>
+<h3 id="4-tls">④ TLS握手信息<a class="headerlink" href="#4-tls" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>TLS版本
 加密算法
 证书信息
 </code></pre></div>
-
-部分可见。
-
-
----
-
-## 5. 为什么 App 抓包经常需要安装证书？
-
-比如微信小程序、App：
-
-请求：
-
+<p>部分可见。</p>
+<h2 id="5-app">5. 为什么 App 抓包经常需要安装证书？<a class="headerlink" href="#5-app" title="Permanent link">¶</a></h2>
+<p>比如微信小程序、App：</p>
+<p>请求：</p>
 <div class="highlight"><pre><span></span><code>https://api.xxx.com/user
 </code></pre></div>
-
-没有证书：
-
-mitmproxy看到：
-
+<p>没有证书：</p>
+<p>mitmproxy看到：</p>
 <div class="highlight"><pre><span></span><code>TLS Application Data
 乱码
 </code></pre></div>
-
-安装 CA 后：
-
+<p>安装 CA 后：</p>
 <div class="highlight"><pre><span></span><code>POST /user
 
 {
@@ -3026,29 +3726,18 @@ mitmproxy看到：
  token:"xxxx"
 }
 </code></pre></div>
-
-就能看到。
-
-
----
-
-## 6. 但是现在很多 App 仍然抓不到
-
-因为有：
-
-### SSL Pinning（证书锁定）
-
-普通流程：
-
+<p>就能看到。</p>
+<h2 id="6-app">6. 但是现在很多 App 仍然抓不到<a class="headerlink" href="#6-app" title="Permanent link">¶</a></h2>
+<p>因为有：</p>
+<h3 id="ssl-pinning">SSL Pinning（证书锁定）<a class="headerlink" href="#ssl-pinning" title="Permanent link">¶</a></h3>
+<p>普通流程：</p>
 <div class="highlight"><pre><span></span><code>App
  |
 检查系统CA
  |
 信任你的抓包证书
 </code></pre></div>
-
-SSL Pinning：
-
+<p>SSL Pinning：</p>
 <div class="highlight"><pre><span></span><code>App
  |
 检查服务器证书指纹
@@ -3057,32 +3746,24 @@ SSL Pinning：
  |
 拒绝连接
 </code></pre></div>
-
-即使安装 CA：
-
+<p>即使安装 CA：</p>
 <div class="highlight"><pre><span></span><code>抓包失败
 </code></pre></div>
-
-常见于：
-
-- 银行 App
-- 支付 App
-- 高安全 App
-
-
-需要：
-
-- Frida hook
-- Objection
-- 修改 APK
-- 绕过 pinning
-
----
-
-## 7. 你之前提到的 mitmproxy + 微信小程序场景
-
-你的流程大概是：
-
+<p>常见于：</p>
+<ul>
+<li>银行 App</li>
+<li>支付 App</li>
+<li>高安全 App</li>
+</ul>
+<p>需要：</p>
+<ul>
+<li>Frida hook</li>
+<li>Objection</li>
+<li>修改 APK</li>
+<li>绕过 pinning</li>
+</ul>
+<h2 id="7-mitmproxy">7. 你之前提到的 mitmproxy + 微信小程序场景<a class="headerlink" href="#7-mitmproxy" title="Permanent link">¶</a></h2>
+<p>你的流程大概是：</p>
 <div class="highlight"><pre><span></span><code>微信开发者工具/App
         |
         |
@@ -3091,61 +3772,83 @@ SSL Pinning：
         |
     HTTPS服务器
 </code></pre></div>
-
-需要：
-
-1. 安装 mitmproxy CA
-2. 配置代理
-3. App信任证书
-
-之后才能看到：
-
+<p>需要：</p>
+<ol>
+<li>安装 mitmproxy CA</li>
+<li>配置代理</li>
+<li>App信任证书</li>
+</ol>
+<p>之后才能看到：</p>
 <div class="highlight"><pre><span></span><code>请求URL
 Header
 Cookie
 POST参数
 返回JSON
 </code></pre></div>
-
-否则只能看到 TLS 加密流量。
-
-简单总结：
-
-|内容|HTTPS是否加密|
-|-|-|
-|域名|通常部分暴露(SNI)|
-|IP|不加密|
-|端口|不加密|
-|URL路径|✅|
-|GET参数|✅|
-|POST数据|✅|
-|Cookie|✅|
-|Token|✅|
-|返回JSON|✅|
-|HTTP Header|✅|
-
-所以**抓 HTTPS 包的核心不是“破解加密”，而是让抓包工具成为一个被客户端信任的 HTTPS 中间人**。安装 CA 证书就是让客户端信任它。
-
----
-
-<div class="conv-block">
-<p class="conv-label conv-label-q">[问]</p>
-message time: 2026-07-14 09:35:02
-
-ca 要安装在根上吗
-
----
-
+<p>否则只能看到 TLS 加密流量。</p>
+<p>简单总结：</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>HTTPS是否加密</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>域名</td>
+<td>通常部分暴露(SNI)</td>
+</tr>
+<tr>
+<td>IP</td>
+<td>不加密</td>
+</tr>
+<tr>
+<td>端口</td>
+<td>不加密</td>
+</tr>
+<tr>
+<td>URL路径</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>GET参数</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>POST数据</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>返回JSON</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>HTTP Header</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>所以<strong>抓 HTTPS 包的核心不是“破解加密”，而是让抓包工具成为一个被客户端信任的 HTTPS 中间人</strong>。安装 CA 证书就是让客户端信任它。</p>
 </div>
-<div class="conv-block">
+<div class="conv-block conv-block-q">
+<p class="conv-label conv-label-q">[问]</p>
+<p class="conv-time">2026-07-14 09:35:02</p>
+<p>ca 要安装在根上吗</p>
+</div>
+<div class="conv-block conv-block-a">
 <p class="conv-label conv-label-a">[答]</p>
-
-**是的，一般就是安装到"受信任的根证书颁发机构（Trusted Root Certification Authorities）"。**
-
-原因在于证书的信任链。
-
-正常情况下：
-
+<p><strong>是的，一般就是安装到"受信任的根证书颁发机构（Trusted Root Certification Authorities）"。</strong></p>
+<p>原因在于证书的信任链。</p>
+<p>正常情况下：</p>
 <div class="highlight"><pre><span></span><code>      根CA（Root CA）
            │
            ▼
@@ -3154,97 +3857,69 @@ ca 要安装在根上吗
            ▼
      www.example.com 证书
 </code></pre></div>
-
-浏览器或操作系统只要**信任根 CA**，就会信任它签发的所有下级证书。
-
-抓包工具（如 Charles、Fiddler、mitmproxy）会自己生成一个**根 CA**：
-
+<p>浏览器或操作系统只要<strong>信任根 CA</strong>，就会信任它签发的所有下级证书。</p>
+<p>抓包工具（如 Charles、Fiddler、mitmproxy）会自己生成一个<strong>根 CA</strong>：</p>
 <div class="highlight"><pre><span></span><code>mitmproxy Root CA
         │
         ▼
 api.example.com（伪造证书）
 </code></pre></div>
-
-如果把 `mitmproxy Root CA` 安装到：
-
+<p>如果把 <code>mitmproxy Root CA</code> 安装到：</p>
 <div class="highlight"><pre><span></span><code>受信任的根证书颁发机构
 </code></pre></div>
-
-那么系统就会认为：
-
+<p>那么系统就会认为：</p>
 <div class="highlight"><pre><span></span><code>api.example.com（mitmproxy签发）
 </code></pre></div>
-
-也是可信的，于是 HTTPS 连接就能建立，抓包工具便可以解密数据。
-
----
-
-### Windows
-
-通常会安装到：
-
+<p>也是可信的，于是 HTTPS 连接就能建立，抓包工具便可以解密数据。</p>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h3>
+<p>通常会安装到：</p>
 <div class="highlight"><pre><span></span><code>本地计算机
     └── 受信任的根证书颁发机构
            └── 证书
 </code></pre></div>
-
-或者
-
+<p>或者</p>
 <div class="highlight"><pre><span></span><code>当前用户
     └── 受信任的根证书颁发机构
 </code></pre></div>
-
-两者区别：
-
-- **当前用户**：只有当前登录用户信任。
-- **本地计算机**：所有用户都信任（通常需要管理员权限）。
-
-很多抓包工具都会自动安装，例如：
-
-- Fiddler → `Tools → Options → HTTPS → Trust Root Certificate`
-- Charles → `Help → SSL Proxying → Install Charles Root Certificate`
-- mitmproxy → 打开 `http://mitm.it` 自动安装
-
----
-
-### Android
-
-Android 7（Nougat）开始有一个变化：
-
-即使安装了用户 CA：
-
+<p>两者区别：</p>
+<ul>
+<li><strong>当前用户</strong>：只有当前登录用户信任。</li>
+<li><strong>本地计算机</strong>：所有用户都信任（通常需要管理员权限）。</li>
+</ul>
+<p>很多抓包工具都会自动安装，例如：</p>
+<ul>
+<li>Fiddler → <code>Tools → Options → HTTPS → Trust Root Certificate</code></li>
+<li>Charles → <code>Help → SSL Proxying → Install Charles Root Certificate</code></li>
+<li>mitmproxy → 打开 <code>http://mitm.it</code> 自动安装</li>
+</ul>
+<h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">¶</a></h3>
+<p>Android 7（Nougat）开始有一个变化：</p>
+<p>即使安装了用户 CA：</p>
 <div class="highlight"><pre><span></span><code>设置
   ↓
 安全
   ↓
 安装证书
 </code></pre></div>
-
-**很多 App 默认也不会信任它。**
-
-因为 Android 默认只信任：
-
-- 系统 CA（/system/etc/security/cacerts）
-
-而不信任：
-
-- 用户安装的 CA
-
-这也是很多 App 安装了 mitmproxy 证书后仍然抓不到 HTTPS 的原因。
-
-解决办法通常包括：
-
-- Root 后把证书安装到系统 CA。
-- 使用 Magisk 模块（如 Trust User Certificates）。
-- 使用 Frida 绕过 SSL Pinning。
-- 修改 App 的 `network_security_config`（适用于自己开发的 App）。
-
----
-
-### iPhone（iOS）
-
-安装描述文件后，还需要手动开启完全信任：
-
+<p><strong>很多 App 默认也不会信任它。</strong></p>
+<p>因为 Android 默认只信任：</p>
+<ul>
+<li>系统 CA（/system/etc/security/cacerts）</li>
+</ul>
+<p>而不信任：</p>
+<ul>
+<li>用户安装的 CA</li>
+</ul>
+<p>这也是很多 App 安装了 mitmproxy 证书后仍然抓不到 HTTPS 的原因。</p>
+<p>解决办法通常包括：</p>
+<ul>
+<li>Root 后把证书安装到系统 CA。</li>
+<li>使用 Magisk 模块（如 Trust User Certificates）。</li>
+<li>使用 Frida 绕过 SSL Pinning。</li>
+<li>修改 App 的 <code>network_security_config</code>（适用于自己开发的 App）。</li>
+</ul>
+<h3 id="iphoneios">iPhone（iOS）<a class="headerlink" href="#iphoneios" title="Permanent link">¶</a></h3>
+<p>安装描述文件后，还需要手动开启完全信任：</p>
 <div class="highlight"><pre><span></span><code>设置
   ↓
 通用
@@ -3255,15 +3930,9 @@ Android 7（Nougat）开始有一个变化：
   ↓
 开启 mitmproxy/Charles/Fiddler Root CA
 </code></pre></div>
-
-否则虽然安装了证书，系统仍不会信任它。
-
----
-
-### 总结
-
-可以把证书理解成"身份证"，根 CA 就像公安部：
-
+<p>否则虽然安装了证书，系统仍不会信任它。</p>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>可以把证书理解成"身份证"，根 CA 就像公安部：</p>
 <div class="highlight"><pre><span></span><code>根CA（受信任）
       │
       ├── 百度证书
@@ -3271,52 +3940,34 @@ Android 7（Nougat）开始有一个变化：
       ├── 阿里证书
       └── mitmproxy伪造证书
 </code></pre></div>
-
-**抓包工具之所以安装的是"根 CA"，而不是给每个网站单独安装证书，就是因为有了这个根 CA，它可以为任何访问的网站动态签发证书，浏览器和系统都会沿着信任链认为这些证书是可信的。**
-
----
-
-<div class="conv-block">
-<p class="conv-label conv-label-q">[问]</p>
-message time: 2026-07-14 09:44:35
-
-公钥证书链条是假设根ca私钥在本机的 所以不会泄露的 不会传输的 除非本机失窃了 可以反驳我 同时私钥是加密 公钥是验证
-
----
-
+<p><strong>抓包工具之所以安装的是"根 CA"，而不是给每个网站单独安装证书，就是因为有了这个根 CA，它可以为任何访问的网站动态签发证书，浏览器和系统都会沿着信任链认为这些证书是可信的。</strong></p>
 </div>
-<div class="conv-block">
+<div class="conv-block conv-block-q">
+<p class="conv-label conv-label-q">[问]</p>
+<p class="conv-time">2026-07-14 09:44:35</p>
+<p>公钥证书链条是假设根ca私钥在本机的 所以不会泄露的 不会传输的 除非本机失窃了 可以反驳我 同时私钥是加密 公钥是验证</p>
+</div>
+<div class="conv-block conv-block-a">
 <p class="conv-label conv-label-a">[答]</p>
-
-你的理解方向基本正确，但有几个地方需要修正。我逐点反驳一下。
-
----
-
-## 1. 「假设根 CA 私钥在本机」——这个不准确
-
-**根 CA 的私钥通常不在普通用户本机。**
-
-比如：
-
+<p>你的理解方向基本正确，但有几个地方需要修正。我逐点反驳一下。</p>
+<h2 id="1-ca">1. 「假设根 CA 私钥在本机」——这个不准确<a class="headerlink" href="#1-ca" title="Permanent link">¶</a></h2>
+<p><strong>根 CA 的私钥通常不在普通用户本机。</strong></p>
+<p>比如：</p>
 <div class="highlight"><pre><span></span><code>DigiCert Root CA
 Let's Encrypt Root CA
 </code></pre></div>
-
-这些根 CA 的私钥：
-
-- 在 CA 机构的安全环境里
-- 通常使用 HSM（硬件安全模块）保存
-- 受到严格权限控制
-
-不是：
-
+<p>这些根 CA 的私钥：</p>
+<ul>
+<li>在 CA 机构的安全环境里</li>
+<li>通常使用 HSM（硬件安全模块）保存</li>
+<li>受到严格权限控制</li>
+</ul>
+<p>不是：</p>
 <div class="highlight"><pre><span></span><code>你的电脑
   |
   └── 根CA私钥
 </code></pre></div>
-
-而是：
-
+<p>而是：</p>
 <div class="highlight"><pre><span></span><code>CA公司服务器/HSM
         |
         | 私钥签名
@@ -3326,55 +3977,38 @@ Let's Encrypt Root CA
         ↓
 发给全世界
 </code></pre></div>
-
-你的电脑里面只有：
-
+<p>你的电脑里面只有：</p>
 <div class="highlight"><pre><span></span><code>根CA证书
     |
     └── 根CA公钥
 </code></pre></div>
-
-没有私钥。
-
----
-
-## 2. 为什么根 CA 私钥不需要传输？
-
-因为 CA 的工作不是"加密通信"，而是：
-
-&gt; 用私钥证明某个公钥属于某个身份。
-
-例如：
-
-服务器：
-
+<p>没有私钥。</p>
+<h2 id="2-ca_1">2. 为什么根 CA 私钥不需要传输？<a class="headerlink" href="#2-ca_1" title="Permanent link">¶</a></h2>
+<p>因为 CA 的工作不是"加密通信"，而是：</p>
+<blockquote>
+<p>用私钥证明某个公钥属于某个身份。</p>
+</blockquote>
+<p>例如：</p>
+<p>服务器：</p>
 <div class="highlight"><pre><span></span><code>www.baidu.com
 </code></pre></div>
-
-生成：
-
+<p>生成：</p>
 <div class="highlight"><pre><span></span><code>服务器私钥
 服务器公钥
 </code></pre></div>
-
-然后：
-
+<p>然后：</p>
 <div class="highlight"><pre><span></span><code>服务器公钥
      +
 身份信息
      ↓
 提交给 CA
 </code></pre></div>
-
-CA：
-
+<p>CA：</p>
 <div class="highlight"><pre><span></span><code>用自己的根CA私钥
        ↓
 签名服务器证书
 </code></pre></div>
-
-得到：
-
+<p>得到：</p>
 <div class="highlight"><pre><span></span><code>百度证书：
 {
  域名：www.baidu.com
@@ -3382,136 +4016,84 @@ CA：
  CA签名：xxxx
 }
 </code></pre></div>
-
-然后发给用户。
-
----
-
-## 3. 用户为什么能验证？
-
-用户电脑里面：
-
+<p>然后发给用户。</p>
+<h2 id="3">3. 用户为什么能验证？<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<p>用户电脑里面：</p>
 <div class="highlight"><pre><span></span><code>根CA证书
 
 包含：
 
 根CA公钥
 </code></pre></div>
-
-收到：
-
+<p>收到：</p>
 <div class="highlight"><pre><span></span><code>百度证书
 </code></pre></div>
-
-验证：
-
+<p>验证：</p>
 <div class="highlight"><pre><span></span><code>百度证书上的签名
 
 是否能被
 
 根CA公钥验证通过
 </code></pre></div>
-
-如果成功：
-
-说明：
-
+<p>如果成功：</p>
+<p>说明：</p>
 <div class="highlight"><pre><span></span><code>这个证书确实是根CA私钥签发的
 </code></pre></div>
-
----
-
-这里你的：
-
-&gt; 私钥是加密，公钥是验证
-
-需要修正。
-
-更准确：
-
-### 私钥：
-
-用于：
-
-- 签名
-- 解密（某些非现代场景）
-
-### 公钥：
-
-用于：
-
-- 验证签名
-- 加密（某些非现代场景）
-
-
-在 HTTPS 证书体系里面：
-
-主要是：
-
+<p>这里你的：</p>
+<blockquote>
+<p>私钥是加密，公钥是验证</p>
+</blockquote>
+<p>需要修正。</p>
+<p>更准确：</p>
+<h3 id="_3">私钥：<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>用于：</p>
+<ul>
+<li>签名</li>
+<li>解密（某些非现代场景）</li>
+</ul>
+<h3 id="_4">公钥：<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>用于：</p>
+<ul>
+<li>验证签名</li>
+<li>加密（某些非现代场景）</li>
+</ul>
+<p>在 HTTPS 证书体系里面：</p>
+<p>主要是：</p>
 <div class="highlight"><pre><span></span><code>私钥 ----签名----&gt; 证书
 
 公钥 ----验证----&gt; 签名是否正确
 </code></pre></div>
-
-不是：
-
+<p>不是：</p>
 <div class="highlight"><pre><span></span><code>私钥加密
 公钥解密
 </code></pre></div>
-
-这个说法容易误导。
-
----
-
-## 4. 那么 HTTPS 私钥在哪里？
-
-这里有两套私钥，不要混淆。
-
-### 第一套：CA 私钥
-
-例如：
-
+<p>这个说法容易误导。</p>
+<h2 id="4-https_1">4. 那么 HTTPS 私钥在哪里？<a class="headerlink" href="#4-https_1" title="Permanent link">¶</a></h2>
+<p>这里有两套私钥，不要混淆。</p>
+<h3 id="ca">第一套：CA 私钥<a class="headerlink" href="#ca" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>DigiCert Root CA 私钥
 </code></pre></div>
-
-作用：
-
+<p>作用：</p>
 <div class="highlight"><pre><span></span><code>签发证书
 </code></pre></div>
-
-位置：
-
+<p>位置：</p>
 <div class="highlight"><pre><span></span><code>CA机构
 </code></pre></div>
-
-不会传输。
-
----
-
-### 第二套：服务器私钥
-
-例如：
-
+<p>不会传输。</p>
+<h3 id="_5">第二套：服务器私钥<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>www.example.com 私钥
 </code></pre></div>
-
-作用：
-
+<p>作用：</p>
 <div class="highlight"><pre><span></span><code>证明服务器身份
 参与TLS密钥协商
 </code></pre></div>
-
-位置：
-
+<p>位置：</p>
 <div class="highlight"><pre><span></span><code>服务器
 </code></pre></div>
-
-也不会传输。
-
----
-
-流程：
-
+<p>也不会传输。</p>
+<p>流程：</p>
 <div class="highlight"><pre><span></span><code>服务器生成：
 
 私钥A
@@ -3526,166 +4108,133 @@ CA签名
 服务器证书
 (包含公钥A)
 </code></pre></div>
-
-客户端得到：
-
+<p>客户端得到：</p>
 <div class="highlight"><pre><span></span><code>服务器证书
 </code></pre></div>
-
-但是：
-
+<p>但是：</p>
 <div class="highlight"><pre><span></span><code>没有服务器私钥A
 </code></pre></div>
-
----
-
-## 5. 「除非本机失窃」这个也需要改
-
-如果说：
-
-&gt; 根 CA 私钥泄露，需要本机失窃
-
-不对。
-
-根 CA 私钥泄露通常意味着：
-
+<h2 id="5">5. 「除非本机失窃」这个也需要改<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
+<p>如果说：</p>
+<blockquote>
+<p>根 CA 私钥泄露，需要本机失窃</p>
+</blockquote>
+<p>不对。</p>
+<p>根 CA 私钥泄露通常意味着：</p>
 <div class="highlight"><pre><span></span><code>CA服务器被攻破
 内部人员泄露
 HSM被攻击
 </code></pre></div>
-
-不是普通用户电脑。
-
-如果你的电脑丢失：
-
-攻击者得到：
-
+<p>不是普通用户电脑。</p>
+<p>如果你的电脑丢失：</p>
+<p>攻击者得到：</p>
 <div class="highlight"><pre><span></span><code>你的浏览器缓存
 你的账号
 你的本地证书
 </code></pre></div>
-
-可能有风险。
-
-但：
-
+<p>可能有风险。</p>
+<p>但：</p>
 <div class="highlight"><pre><span></span><code>DigiCert根CA私钥
 </code></pre></div>
-
-不会因为你的电脑丢失而泄露。
-
----
-
-## 6. HTTPS 抓包为什么安装 CA？
-
-这里刚好对应你的问题。
-
-mitmproxy：
-
-自己生成：
-
+<p>不会因为你的电脑丢失而泄露。</p>
+<h2 id="6-https-ca">6. HTTPS 抓包为什么安装 CA？<a class="headerlink" href="#6-https-ca" title="Permanent link">¶</a></h2>
+<p>这里刚好对应你的问题。</p>
+<p>mitmproxy：</p>
+<p>自己生成：</p>
 <div class="highlight"><pre><span></span><code>mitmproxy Root CA
 
 私钥
 公钥
 </code></pre></div>
-
-注意：
-
-这个私钥确实在你的电脑：
-
+<p>注意：</p>
+<p>这个私钥确实在你的电脑：</p>
 <div class="highlight"><pre><span></span><code>你的电脑
  |
  ├── mitmproxy CA私钥
  └── mitmproxy CA证书
 </code></pre></div>
-
-然后：
-
-它给：
-
+<p>然后：</p>
+<p>它给：</p>
 <div class="highlight"><pre><span></span><code>www.example.com
 </code></pre></div>
-
-动态签：
-
+<p>动态签：</p>
 <div class="highlight"><pre><span></span><code>伪造证书
 </code></pre></div>
-
-因为你的系统信任：
-
+<p>因为你的系统信任：</p>
 <div class="highlight"><pre><span></span><code>mitmproxy Root CA
 </code></pre></div>
-
-所以浏览器接受。
-
-所以抓包工具里的 CA 和公网 CA 最大区别：
-
-| |公网CA|抓包CA|
-|-|-|-|
-|私钥在哪里|CA机构|你的电脑|
-|作用|签服务器证书|伪造服务器证书|
-|是否应该泄露|绝对不能|也不能|
-|是否被系统信任|默认|安装后|
-
----
-
-所以你的核心理解：
-
-&gt; 私钥不传输，公钥用于验证，只有私钥泄露才危险
-
-✅ 基本正确。
-
-需要修正的是：
-
-1. **根 CA 私钥不在用户本机，而在 CA 机构**
-2. **HTTPS 有服务器私钥和 CA 私钥两套**
-3. **私钥主要用于签名，不是简单理解成"加密"**
-4. **抓包工具的 CA 私钥才会在本机，因为它人为成为了一个小型 CA**
-
----
-
-<div class="conv-block">
-<p class="conv-label conv-label-q">[问]</p>
-message time: 2026-07-14 09:46:49
-
-同时这里的证书就是私钥加密签发的 然后用公钥可以验证吗
-
----
-
+<p>所以浏览器接受。</p>
+<p>所以抓包工具里的 CA 和公网 CA 最大区别：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>公网CA</th>
+<th>抓包CA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>私钥在哪里</td>
+<td>CA机构</td>
+<td>你的电脑</td>
+</tr>
+<tr>
+<td>作用</td>
+<td>签服务器证书</td>
+<td>伪造服务器证书</td>
+</tr>
+<tr>
+<td>是否应该泄露</td>
+<td>绝对不能</td>
+<td>也不能</td>
+</tr>
+<tr>
+<td>是否被系统信任</td>
+<td>默认</td>
+<td>安装后</td>
+</tr>
+</tbody>
+</table>
+<p>所以你的核心理解：</p>
+<blockquote>
+<p>私钥不传输，公钥用于验证，只有私钥泄露才危险</p>
+</blockquote>
+<p>✅ 基本正确。</p>
+<p>需要修正的是：</p>
+<ol>
+<li><strong>根 CA 私钥不在用户本机，而在 CA 机构</strong></li>
+<li><strong>HTTPS 有服务器私钥和 CA 私钥两套</strong></li>
+<li><strong>私钥主要用于签名，不是简单理解成"加密"</strong></li>
+<li><strong>抓包工具的 CA 私钥才会在本机，因为它人为成为了一个小型 CA</strong></li>
+</ol>
 </div>
-<div class="conv-block">
+<div class="conv-block conv-block-q">
+<p class="conv-label conv-label-q">[问]</p>
+<p class="conv-time">2026-07-14 09:46:49</p>
+<p>同时这里的证书就是私钥加密签发的 然后用公钥可以验证吗</p>
+</div>
+<div class="conv-block conv-block-a">
 <p class="conv-label conv-label-a">[答]</p>
-
-你的理解已经很接近了，但这里有一个**非常重要的概念区别**：
-
-&gt; **证书不是"私钥加密"出来的，而是"私钥签名"出来的。**
-
-这是密码学里容易混淆的地方。
-
----
-
-## 正确的流程
-
-假设服务器生成了一对密钥：
-
+<p>你的理解已经很接近了，但这里有一个<strong>非常重要的概念区别</strong>：</p>
+<blockquote>
+<p><strong>证书不是"私钥加密"出来的，而是"私钥签名"出来的。</strong></p>
+</blockquote>
+<p>这是密码学里容易混淆的地方。</p>
+<h2 id="_6">正确的流程<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<p>假设服务器生成了一对密钥：</p>
 <div class="highlight"><pre><span></span><code>服务器私钥
 服务器公钥
 </code></pre></div>
-
-然后把：
-
+<p>然后把：</p>
 <div class="highlight"><pre><span></span><code>服务器公钥
 域名：www.example.com
 有效期
 用途
 ...
 </code></pre></div>
-
-这些信息发送给 CA。
-
-CA 会生成一个证书：
-
+<p>这些信息发送给 CA。</p>
+<p>CA 会生成一个证书：</p>
 <div class="highlight"><pre><span></span><code>Certificate
 ----------------------
 域名：www.example.com
@@ -3694,24 +4243,18 @@ CA 会生成一个证书：
 序列号
 ...
 </code></pre></div>
-
-然后对**整个证书内容**计算一个摘要（Hash）：
-
+<p>然后对<strong>整个证书内容</strong>计算一个摘要（Hash）：</p>
 <div class="highlight"><pre><span></span><code>Hash(证书内容)
         ↓
 A1B2C3...
 </code></pre></div>
-
-再使用 **CA 的私钥** 对这个摘要进行数字签名：
-
+<p>再使用 <strong>CA 的私钥</strong> 对这个摘要进行数字签名：</p>
 <div class="highlight"><pre><span></span><code>CA私钥
     │
     ▼
 数字签名(Signature)
 </code></pre></div>
-
-最终得到：
-
+<p>最终得到：</p>
 <div class="highlight"><pre><span></span><code>Certificate
 ----------------------
 域名：www.example.com
@@ -3720,124 +4263,100 @@ A1B2C3...
 ...
 数字签名
 </code></pre></div>
-
-这就是服务器收到并发送给客户端的证书。
-
----
-
-## 客户端如何验证？
-
-客户端已经内置了：
-
+<p>这就是服务器收到并发送给客户端的证书。</p>
+<h2 id="_7">客户端如何验证？<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<p>客户端已经内置了：</p>
 <div class="highlight"><pre><span></span><code>CA公钥
 </code></pre></div>
-
-收到证书后：
-
-### 第一步
-
-自己重新计算：
-
+<p>收到证书后：</p>
+<h3 id="_8">第一步<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>自己重新计算：</p>
 <div class="highlight"><pre><span></span><code>Hash(证书内容)
 </code></pre></div>
-
-得到：
-
+<p>得到：</p>
 <div class="highlight"><pre><span></span><code>A1B2C3...
 </code></pre></div>
-
----
-
-### 第二步
-
-使用 **CA 公钥** 验证数字签名。
-
-如果验证成功，就说明：
-
-&gt; **这个签名只能是持有 CA 私钥的人生成的。**
-
-因此：
-
-- 证书没有被修改
-- 确实是这个 CA 签发的
-
----
-
-## 为什么说"不是加密"？
-
-很多教材会说：
-
-&gt; 私钥加密，公钥解密。
-
-这是 RSA 最早的描述方式，但**现代密码学更准确的说法是：**
-
-- **数字签名（Signing）**：私钥签名，公钥验证。
-- **加密（Encryption）**：公钥加密，私钥解密。
-
-在 HTTPS 的证书体系中，CA 做的是**数字签名**，不是为了保密，而是为了证明真实性和完整性。
-
----
-
-## 可以这样记忆
-
-| 用途 | 谁操作 | 谁验证/恢复 | 目的 |
-|------|--------|-------------|------|
-| 加密（Encryption） | 公钥加密 | 私钥解密 | 保密 |
-| 数字签名（Signature） | 私钥签名 | 公钥验证 | 身份认证、完整性 |
-
----
-
-所以，你这句话：
-
-&gt; **证书就是私钥加密签发的，然后用公钥可以验证吗？**
-
-可以改成更准确的表述：
-
-&gt; **证书包含了 CA 使用私钥生成的数字签名，客户端使用 CA 的公钥验证这个签名，从而确认该证书确实由该 CA 签发且内容没有被篡改。**
-
-这也是整个 PKI（公钥基础设施）能够建立信任链的核心原理。
-
----
-
-<div class="conv-block">
-<p class="conv-label conv-label-q">[问]</p>
-message time: 2026-07-14 09:48:51
-
-既然域名的证书是根ca对其hash值签名的  那为什么还要有次一级的证书ca
-
----
-
+<h3 id="_9">第二步<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p>使用 <strong>CA 公钥</strong> 验证数字签名。</p>
+<p>如果验证成功，就说明：</p>
+<blockquote>
+<p><strong>这个签名只能是持有 CA 私钥的人生成的。</strong></p>
+</blockquote>
+<p>因此：</p>
+<ul>
+<li>证书没有被修改</li>
+<li>确实是这个 CA 签发的</li>
+</ul>
+<h2 id="_10">为什么说"不是加密"？<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
+<p>很多教材会说：</p>
+<blockquote>
+<p>私钥加密，公钥解密。</p>
+</blockquote>
+<p>这是 RSA 最早的描述方式，但<strong>现代密码学更准确的说法是：</strong></p>
+<ul>
+<li><strong>数字签名（Signing）</strong>：私钥签名，公钥验证。</li>
+<li><strong>加密（Encryption）</strong>：公钥加密，私钥解密。</li>
+</ul>
+<p>在 HTTPS 的证书体系中，CA 做的是<strong>数字签名</strong>，不是为了保密，而是为了证明真实性和完整性。</p>
+<h2 id="_11">可以这样记忆<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>谁操作</th>
+<th>谁验证/恢复</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加密（Encryption）</td>
+<td>公钥加密</td>
+<td>私钥解密</td>
+<td>保密</td>
+</tr>
+<tr>
+<td>数字签名（Signature）</td>
+<td>私钥签名</td>
+<td>公钥验证</td>
+<td>身份认证、完整性</td>
+</tr>
+</tbody>
+</table>
+<p>所以，你这句话：</p>
+<blockquote>
+<p><strong>证书就是私钥加密签发的，然后用公钥可以验证吗？</strong></p>
+</blockquote>
+<p>可以改成更准确的表述：</p>
+<blockquote>
+<p><strong>证书包含了 CA 使用私钥生成的数字签名，客户端使用 CA 的公钥验证这个签名，从而确认该证书确实由该 CA 签发且内容没有被篡改。</strong></p>
+</blockquote>
+<p>这也是整个 PKI（公钥基础设施）能够建立信任链的核心原理。</p>
 </div>
-<div class="conv-block">
+<div class="conv-block conv-block-q">
+<p class="conv-label conv-label-q">[问]</p>
+<p class="conv-time">2026-07-14 09:48:51</p>
+<p>既然域名的证书是根ca对其hash值签名的  那为什么还要有次一级的证书ca</p>
+</div>
+<div class="conv-block conv-block-a">
 <p class="conv-label conv-label-a">[答]</p>
-
-这是一个很好的问题，实际上你已经碰到了 **PKI（公钥基础设施）为什么要设计证书链的问题**。
-
-你的疑问：
-
-&gt; 既然根 CA 可以直接对域名证书的 hash 签名，那为什么还需要中间 CA？
-
-答案：**不是技术上必须，而是工程上必须。**
-
-理论上完全可以：
-
+<p>这是一个很好的问题，实际上你已经碰到了 <strong>PKI（公钥基础设施）为什么要设计证书链的问题</strong>。</p>
+<p>你的疑问：</p>
+<blockquote>
+<p>既然根 CA 可以直接对域名证书的 hash 签名，那为什么还需要中间 CA？</p>
+</blockquote>
+<p>答案：<strong>不是技术上必须，而是工程上必须。</strong></p>
+<p>理论上完全可以：</p>
 <div class="highlight"><pre><span></span><code>Root CA
    |
    | 私钥签名
    ↓
 www.example.com证书
 </code></pre></div>
-
-这样就可以工作。
-
-但是现实中不会这么做。
-
----
-
-## 1. 根 CA 私钥太重要，不能频繁使用
-
-根 CA 的私钥是整个信任体系的最高权限：
-
+<p>这样就可以工作。</p>
+<p>但是现实中不会这么做。</p>
+<h2 id="1-ca_1">1. 根 CA 私钥太重要，不能频繁使用<a class="headerlink" href="#1-ca_1" title="Permanent link">¶</a></h2>
+<p>根 CA 的私钥是整个信任体系的最高权限：</p>
 <div class="highlight"><pre><span></span><code>Root CA 私钥
        |
        |
@@ -3847,33 +4366,23 @@ www.example.com证书
        |
        +---- xxx.com证书
 </code></pre></div>
-
-如果根 CA 私钥泄露：
-
-攻击者可以：
-
+<p>如果根 CA 私钥泄露：</p>
+<p>攻击者可以：</p>
 <div class="highlight"><pre><span></span><code>伪造任何网站证书
 
 example.com
 bank.com
 google.com
 </code></pre></div>
-
-然后所有浏览器都会信任。
-
-所以根 CA 私钥一般：
-
-- 离线保存
-- 放在 HSM
-- 很少使用
-
-
----
-
-## 2. 引入中间 CA 后
-
-结构变成：
-
+<p>然后所有浏览器都会信任。</p>
+<p>所以根 CA 私钥一般：</p>
+<ul>
+<li>离线保存</li>
+<li>放在 HSM</li>
+<li>很少使用</li>
+</ul>
+<h2 id="2-ca_2">2. 引入中间 CA 后<a class="headerlink" href="#2-ca_2" title="Permanent link">¶</a></h2>
+<p>结构变成：</p>
 <div class="highlight"><pre><span></span><code>          Root CA
              |
        签发 Intermediate CA
@@ -3884,9 +4393,7 @@ google.com
              |
        www.example.com
 </code></pre></div>
-
-例如：
-
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>DigiCert Root CA
        |
        |
@@ -3895,40 +4402,22 @@ DigiCert TLS RSA SHA256 2020 CA1
        |
 www.example.com
 </code></pre></div>
-
-实际签网站证书的是：
-
+<p>实际签网站证书的是：</p>
 <div class="highlight"><pre><span></span><code>Intermediate CA
 </code></pre></div>
-
-不是 Root CA。
-
-
----
-
-## 3. 为什么这样更安全？
-
-假设：
-
-### 情况A：没有中间CA
-
+<p>不是 Root CA。</p>
+<h2 id="3_1">3. 为什么这样更安全？<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h2>
+<p>假设：</p>
+<h3 id="aca">情况A：没有中间CA<a class="headerlink" href="#aca" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>Root私钥
      |
      +---- 100万个网站证书
 </code></pre></div>
-
-每天：
-
+<p>每天：</p>
 <div class="highlight"><pre><span></span><code>签很多次
 </code></pre></div>
-
-风险大。
-
-
----
-
-### 情况B：有中间CA
-
+<p>风险大。</p>
+<h3 id="bca">情况B：有中间CA<a class="headerlink" href="#bca" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>Root私钥
      |
      |
@@ -3937,51 +4426,27 @@ www.example.com
           |
        网站证书
 </code></pre></div>
-
-Root：
-
-一年甚至几年不用一次。
-
-
-如果 Intermediate CA 泄露：
-
-可以：
-
+<p>Root：</p>
+<p>一年甚至几年不用一次。</p>
+<p>如果 Intermediate CA 泄露：</p>
+<p>可以：</p>
 <div class="highlight"><pre><span></span><code>吊销这个Intermediate CA
 </code></pre></div>
-
-影响：
-
+<p>影响：</p>
 <div class="highlight"><pre><span></span><code>这个中间CA签发的网站
 </code></pre></div>
-
-而不是整个互联网。
-
-
----
-
-## 4. 类似公司权限模型
-
-可以类比：
-
-### 没有中间CA：
-
-老板：
-
+<p>而不是整个互联网。</p>
+<h2 id="4_1">4. 类似公司权限模型<a class="headerlink" href="#4_1" title="Permanent link">¶</a></h2>
+<p>可以类比：</p>
+<h3 id="ca_1">没有中间CA：<a class="headerlink" href="#ca_1" title="Permanent link">¶</a></h3>
+<p>老板：</p>
 <div class="highlight"><pre><span></span><code>老板账号
  |
  +-- 给所有员工发权限
 </code></pre></div>
-
-老板密码泄露：
-
-全部完蛋。
-
-
----
-
-### 有中间CA：
-
+<p>老板密码泄露：</p>
+<p>全部完蛋。</p>
+<h3 id="ca_2">有中间CA：<a class="headerlink" href="#ca_2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>老板账号(root)
        |
        |
@@ -3990,54 +4455,32 @@ Root：
        |
 员工账号(网站证书)
 </code></pre></div>
-
-部门经理泄露：
-
-只影响一个部门。
-
----
-
-## 5. 那验证过程是不是更复杂？
-
-是的。
-
-客户端收到：
-
+<p>部门经理泄露：</p>
+<p>只影响一个部门。</p>
+<h2 id="5_1">5. 那验证过程是不是更复杂？<a class="headerlink" href="#5_1" title="Permanent link">¶</a></h2>
+<p>是的。</p>
+<p>客户端收到：</p>
 <div class="highlight"><pre><span></span><code>网站证书
 </code></pre></div>
-
-里面有：
-
+<p>里面有：</p>
 <div class="highlight"><pre><span></span><code>签发者:
 Intermediate CA
 </code></pre></div>
-
-于是继续找：
-
+<p>于是继续找：</p>
 <div class="highlight"><pre><span></span><code>Intermediate CA证书
 </code></pre></div>
-
-发现：
-
+<p>发现：</p>
 <div class="highlight"><pre><span></span><code>签发者:
 Root CA
 </code></pre></div>
-
-继续：
-
+<p>继续：</p>
 <div class="highlight"><pre><span></span><code>Root CA
 </code></pre></div>
-
-因为 Root CA 在系统里：
-
+<p>因为 Root CA 在系统里：</p>
 <div class="highlight"><pre><span></span><code>可信
 </code></pre></div>
-
-所以链成立。
-
-
-完整验证：
-
+<p>所以链成立。</p>
+<p>完整验证：</p>
 <div class="highlight"><pre><span></span><code>www.example.com证书
         |
         | Intermediate CA公钥验证
@@ -4051,14 +4494,8 @@ Root CA证书
         ↓
 信任
 </code></pre></div>
-
-
----
-
-## 6. 为什么不无限增加？
-
-实际上可能有：
-
+<h2 id="6">6. 为什么不无限增加？<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
+<p>实际上可能有：</p>
 <div class="highlight"><pre><span></span><code>Root CA
    |
 Intermediate CA
@@ -4069,54 +4506,41 @@ Intermediate CA
    |
 网站证书
 </code></pre></div>
-
-叫：
-
-**证书链（Certificate Chain）**
-
-但一般不会太深，因为：
-
-- 验证成本增加
-- 管理复杂
-
-
----
-
-## 7. 回到你的问题
-
-&gt; 既然根CA可以直接签域名证书，为什么需要次一级CA？
-
-准确回答：
-
-因为：
-
-1. **保护根 CA 私钥**
-2. **降低根 CA 使用频率**
-3. **限制损失范围**
-4. **方便权限管理**
-5. **方便吊销和运营管理**
-
-所以：
-
+<p>叫：</p>
+<p><strong>证书链（Certificate Chain）</strong></p>
+<p>但一般不会太深，因为：</p>
+<ul>
+<li>验证成本增加</li>
+<li>管理复杂</li>
+</ul>
+<h2 id="7">7. 回到你的问题<a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>既然根CA可以直接签域名证书，为什么需要次一级CA？</p>
+</blockquote>
+<p>准确回答：</p>
+<p>因为：</p>
+<ol>
+<li><strong>保护根 CA 私钥</strong></li>
+<li><strong>降低根 CA 使用频率</strong></li>
+<li><strong>限制损失范围</strong></li>
+<li><strong>方便权限管理</strong></li>
+<li><strong>方便吊销和运营管理</strong></li>
+</ol>
+<p>所以：</p>
 <div class="highlight"><pre><span></span><code>根CA = 信任的根
 中间CA = 运营层
 域名证书 = 具体身份
 </code></pre></div>
-
-技术上：
-
+<p>技术上：</p>
 <div class="highlight"><pre><span></span><code>Root CA → 网站证书
 </code></pre></div>
-
-能运行。
-
-工程上：
-
+<p>能运行。</p>
+<p>工程上：</p>
 <div class="highlight"><pre><span></span><code>Root CA → Intermediate CA → 网站证书
 </code></pre></div>
-
-才是互联网实际采用的方案。你前面的理解（私钥签名 hash、公钥验证）正好就是证书链每一级之间建立信任的核心。
-</div></div></div></div></div></div>
+<p>才是互联网实际采用的方案。你前面的理解（私钥签名 hash、公钥验证）正好就是证书链每一级之间建立信任的核心。</p>
+</div>
+</div>
 
                   
                 
